@@ -1,0 +1,23 @@
+---
+title: "How Foundation Models Are Built and Extended Beyond Text"
+description: "Data, scaling, MoE, efficient adaptation, multimodality, diffusion, prompting, and evaluation."
+author: "Yan Xu"
+date: 2026-09-19
+categories: [Pre-training, MoE, VLM, Diffusion]
+draft: false
+---
+
+## Planned chapters
+
+::: {.callout-note}
+Series outline. Full chapters and experiments will be added during week two.
+:::
+
+1. Data engineering and pre-training pipelines
+2. Distributed training, memory, and stability
+3. MoE, LoRA/QLoRA, adapter merging, and model soups
+4. VLM/LVM architecture: vision encoder to language decoder
+5. Diffusion, latent diffusion, DiT, and flow matching
+6. Prompt optimization, evaluation, model evolution, and benchmark competition
+
+For every chapter: history → theory → mathematics → Colab implementation → ablation/visualization → failure analysis → interview questions.

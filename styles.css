@@ -1,0 +1,38 @@
+:root {
+  --brand: #3157d5;
+}
+
+body {
+  letter-spacing: -0.01em;
+}
+
+.hero {
+  padding: 4.5rem 0 3.5rem;
+  max-width: 900px;
+}
+
+.hero h2 {
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  line-height: 1.65;
+  max-width: 760px;
+}
+
+.btn-primary {
+  background-color: var(--brand);
+  border-color: var(--brand);
+}
+
+.grid h3 {
+  margin-top: 0;
+}
+
+code {
+  font-variant-ligatures: none;
+}

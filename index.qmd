@@ -1,0 +1,46 @@
+---
+title: "Yan Xu"
+page-layout: full
+title-block-banner: false
+---
+
+::: {.hero}
+## Building and explaining foundation models from first principles
+
+I write about LLM architecture, multimodal generation, post-training, reinforcement learning, and the engineering details that make models work.
+
+[Read the flagship series](essays.qmd){.btn .btn-primary} [View the learning roadmap](roadmap/18-day-plan.qmd){.btn .btn-outline-secondary}
+:::
+
+## Flagship series
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-4}
+### 01 · Inside a Modern LLM
+
+Tokens, attention, modern decoder blocks, training, decoding, and KV cache—with implementations and ablations.
+
+[Open the essay →](posts/01-inside-modern-llm/index.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### 02 · Building Foundation Models
+
+Data, scaling, MoE, LoRA, model soups, VLMs, diffusion, prompt optimization, and evaluation.
+
+[Open the outline →](posts/02-building-foundation-models/index.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### 03 · Post-Training from First Principles
+
+SFT, reward modeling, PPO, DPO, GRPO, safety, evaluation, and failure analysis.
+
+[Open the outline →](posts/03-post-training-from-first-principles/index.qmd)
+:::
+:::
+
+## Working standard
+
+Every substantial article should contain four things: derivation, executable code, controlled ablation, and an honest failure analysis. Claims about closed models are labeled as **official**, **third-party estimate**, or **unknown**.
+

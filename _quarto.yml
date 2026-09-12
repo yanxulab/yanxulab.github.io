@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Yan Xu"
+  site-url: "https://yanxudev.github.io"
+  description: "Foundation models, post-training, reinforcement learning, and multimodal systems—from first principles to working code."
+  favicon: assets/favicon.svg
+  open-graph: true
+  twitter-card: true
+  search: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: essays.qmd
+        text: Essays
+      - href: lab-notes.qmd
+        text: Lab Notes
+      - href: projects.qmd
+        text: Projects
+      - href: roadmap/18-day-plan.qmd
+        text: Roadmap
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/yanxudev
+        aria-label: GitHub
+  page-footer:
+    left: "© 2026 Yan Xu"
+    right: "Built with Quarto · Hosted on GitHub Pages"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-overflow: wrap
+    code-line-numbers: true
+    anchor-sections: true
+
+execute:
+  freeze: auto

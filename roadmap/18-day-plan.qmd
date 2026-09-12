@@ -1,0 +1,24 @@
+---
+title: "18-Day Foundation Models + Post-Training Roadmap"
+description: "Three weeks, six days per week, five hours per day."
+toc: true
+---
+
+The complete plan is maintained in [`18-day-foundation-model-plan.md`](../18-day-foundation-model-plan.md). It starts with Transformer fundamentals, builds a full foundation-model systems map, and then specializes in post-training and reinforcement learning.
+
+## Daily cadence
+
+| Block | Time |
+|---|---:|
+| History and theory | 60 min |
+| Mathematics | 45 min |
+| Colab implementation | 120 min |
+| Ablation and visualization | 45 min |
+| Flagship essay chapter | 30 min |
+
+## Weekly outputs
+
+1. **Inside a Modern LLM: From Tokens to KV Cache**
+2. **How Foundation Models Are Built and Extended Beyond Text**
+3. **Post-Training from First Principles: SFT, RLHF, DPO and GRPO**
+

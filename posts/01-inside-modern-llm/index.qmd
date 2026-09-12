@@ -1,0 +1,153 @@
+---
+title: "Inside a Modern LLM: From Tokens to KV Cache"
+description: "A bottom-up guide to decoder-only language models, with derivations, PyTorch implementations, ablations, and systems measurements."
+author: "Yan Xu"
+date: 2026-09-12
+categories: [LLM, Transformer, Systems, From Scratch]
+image: ../../assets/og-placeholder.svg
+draft: false
+toc: true
+number-sections: true
+code-fold: show
+---
+
+> **Thesis.** A language model stops being mysterious once every boundary—tokens, tensors, weights, logits, loss, cache, and samples—can be traced and measured.
+
+::: {.callout-note}
+This is a living essay under active development. Each chapter is backed by a reproducible notebook and will be expanded during the 18-day sprint.
+:::
+
+## What the reader will build
+
+- A tokenizer and input/output embedding path
+- Multi-head causal self-attention from tensor operations
+- A modern decoder block with RMSNorm, RoPE, GQA, and SwiGLU
+- A trainable Tiny GPT
+- Cached autoregressive decoding and a latency/memory benchmark
+- A model-anatomy script for inspecting real open-source checkpoints
+
+## Chapter 1 · Tokens in, logits out
+
+### Historical problem
+
+<!-- Why sequence modeling moved from recurrent state to token-parallel representations. -->
+
+### Tensor contract
+
+<!-- State every shape: token IDs [B,T], embeddings [B,T,D], logits [B,T,V]. -->
+
+### Mathematics
+
+<!-- Embedding lookup, softmax, cross-entropy, weight tying, parameter count. -->
+
+### Implementation
+
+<!-- Link Colab and embed the smallest important code excerpt. -->
+
+### Ablation and visualization
+
+<!-- Vocabulary size vs sequence length / embedding parameters / compression. -->
+
+### Interview takeaways
+
+<!-- Five crisp questions and answers. -->
+
+## Chapter 2 · Self-attention from first principles
+
+### From additive attention to Q/K/V
+
+<!-- Explain the design pressure and the scaling term. -->
+
+### Mathematics and dimensions
+
+<!-- Derive masked scaled dot-product attention and MHA. -->
+
+### Implementation and tests
+
+<!-- Implement without nn.MultiheadAttention; compare outputs and gradients. -->
+
+### Ablation and visualization
+
+<!-- Scaling, masking, head count, attention maps. -->
+
+## Chapter 3 · The modern decoder block
+
+### Architecture evolution
+
+<!-- Post-LN→Pre-LN, LayerNorm→RMSNorm, absolute position→RoPE, MHA→GQA. -->
+
+### Components and parameter ledger
+
+<!-- RMSNorm, RoPE, GQA, SwiGLU, residual stream. -->
+
+### Implementation
+
+<!-- One readable PyTorch block with shape assertions. -->
+
+### Ablation and visualization
+
+<!-- Gradient flow, position extrapolation, attention variants. -->
+
+## Chapter 4 · Training a Tiny GPT
+
+### Objective, data, and optimization
+
+<!-- Next-token loss, packing, initialization, AdamW, schedule, mixed precision. -->
+
+### End-to-end implementation
+
+<!-- Config, model, dataloader, training loop, checkpoint, generation. -->
+
+### Ablation and visualization
+
+<!-- Width/depth, learning rate, weight decay; loss and gradient curves. -->
+
+### Failure analysis
+
+<!-- Memorization, unstable runs, data leakage, misleading perplexity. -->
+
+## Chapter 5 · Decoding and KV cache
+
+### Prefill versus decode
+
+<!-- Explain compute-bound vs memory-bound behavior. -->
+
+### Cache mathematics
+
+<!-- Complexity and bytes/token formulas, including GQA. -->
+
+### Implementation
+
+<!-- Add cache to Tiny GPT and prove cached/uncached logits match. -->
+
+### Systems benchmark
+
+<!-- Latency, throughput, peak memory, sequence length, sampling settings. -->
+
+## Chapter 6 · Anatomy of real models
+
+### What is public and what is not
+
+<!-- Label every architecture fact: official / estimate / unknown. -->
+
+### Config-to-weights inspection
+
+<!-- Traverse a small open model; print modules, tensors, shapes, parameter counts. -->
+
+### Model-family comparison
+
+<!-- GPT, Claude, Gemini, Llama, Qwen, Mistral, DeepSeek: evolution and trade-offs. -->
+
+### Final mental model
+
+<!-- Close with one end-to-end trace and the limits of the toy implementation. -->
+
+## Reproducibility checklist
+
+- [ ] Colab links run from a clean runtime
+- [ ] Package/model/data versions are pinned
+- [ ] Random seeds and hardware are reported
+- [ ] Plots include axes, units, and sample counts
+- [ ] Cached and uncached logits have a numerical equivalence test
+- [ ] Closed-model claims are sourced and labeled
+- [ ] Failed experiments are documented

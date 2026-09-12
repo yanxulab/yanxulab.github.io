@@ -1,0 +1,14 @@
+---
+title: "About"
+---
+
+I am Yan Xu. I study foundation-model architecture and post-training by deriving the objectives, implementing the systems, and testing the claims.
+
+My current focus is post-training and reinforcement learning for language and multimodal models.
+
+## Contact
+
+- GitHub: [@yanxudev](https://github.com/yanxudev)
+- Email: `replace-with-your-email@example.com`
+
+Before publishing, replace the email and add a two-sentence professional biography. Avoid a long autobiography; let the technical work carry the page.

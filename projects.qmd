@@ -1,0 +1,14 @@
+---
+title: "Projects"
+---
+
+## Foundation-model lab
+
+- Tiny decoder-only language model from scratch
+- KV-cache latency and memory benchmark
+- MoE router and expert-load visualizer
+- Mini multimodal model and toy diffusion model
+- Unified SFT / PPO / DPO / GRPO comparison harness
+
+Replace this checklist with repository links, figures, and concise outcome statements as the implementations land.
+

@@ -1,0 +1,8 @@
+---
+title: "Lab Notes"
+---
+
+Short experiment records live here: hypothesis, setup, result, plot, interpretation, and next test.
+
+Use `notebooks/` for code and add a short `.qmd` note whenever an experiment produces a result worth preserving.
+

@@ -1,0 +1,23 @@
+---
+title: "Post-Training from First Principles: SFT, RLHF, DPO and GRPO"
+description: "A derivation-first, implementation-driven map of modern post-training."
+author: "Yan Xu"
+date: 2026-09-26
+categories: [Post-training, RLHF, DPO, GRPO]
+draft: false
+---
+
+## Planned chapters
+
+::: {.callout-note}
+Series outline. Full chapters and controlled comparisons will be added during week three.
+:::
+
+1. Post-training map and supervised fine-tuning
+2. Preference data and reward modeling
+3. RLHF and PPO from first principles
+4. DPO and direct preference-optimization families
+5. Reasoning RL and GRPO
+6. Evaluation, safety, red-teaming, model cards, and research proposals
+
+The central artifact is one controlled comparison: the same base model and evaluation set across base, SFT, DPO, PPO, and GRPO checkpoints.
