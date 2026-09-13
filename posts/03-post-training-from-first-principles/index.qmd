@@ -6,7 +6,7 @@ date: 2026-09-26
 categories: [Post-training, RLHF, DPO, GRPO]
 image: ../../assets/og-post-training.svg
 draft: false
-toc: true
+toc: false
 number-sections: true
 code-fold: show
 ---

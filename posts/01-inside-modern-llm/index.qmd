@@ -6,7 +6,7 @@ date: 2026-09-12
 categories: [LLM, Transformer, Systems, From Scratch]
 image: ../../assets/og-placeholder.svg
 draft: false
-toc: true
+toc: false
 number-sections: true
 code-fold: show
 ---

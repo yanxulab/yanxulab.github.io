@@ -1,27 +1,19 @@
 ---
-title: "Yan Xu"
-description: "Technical essays on foundation models, multimodal generation, post-training, and reinforcement learning."
-page-layout: full
-title-block-banner: false
+title: false
+description: "Technical essays by Yan Xu."
+page-layout: article
+toc: false
 listing:
   contents: posts
   sort: "date asc"
   type: default
-  fields: [image, title, description, date, categories]
-  categories: true
+  fields: [date, title, description]
+  categories: false
+  sort-ui: false
+  filter-ui: false
   feed: true
 ---
 
-## Research notes on foundation models and intelligent systems
+# Yan Xu
 
-I study modern AI systems by tracing their history, deriving the mathematics, implementing the core algorithms, and testing them with controlled ablations.
-
-The first series contains three long-form technical essays. Each essay is maintained as a living document rather than split into shallow daily posts.
-
-## Blogs
-
-## Writing standard
-
-Every substantial article should contain four things: derivation, executable code, controlled ablation, and an honest failure analysis. Claims about closed models are labeled as **official**, **third-party estimate**, or **unknown**.
-
-[About Yan Xu](about.qmd) · [18-day roadmap](roadmap/18-day-plan.qmd) · [Experiment notes](lab-notes.qmd)
+Notes on foundation models, post-training, reinforcement learning, and the systems behind them.

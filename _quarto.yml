@@ -9,31 +9,20 @@ website:
   favicon: assets/favicon.svg
   open-graph: true
   twitter-card: true
-  search: true
+  search: false
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - href: essays.qmd
-        text: Blogs
+    right:
       - href: about.qmd
         text: About
-    right:
-      - icon: github
-        href: https://github.com/yanxulab
-        aria-label: GitHub
   page-footer:
-    left: "© 2026 Yan Xu"
-    right: "Built with Quarto · Hosted on GitHub Pages"
+    left: "Yan Xu"
+    right: "[GitHub](https://github.com/yanxulab)"
 
 format:
   html:
-    theme:
-      light: cosmo
-      dark: darkly
+    theme: cosmo
     css: styles.css
-    toc: true
-    toc-depth: 3
+    toc: false
     code-copy: true
     code-overflow: wrap
     code-line-numbers: true
