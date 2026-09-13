@@ -1,11 +1,11 @@
-# yanxudev.github.io
+# yanxulab.github.io
 
 Yan Xu's technical blog: foundation models, multimodal generation, post-training, and reinforcement learning.
 
 ## One-time setup
 
-1. Sign in to GitHub as `yanxudev`.
-2. Create a **public** repository named exactly `yanxudev.github.io` without adding a README or license.
+1. Sign in to GitHub as `yanxulab`.
+2. Create a **public** repository named exactly `yanxulab.github.io` without adding a README or license.
 3. From this project directory, run:
 
    ```bash
@@ -13,13 +13,13 @@ Yan Xu's technical blog: foundation models, multimodal generation, post-training
    git add .
    git commit -m "Initialize technical blog"
    git branch -M main
-   git remote add origin https://github.com/yanxudev/yanxudev.github.io.git
+   git remote add origin https://github.com/yanxulab/yanxulab.github.io.git
    git push -u origin main
    ```
 
 4. In the repository, open **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
 5. Open the **Actions** tab and wait for “Publish Quarto site” to turn green.
-6. Visit <https://yanxudev.github.io>. Initial DNS/TLS propagation can take a few minutes.
+6. Visit <https://yanxulab.github.io>. Initial DNS/TLS propagation can take a few minutes.
 
 ## Local preview
 

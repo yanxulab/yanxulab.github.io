@@ -8,7 +8,7 @@ My current focus is post-training and reinforcement learning for language and mu
 
 ## Contact
 
-- GitHub: [@yanxudev](https://github.com/yanxudev)
+- GitHub: [@yanxulab](https://github.com/yanxulab)
 - Email: `replace-with-your-email@example.com`
 
 Before publishing, replace the email and add a two-sentence professional biography. Avoid a long autobiography; let the technical work carry the page.

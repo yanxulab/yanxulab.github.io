@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Yan Xu"
-  site-url: "https://yanxudev.github.io"
+  site-url: "https://yanxulab.github.io"
   description: "Foundation models, post-training, reinforcement learning, and multimodal systems—from first principles to working code."
   favicon: assets/favicon.svg
   open-graph: true
@@ -26,7 +26,7 @@ website:
         text: About
     right:
       - icon: github
-        href: https://github.com/yanxudev
+        href: https://github.com/yanxulab
         aria-label: GitHub
   page-footer:
     left: "© 2026 Yan Xu"

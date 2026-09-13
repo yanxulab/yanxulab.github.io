@@ -4,5 +4,5 @@
   <circle cx="1030" cy="570" r="300" fill="#7c3aed" opacity=".35"/>
   <text x="90" y="260" fill="#fff" font-family="system-ui,sans-serif" font-size="76" font-weight="700">Inside a Modern LLM</text>
   <text x="90" y="350" fill="#cbd5e1" font-family="system-ui,sans-serif" font-size="40">From Tokens to KV Cache</text>
-  <text x="90" y="505" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="28">Yan Xu · yanxudev.github.io</text>
+  <text x="90" y="505" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="28">Yan Xu · yanxulab.github.io</text>
 </svg>
