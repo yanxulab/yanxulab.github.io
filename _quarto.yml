@@ -15,13 +15,7 @@ website:
       - href: index.qmd
         text: Home
       - href: essays.qmd
-        text: Essays
-      - href: lab-notes.qmd
-        text: Lab Notes
-      - href: projects.qmd
-        text: Projects
-      - href: roadmap/18-day-plan.qmd
-        text: Roadmap
+        text: Blogs
       - href: about.qmd
         text: About
     right:

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#102a43"/>
+  <circle cx="1040" cy="120" r="230" fill="#0ea5e9" opacity=".55"/>
+  <circle cx="1060" cy="590" r="320" fill="#14b8a6" opacity=".32"/>
+  <text x="90" y="245" fill="#fff" font-family="system-ui,sans-serif" font-size="68" font-weight="700">Building Foundation Models</text>
+  <text x="90" y="335" fill="#cbd5e1" font-family="system-ui,sans-serif" font-size="38">Data · Scaling · MoE · VLM · Diffusion</text>
+  <text x="90" y="505" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="28">Yan Xu · yanxulab.github.io</text>
+</svg>

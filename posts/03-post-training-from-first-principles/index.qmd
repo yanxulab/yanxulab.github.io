@@ -4,20 +4,122 @@ description: "A derivation-first, implementation-driven map of modern post-train
 author: "Yan Xu"
 date: 2026-09-26
 categories: [Post-training, RLHF, DPO, GRPO]
+image: ../../assets/og-post-training.svg
 draft: false
+toc: true
+number-sections: true
+code-fold: show
 ---
 
-## Planned chapters
-
 ::: {.callout-note}
-Series outline. Full chapters and controlled comparisons will be added during week three.
+This is a living essay under active development. Its central artifact is a controlled comparison using the same base model, data split, and evaluation harness.
 :::
 
-1. Post-training map and supervised fine-tuning
-2. Preference data and reward modeling
-3. RLHF and PPO from first principles
-4. DPO and direct preference-optimization families
-5. Reasoning RL and GRPO
-6. Evaluation, safety, red-teaming, model cards, and research proposals
+> **Thesis.** Post-training is a sequence of distribution-shaping problems: supervised imitation, preference estimation, constrained policy optimization, and evaluation under imperfect rewards.
 
-The central artifact is one controlled comparison: the same base model and evaluation set across base, SFT, DPO, PPO, and GRPO checkpoints.
+## What the reader will build
+
+- A QLoRA supervised fine-tuning baseline
+- A pairwise preference dataset and reward model
+- A miniature PPO/RLHF loop with explicit KL control
+- DPO implemented directly from its loss equation
+- A small GRPO experiment on verifiable tasks
+- A unified evaluation report and model card
+
+## Chapter 1 · From a base model to an assistant
+
+### History and theory
+<!-- Base → continued pre-training → SFT → preference/RL → safety and evaluation. -->
+
+### Mathematics
+<!-- Token cross-entropy, prompt masking, packing, and mixture weighting. -->
+
+### Colab implementation
+<!-- QLoRA SFT with explicit chat templates, masks, checkpoints, and tests. -->
+
+### Ablation and visualization
+<!-- Data amount, epochs, learning rate, rank, and prompt-token masking. -->
+
+### Failure analysis
+<!-- Overfitting, catastrophic forgetting, format learning, and misleading demos. -->
+
+## Chapter 2 · Preference data and reward models
+
+### History and theory
+<!-- Chosen/rejected data, rubrics, position/style bias, and process supervision. -->
+
+### Mathematics
+<!-- Bradley–Terry probability, pairwise logistic loss, margin, and calibration. -->
+
+### Colab implementation
+<!-- Construct preference pairs and train a small reward model or reranker. -->
+
+### Ablation and visualization
+<!-- Label noise, length bias, imbalance, reward distributions, calibration curves. -->
+
+## Chapter 3 · RLHF and PPO from first principles
+
+### History and theory
+<!-- Policy, reference, reward, and value models; rollout and optimization phases. -->
+
+### Mathematics
+<!-- Policy gradient, importance ratio, clipped objective, GAE, entropy, KL penalty. -->
+
+### Colab implementation
+<!-- Implement toy PPO, then reproduce the same training signals with TRL. -->
+
+### Ablation and visualization
+<!-- Clip range, KL coefficient, reward scale, entropy, and policy collapse. -->
+
+## Chapter 4 · DPO and direct preference optimization
+
+### History and theory
+<!-- DPO assumptions and contrasts with PPO, IPO, ORPO, KTO, and SimPO. -->
+
+### Derivation
+<!-- Derive DPO from KL-regularized RL; explain beta, log-ratios, implicit rewards. -->
+
+### Colab implementation
+<!-- Write the DPO loss directly and match a library implementation numerically. -->
+
+### Ablation and visualization
+<!-- Beta, reference model, preference noise, response length, and difficulty. -->
+
+## Chapter 5 · Reasoning RL and GRPO
+
+### History and theory
+<!-- Verifiable rewards, group sampling, process/outcome rewards, curricula, hacking. -->
+
+### Mathematics
+<!-- Group-relative advantages, normalized rewards, KL, and estimator variance. -->
+
+### Colab implementation
+<!-- Implement mini-GRPO on a verifiable task and preserve all sampled rollouts. -->
+
+### Ablation and visualization
+<!-- Group size, temperature, KL, reward shaping, output length, correctness. -->
+
+## Chapter 6 · Evaluation, safety, and research judgment
+
+### Evaluation system
+<!-- Offline/online eval, LLM judges, human agreement, contamination, confidence intervals. -->
+
+### Safety and red-teaming
+<!-- Refusal, over-refusal, jailbreaks, capability–safety trade-offs, data flywheels. -->
+
+### Unified comparison
+<!-- Compare base, SFT, reward model, DPO, PPO, and GRPO under one protocol. -->
+
+### Model card and research proposals
+<!-- Intended use, limitations, risks, failure taxonomy, and three follow-up experiments. -->
+
+## Reproducibility checklist
+
+- [ ] All checkpoints share the same documented base model
+- [ ] Train and evaluation data are separated and decontaminated
+- [ ] Preference formatting and chat templates are identical across methods
+- [ ] Reward, KL, entropy, length, and task metrics are logged together
+- [ ] Ablations change one primary variable at a time
+- [ ] Failed or unstable runs are included
+- [ ] Safety and capability regressions are both reported
+- [ ] The model card distinguishes evidence from speculation

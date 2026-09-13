@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#21133f"/>
+  <circle cx="1030" cy="90" r="220" fill="#8b5cf6" opacity=".6"/>
+  <circle cx="1050" cy="590" r="330" fill="#ec4899" opacity=".3"/>
+  <text x="90" y="245" fill="#fff" font-family="system-ui,sans-serif" font-size="68" font-weight="700">Post-Training from First Principles</text>
+  <text x="90" y="335" fill="#ddd6fe" font-family="system-ui,sans-serif" font-size="38">SFT · RLHF · PPO · DPO · GRPO</text>
+  <text x="90" y="505" fill="#a78bfa" font-family="system-ui,sans-serif" font-size="28">Yan Xu · yanxulab.github.io</text>
+</svg>

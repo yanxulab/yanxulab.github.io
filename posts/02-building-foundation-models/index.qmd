@@ -4,20 +4,121 @@ description: "Data, scaling, MoE, efficient adaptation, multimodality, diffusion
 author: "Yan Xu"
 date: 2026-09-19
 categories: [Pre-training, MoE, VLM, Diffusion]
+image: ../../assets/og-foundation-models.svg
 draft: false
+toc: true
+number-sections: true
+code-fold: show
 ---
 
-## Planned chapters
-
 ::: {.callout-note}
-Series outline. Full chapters and experiments will be added during week two.
+This is a living essay under active development. Every chapter will be backed by a reproducible Colab notebook and at least one controlled experiment.
 :::
 
-1. Data engineering and pre-training pipelines
-2. Distributed training, memory, and stability
-3. MoE, LoRA/QLoRA, adapter merging, and model soups
-4. VLM/LVM architecture: vision encoder to language decoder
-5. Diffusion, latent diffusion, DiT, and flow matching
-6. Prompt optimization, evaluation, model evolution, and benchmark competition
+> **Thesis.** Model capability is not produced by architecture alone. Data, compute allocation, optimization, adaptation, modality interfaces, inference strategy, and evaluation form one coupled system.
 
-For every chapter: history → theory → mathematics → Colab implementation → ablation/visualization → failure analysis → interview questions.
+## What the reader will build
+
+- A small pre-training data-cleaning and packing pipeline
+- A Transformer compute and memory estimator
+- A toy MoE router plus LoRA and model-soup experiments
+- A miniature vision-language alignment pipeline
+- A toy diffusion model with a visual denoising trajectory
+- A prompt and evaluation harness with confidence intervals
+
+## Chapter 1 · Data becomes model behavior
+
+### History and theory
+<!-- Curated corpora → web-scale mixtures → filtering, deduplication, contamination, synthetic data. -->
+
+### Mathematics
+<!-- Sampling weights, token budgets, repetition, effective data size, and compute estimates. -->
+
+### Colab implementation
+<!-- Clean, deduplicate, tokenize, mix, and pack a small multi-domain corpus. -->
+
+### Ablation and visualization
+<!-- Data quality, duplication rate, and mixture weights versus validation loss. -->
+
+### Failure analysis and interview takeaways
+<!-- Leakage, benchmark contamination, PII, memorization, and irreproducible recipes. -->
+
+## Chapter 2 · Scaling training without losing control
+
+### History and theory
+<!-- DDP, FSDP/ZeRO, tensor, pipeline, context, and expert parallelism. -->
+
+### Mathematics
+<!-- Parameters, gradients, optimizer state, activations, communication, and MFU. -->
+
+### Colab implementation
+<!-- Build a compute/memory estimator; demonstrate accumulation and checkpointing. -->
+
+### Ablation and visualization
+<!-- Sequence length, microbatch size, precision, checkpointing, memory, and step time. -->
+
+## Chapter 3 · Sparse models and efficient adaptation
+
+### History and theory
+<!-- Switch Transformer, Mixtral, fine-grained MoE, LoRA, QLoRA, merging, model soups. -->
+
+### Mathematics
+<!-- Router probability, balance loss, active parameters, low-rank ΔW = BA, averaging assumptions. -->
+
+### Colab implementation
+<!-- Train a toy router and two adapters; merge them using several soup weights. -->
+
+### Ablation and visualization
+<!-- Expert collapse, top-k, capacity, LoRA rank, and interpolation weight. -->
+
+## Chapter 4 · Extending language models to vision
+
+### History and theory
+<!-- ViT, CLIP, Flamingo, LLaVA, visual tokens, projectors, resamplers, cross-attention. -->
+
+### Mathematics
+<!-- Patch embeddings, contrastive loss, cross-attention, and multimodal token budgets. -->
+
+### Colab implementation
+<!-- Implement patchify + encoder + projector, or train a miniature CLIP. -->
+
+### Ablation and visualization
+<!-- Patch size, projector depth, frozen versus trainable encoders, attention maps. -->
+
+## Chapter 5 · Diffusion and generative media
+
+### History and theory
+<!-- VAE/GAN → DDPM → latent diffusion → DiT → flow matching. -->
+
+### Mathematics
+<!-- Forward noising, epsilon/v prediction, CFG, schedulers, flow-matching intuition. -->
+
+### Colab implementation
+<!-- Train a toy DDPM and visualize its denoising trajectory. -->
+
+### Ablation and visualization
+<!-- Sampling steps, scheduler, guidance, seed, quality, and latency. -->
+
+## Chapter 6 · Prompt optimization and honest evaluation
+
+### History and theory
+<!-- Zero/few-shot, CoT, self-consistency, ReAct, prompt search, modality-specific controls. -->
+
+### Mathematics
+<!-- Accuracy, pass@k, Elo/Bradley–Terry, bootstrap CI, FID, and judge bias. -->
+
+### Colab implementation
+<!-- Build one harness for prompt variants, pairwise comparisons, and reports. -->
+
+### Model landscape
+<!-- Family, evolution, public architecture facts, strengths, weaknesses, and benchmarks. -->
+
+## Reproducibility checklist
+
+- [ ] Data sources, filters, and sampling weights are documented
+- [ ] Compute and memory estimates state their assumptions
+- [ ] Adapter and soup checkpoints share a compatible base
+- [ ] Every multimodal experiment reports its token budget
+- [ ] Generative comparisons control seeds and sampling settings
+- [ ] Benchmark claims include dates, versions, and primary sources
+- [ ] Confidence intervals and failure cases accompany headline metrics

@@ -1,13 +1,14 @@
 ---
-title: "Essays"
+title: "Blogs"
+description: "Long-form technical essays built from derivations, implementations, and controlled experiments."
 listing:
   contents: posts
-  sort: "date desc"
+  sort: "date asc"
   type: default
+  fields: [image, title, description, date, categories]
   categories: true
   feed: true
 page-layout: full
 ---
 
-Three deep, maintained essays replace a stream of shallow daily posts. Each essay grows chapter by chapter from runnable experiments.
-
+Three deep, maintained essays replace a stream of shallow daily posts. Each one grows chapter by chapter from runnable experiments.

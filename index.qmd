@@ -1,46 +1,27 @@
 ---
 title: "Yan Xu"
+description: "Technical essays on foundation models, multimodal generation, post-training, and reinforcement learning."
 page-layout: full
 title-block-banner: false
+listing:
+  contents: posts
+  sort: "date asc"
+  type: default
+  fields: [image, title, description, date, categories]
+  categories: true
+  feed: true
 ---
 
-::: {.hero}
-## Building and explaining foundation models from first principles
+## Research notes on foundation models and intelligent systems
 
-I write about LLM architecture, multimodal generation, post-training, reinforcement learning, and the engineering details that make models work.
+I study modern AI systems by tracing their history, deriving the mathematics, implementing the core algorithms, and testing them with controlled ablations.
 
-[Read the flagship series](essays.qmd){.btn .btn-primary} [View the learning roadmap](roadmap/18-day-plan.qmd){.btn .btn-outline-secondary}
-:::
+The first series contains three long-form technical essays. Each essay is maintained as a living document rather than split into shallow daily posts.
 
-## Flagship series
+## Blogs
 
-::: {.grid}
-::: {.g-col-12 .g-col-md-4}
-### 01 · Inside a Modern LLM
-
-Tokens, attention, modern decoder blocks, training, decoding, and KV cache—with implementations and ablations.
-
-[Open the essay →](posts/01-inside-modern-llm/index.qmd)
-:::
-
-::: {.g-col-12 .g-col-md-4}
-### 02 · Building Foundation Models
-
-Data, scaling, MoE, LoRA, model soups, VLMs, diffusion, prompt optimization, and evaluation.
-
-[Open the outline →](posts/02-building-foundation-models/index.qmd)
-:::
-
-::: {.g-col-12 .g-col-md-4}
-### 03 · Post-Training from First Principles
-
-SFT, reward modeling, PPO, DPO, GRPO, safety, evaluation, and failure analysis.
-
-[Open the outline →](posts/03-post-training-from-first-principles/index.qmd)
-:::
-:::
-
-## Working standard
+## Writing standard
 
 Every substantial article should contain four things: derivation, executable code, controlled ablation, and an honest failure analysis. Claims about closed models are labeled as **official**, **third-party estimate**, or **unknown**.
 
+[About Yan Xu](about.qmd) · [18-day roadmap](roadmap/18-day-plan.qmd) · [Experiment notes](lab-notes.qmd)
