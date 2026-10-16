@@ -1,19 +1,10 @@
 ---
-title: false
-description: "Technical essays by Yan Xu."
-page-layout: article
+title: ""
+pagetitle: "Yan Xu"
+description: "Yan Xu — foundation models, post-training, and reinforcement learning. Selected experiments, visual explanations, and technical writing."
+page-layout: full
+body-classes: home-page
 toc: false
-listing:
-  contents: posts
-  sort: "date asc"
-  type: default
-  fields: [date, title, description]
-  categories: false
-  sort-ui: false
-  filter-ui: false
-  feed: true
 ---
 
-# Yan Xu
-
-Notes on foundation models, post-training, reinforcement learning, and the systems behind them.
+{{< include _includes/home.html >}}

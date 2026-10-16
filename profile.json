@@ -1,0 +1,176 @@
+{
+  "name": "Yan Xu",
+  "focus": "Computer vision · Foundation models · Reinforcement learning",
+  "bio": [
+    "I work on learning systems, from 3D perception to foundation models.",
+    "I completed my Ph.D. at Carnegie Mellon University, advised by Kris Kitani, with a focus on multi-view geometry and 3D human pose estimation. In December 2022, I joined Waymo to work on 3D perception for autonomous driving.",
+    "I’m now exploring foundation models, post-training, and reinforcement learning through hands-on implementations and experiments."
+  ],
+  "portrait": "assets/portrait.jpg",
+  "portrait_alt": "Yan Xu",
+  "email": null,
+  "scholar": null,
+  "github": "https://github.com/yanxulab",
+  "x": null,
+  "linkedin": null,
+  "cv_pdf": null,
+  "career": [
+    {
+      "years": "2022",
+      "organization": "Waymo",
+      "title": "Joined as a Software Engineer",
+      "description": "3D object detection for autonomous driving, spanning model development, training, evaluation, and deployment.",
+      "url": "https://waymo.com/"
+    },
+    {
+      "years": "Ph.D.",
+      "organization": "Carnegie Mellon University",
+      "title": "Computer Vision · Advisor: Kris Kitani",
+      "description": "Multi-view geometry and multi-person 3D human pose estimation beyond calibrated laboratory settings.",
+      "url": "https://www.cs.cmu.edu/~yxu2/"
+    }
+  ],
+  "work": [
+    {
+      "kind": "Research · BMVC 2022",
+      "title": "3D human pose, without calibrated cameras",
+      "paper_title": "Multi-View Multi-Person 3D Pose Estimation with Uncalibrated Camera Networks",
+      "authors": "Yan Xu, Kris Kitani",
+      "summary": "Reconstructing multiple people in 3D beyond a calibrated camera setup. A study at the intersection of human pose estimation and multi-view geometry.",
+      "image": "assets/research-uncalibrated-pose.png",
+      "image_alt": "Paper figure illustrating multi-person 3D pose estimation from uncalibrated camera views.",
+      "links": [
+        {
+          "label": "Project",
+          "url": "https://bmvc2022.mpi-inf.mpg.de/132/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://bmvc2022.mpi-inf.mpg.de/0132.pdf"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/yan293/UncaliPose"
+        }
+      ]
+    },
+    {
+      "kind": "Research · CVPR 2021",
+      "title": "People as a bridge between cameras",
+      "paper_title": "Wide-Baseline Multi-Camera Calibration using Person Re-Identification",
+      "authors": "Yan Xu, Yu-Jhe Li, Xinshuo Weng, Kris Kitani",
+      "summary": "Using person re-identification to connect camera views and estimate their relative geometry, even across wide baselines.",
+      "image": "assets/research-camera-calibration.png",
+      "image_alt": "Paper figure connecting people observed across camera views for wide-baseline calibration.",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2104.08568"
+        }
+      ]
+    },
+    {
+      "kind": "Research · WACV 2020",
+      "title": "Camera geometry from everyday motion",
+      "paper_title": "Estimating 3D Camera Pose from 2D Pedestrian Trajectories",
+      "authors": "Yan Xu, Vivek Roy, Kris Kitani",
+      "summary": "What can the paths of walking pedestrians tell us about a camera? Estimating 3D camera pose using observed 2D trajectories.",
+      "image": "assets/research-trajectories.png",
+      "image_alt": "Paper figure showing camera pose estimation from pedestrian trajectories.",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/1912.05758"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/yanxo/TrajCamPose"
+        },
+        {
+          "label": "Video",
+          "url": "https://drive.google.com/file/d/1W3tlBa9UTavN01dBwFjcWo2VesbtybEx/view"
+        }
+      ]
+    }
+  ],
+  "writing": [
+    {
+      "id": "inside-an-llm",
+      "title": "Inside a Modern LLM",
+      "subtitle": "From tokens to KV cache",
+      "description": "Follow the tensors through tokenization, attention, a modern decoder, training, and cached generation.",
+      "topics": [
+        "Tokens & embeddings",
+        "Attention & decoder blocks",
+        "Training & inference"
+      ],
+      "status": "In preparation",
+      "published": false,
+      "url": "posts/01-inside-modern-llm/index.qmd"
+    },
+    {
+      "id": "building-foundation-models",
+      "title": "Building Foundation Models",
+      "subtitle": "Data, scale, and the move beyond text",
+      "description": "A practical map of data pipelines, sparse models, efficient adaptation, multimodality, and evaluation.",
+      "topics": [
+        "Data & scaling",
+        "MoE & adaptation",
+        "Multimodal systems"
+      ],
+      "status": "In preparation",
+      "published": false,
+      "url": "posts/02-building-foundation-models/index.qmd"
+    },
+    {
+      "id": "post-training",
+      "title": "Post-Training from First Principles",
+      "subtitle": "SFT, RLHF, DPO, and GRPO",
+      "description": "Derive the objectives, implement the learning loops, and compare the methods under a shared evaluation setup.",
+      "topics": [
+        "Supervised fine-tuning",
+        "Preference learning",
+        "Reinforcement learning"
+      ],
+      "status": "In preparation",
+      "published": false,
+      "url": "posts/03-post-training-from-first-principles/index.qmd"
+    }
+  ],
+  "experiments": [
+    {
+      "kind": "Notebook",
+      "title": "Tokens in, logits out",
+      "summary": "Build a byte-level BPE tokenizer, trace the path from token IDs to next-token loss, and see what weight tying changes.",
+      "image": "assets/tokenizer-path.svg",
+      "image_alt": "Token IDs pass through an embedding table to logits and next-token probabilities.",
+      "links": [
+        {
+          "label": "Open in Colab",
+          "url": "https://colab.research.google.com/github/yanxulab/yanxulab.github.io/blob/main/notebooks/01_tokenizer_embeddings.ipynb"
+        },
+        {
+          "label": "Notebook",
+          "url": "notebooks/01_tokenizer_embeddings.ipynb"
+        }
+      ]
+    },
+    {
+      "kind": "Visual explanation",
+      "title": "A closer look at activation functions",
+      "summary": "Sigmoid, GELU, SiLU, and softmax, side by side. An illustrated reference for the nonlinearities inside a neural network.",
+      "image": "assets/activation-functions.svg",
+      "image_alt": "Eight labeled panels compare activation functions and softmax probabilities.",
+      "links": [
+        {
+          "label": "Explore the figure",
+          "url": "assets/activation-functions.svg"
+        },
+        {
+          "label": "Source code",
+          "url": "https://github.com/yanxulab/yanxulab.github.io/blob/main/scripts/plot_activation_functions.py"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480" role="img" aria-labelledby="title desc">
+  <title id="title">From tokens to probabilities</title>
+  <desc id="desc">A schematic of token IDs, embedding vectors, and next-token probabilities. The bars illustrate the output shape, not measured results.</desc>
+  <rect width="800" height="480" fill="#f2f5f0"/>
+  <g fill="#66776a" font-family="system-ui, sans-serif" font-size="15" letter-spacing="2"><text x="48" y="57">A LANGUAGE MODEL’S FIRST STEPS</text></g>
+  <g font-family="monospace" font-size="24" text-anchor="middle" fill="#29382e"><rect x="48" y="117" width="163" height="70" rx="7" fill="#fff" stroke="#d6dfd3"/><text x="130" y="161">[72, 105]</text></g>
+  <g stroke="#849880" stroke-width="2" fill="none"><path d="M230 152h50m-8-7 8 7-8 7"/><path d="M471 152h50m-8-7 8 7-8 7"/></g>
+  <g transform="translate(306 108)"><g fill="#d5e2cd"><rect width="25" height="25" rx="3"/><rect x="34" width="25" height="25" rx="3"/><rect x="68" width="25" height="25" rx="3"/><rect x="102" width="25" height="25" rx="3"/></g><g fill="#96b18c"><rect y="34" width="25" height="25" rx="3"/><rect x="34" y="34" width="25" height="25" rx="3"/><rect x="68" y="34" width="25" height="25" rx="3"/><rect x="102" y="34" width="25" height="25" rx="3"/></g><g fill="#456c4b"><rect y="68" width="25" height="25" rx="3"/><rect x="34" y="68" width="25" height="25" rx="3"/><rect x="68" y="68" width="25" height="25" rx="3"/><rect x="102" y="68" width="25" height="25" rx="3"/></g></g>
+  <g fill="#698668"><rect x="550" y="162" width="27" height="39" rx="3"/><rect x="590" y="133" width="27" height="68" rx="3"/><rect x="630" y="94" width="27" height="107" rx="3"/><rect x="670" y="177" width="27" height="24" rx="3"/><rect x="710" y="186" width="27" height="15" rx="3"/></g>
+  <g fill="#29382e" font-family="system-ui, sans-serif" font-size="19" text-anchor="middle"><text x="130" y="255">Token IDs</text><text x="370" y="255">Embeddings</text><text x="645" y="255">Probabilities</text></g>
+  <g fill="#6b7869" font-family="monospace" font-size="15" text-anchor="middle"><text x="130" y="286">[B, T]</text><text x="370" y="286">[B, T, D]</text><text x="645" y="286">[B, T, V]</text></g>
+  <path d="M48 335h704" stroke="#d6dfd3"/>
+  <text x="48" y="386" font-family="Georgia, serif" font-size="32" fill="#29382e">Tokens in, logits out.</text>
+  <text x="48" y="423" font-family="system-ui, sans-serif" font-size="17" fill="#6b7869">A small implementation. Every tensor accounted for.</text>
+</svg>

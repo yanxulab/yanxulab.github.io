@@ -1,14 +1,8 @@
 ---
 title: "About"
+description: "About Yan Xu."
 ---
 
-I am Yan Xu. I study foundation-model architecture and post-training by deriving the objectives, implementing the systems, and testing the claims.
+{{< include _includes/bio.html >}}
 
-My current focus is post-training and reinforcement learning for language and multimodal models.
-
-## Contact
-
-- GitHub: [@yanxulab](https://github.com/yanxulab)
-- Email: `replace-with-your-email@example.com`
-
-Before publishing, replace the email and add a two-sentence professional biography. Avoid a long autobiography; let the technical work carry the page.
+[Selected work](index.qmd#selected-work) · [Blog](essays.qmd) · [CV](cv.qmd)

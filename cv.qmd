@@ -1,0 +1,10 @@
+---
+title: ""
+pagetitle: "CV"
+description: "Yan Xu — background, experience, and selected work."
+page-layout: article
+body-classes: cv-page
+toc: false
+---
+
+{{< include _includes/cv.html >}}

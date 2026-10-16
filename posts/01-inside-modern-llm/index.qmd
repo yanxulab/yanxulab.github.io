@@ -6,7 +6,7 @@ date: 2026-09-12
 categories: [LLM, Transformer, Systems, From Scratch]
 image: ../../assets/og-placeholder.svg
 draft: false
-toc: false
+toc: true
 number-sections: true
 code-fold: show
 ---
@@ -25,6 +25,11 @@ This is a living essay under active development. Each chapter is backed by a rep
 - A trainable Tiny GPT
 - Cached autoregressive decoding and a latency/memory benchmark
 - A model-anatomy script for inspecting real open-source checkpoints
+
+
+
+
+
 
 ## Chapter 1 · Tokens in, logits out
 
@@ -51,6 +56,12 @@ This is a living essay under active development. Each chapter is backed by a rep
 ### Interview takeaways
 
 <!-- Five crisp questions and answers. -->
+
+
+
+
+
+
 
 ## Chapter 2 · Self-attention from first principles
 

@@ -1,32 +1,52 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
+    - "roadmap/**/*.qmd"
+  pre-render:
+    - python3 scripts/render_profile.py
+  resources:
+    - CNAME
+    - assets/site.js
+    - notebooks/*.ipynb
 
 website:
   title: "Yan Xu"
-  site-url: "https://yanxulab.github.io"
+  site-url: "https://yanxu.io"
   description: "Foundation models, post-training, reinforcement learning, and multimodal systems—from first principles to working code."
   favicon: assets/favicon.svg
   open-graph: true
   twitter-card: true
   search: false
   navbar:
+    title: "Yan Xu<span class='brand-dot'>.</span>"
+    background: "#fdfdfb"
+    foreground: "#252c28"
     right:
-      - href: about.qmd
-        text: About
+      - href: index.qmd#selected-work
+        text: Work
+      - href: essays.qmd
+        text: Blog
+      - href: cv.qmd
+        text: CV
   page-footer:
-    left: "Yan Xu"
-    right: "[GitHub](https://github.com/yanxulab)"
+    left: "© Yan Xu"
+    right: "[GitHub ↗](https://github.com/yanxulab) · [Back to top ↑](#)"
 
 format:
   html:
-    theme: cosmo
+    theme: default
     css: styles.css
+    include-after-body: _includes/scripts.html
+    lang: en
     toc: false
     code-copy: true
     code-overflow: wrap
     code-line-numbers: true
     anchor-sections: true
+    smooth-scroll: true
 
 execute:
   freeze: auto
