@@ -41,7 +41,7 @@ ICONS = {
     "email": '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>',
     "github": '<path d="M9 19c-4 1-4-2-6-2m12 4v-3.5c0-1 .1-1.5-.5-2 3-.4 5.5-1.5 5.5-6a4.7 4.7 0 0 0-1.3-3.3 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.4 0C6.4 2.7 5.4 3 5.4 3a4.3 4.3 0 0 0-.1 3.2A4.7 4.7 0 0 0 4 9.5c0 4.5 2.5 5.6 5.5 6-.6.5-.6 1.3-.5 2V21"/>',
     "x": '<path d="M4 3h4l12 18h-4L4 3ZM20 3 4 21"/>',
-    "linkedin": '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.1M11 17v-7m0 3a3 3 0 0 1 6 0v4"/>',
+    "linkedin": '<path d="M4 9v12M10 21V9m0 5a5 5 0 0 1 10 0v7"/><circle cx="4" cy="4" r="1" fill="currentColor" stroke="none"/>',
 }
 LABELS = {"linkedin": "LinkedIn", "email": "Email", "scholar": "Google Scholar", "github": "GitHub", "x": "X"}
 
