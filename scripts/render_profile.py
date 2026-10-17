@@ -134,7 +134,7 @@ def home(profile):
     timeline_title = "Experience" if profile.get("career") else "Current focus"
     return f"""
 <div class="home-shell">
-<section class="intro" aria-labelledby="intro-name"><div class="intro-copy"><h1 id="intro-name">{esc(profile['name'])}</h1><div class="bio">{bio(profile)}</div></div><div class="intro-profile">{portrait}{socials(profile)}</div></section>
+<section class="intro" aria-labelledby="intro-name"><h1 id="intro-name">{esc(profile['name'])}</h1><div class="bio">{bio(profile)}</div><div class="intro-profile">{portrait}{socials(profile)}</div></section>
 <section class="career-section" aria-labelledby="career-title"><div class="section-heading"><h2 id="career-title">{timeline_title}</h2><span class="section-aside">{link('CV ↗', 'cv.qmd')}</span></div>{career(profile)}</section>
 <section class="selected-work" id="selected-work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Selected work</h2></div>{works(profile)}</section>
 <section class="writing-preview" aria-labelledby="writing-title"><div><p class="eyebrow">Writing</p><h2 id="writing-title">From the equations<br>to the code.</h2><p>Long-form notes on foundation models and post-training.<br>Currently taking shape, one experiment at a time.</p></div><a class="text-cta" href="/essays.html">Visit the blog <span aria-hidden="true">↗</span></a></section>

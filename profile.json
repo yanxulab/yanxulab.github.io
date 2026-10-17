@@ -1,7 +1,7 @@
 {
   "name": "Yan Xu",
   "bio": [
-    "Yan Xu works on multimodal AI at Google. He focuses on Gemini post-training for long-context video understanding and on training Gemini as a multimodal judge whose scores serve as reinforcement learning rewards for image and video generation models, including Nano Banana and Gemini Omni. Previously at Waymo, he worked on perception foundation models and onboard perception systems for autonomous driving. He received his Ph.D. in Electrical and Computer Engineering from Carnegie Mellon University, advised by Kris Kitani, where he studied 3D human pose estimation in the wild."
+    "Yan Xu works on multimodal AI at Google. He focuses on Gemini post-training for long-context video understanding and on training Gemini as a multimodal judge to guide reinforcement learning for Nano Banana and Gemini Omni. Previously at Waymo, he worked on perception foundation models and onboard perception systems for autonomous driving. He received his Ph.D. in Electrical and Computer Engineering from Carnegie Mellon University, advised by Kris Kitani, where he studied in-the-wild 3D human pose estimation."
   ],
   "bio_links": {
     "Gemini": "https://deepmind.google/models/gemini/",
