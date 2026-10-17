@@ -4,7 +4,6 @@
 - Original SHA-256: `8078eb1933f954d9100325f24e7ab75517180c01bdb2716b5dd6b610129f3b17`.
 - Website version: `assets/portrait-headshot.jpg`.
 - Method: built-in imagegen editing, then JPEG encoding at quality 85 for the website. The edited version is separate from the source photograph.
-- Homepage framing: `styles.css` crops the website version more tightly inside `.portrait-frame`, reducing visible shoulders. This display adjustment does not alter either image file.
 
 ## Imagegen prompt
 
