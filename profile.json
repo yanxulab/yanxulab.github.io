@@ -104,6 +104,40 @@
       ]
     },
     {
+      "kind": "Research",
+      "year": 2024,
+      "venue": "arXiv",
+      "title": "Multi-Person 3D Pose Estimation from Multi-View Uncalibrated Depth Cameras",
+      "paper_title": "Multi-Person 3D Pose Estimation from Multi-View Uncalibrated Depth Cameras",
+      "authors": "Yu-Jhe Li, Yan Xu, Rawal Khirodkar, Jinhyung Park, Kris Kitani",
+      "summary": "Combines 3D re-identification with depth-guided camera calibration and triangulation to recover multi-person 3D poses from sparse, uncalibrated RGBD cameras.",
+      "image": "assets/research-depth-pose.png",
+      "image_alt": "RGBD camera views, projected 3D point clouds, and reconstructed human skeletons with estimated camera positions.",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2401.15616"
+        }
+      ]
+    },
+    {
+      "kind": "Research",
+      "year": 2023,
+      "venue": "arXiv",
+      "title": "Multi-View Person Matching and 3D Pose Estimation with Arbitrary Uncalibrated Camera Networks",
+      "paper_title": "Multi-View Person Matching and 3D Pose Estimation with Arbitrary Uncalibrated Camera Networks",
+      "authors": "Yan Xu, Kris Kitani",
+      "summary": "Matches people across camera views with constrained clustering, then estimates 3D poses through triangulation and bundle adjustment. Works without known camera poses or scene-specific 3D training data.",
+      "image": "assets/research-person-matching.jpg",
+      "image_alt": "Multi-view images, recovered camera positions, and color-coded 3D human poses reconstructed in a shared scene.",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2312.01561"
+        }
+      ]
+    },
+    {
       "kind": "Research · BMVC 2022",
       "year": 2022,
       "venue": "BMVC",

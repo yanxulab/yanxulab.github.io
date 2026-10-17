@@ -121,7 +121,7 @@ Existing article URLs are preserved. Their source outlines remain directly acces
 - `styles.css`: shared design, responsive layouts, and article typography.
 - `assets/site.js`: the interactive temperature demonstration.
 - `assets/figure-viewer.js`: accessible figure previews with zoom and keyboard controls.
-- `assets/favicon-yx.svg`: the warm-white and blue YX tab icon; the original icon remains in `assets/favicon.svg`.
+- `assets/favicon.svg`: the dark-navy tab icon with a white Y; the previous YX variant is retained in `assets/favicon-yx.svg`.
 - `assets/visitor-counter.js`: adds [Busuanzi](https://ibruce.info/2015/04/04/busuanzi/) visitor counts to the small, gray footer on `yanxu.io` and `www.yanxu.io`. The approximate cumulative `site_uv` count starts when tracking is enabled; it does not recover earlier traffic. Local previews make no counting requests. If the service is blocked, unavailable, or returns an invalid count, the footer keeps its welcome message. Production visitors send a request to `busuanzi.ibruce.info`, exposing their IP address, browser request information, and this site’s origin; the full page URL is omitted from the referrer.
 - `scripts/render_profile.py`: generates static HTML from the profile data.
 - `assets/portrait-original.jpg`: the original photo migrated from the supplied [CMU website](https://www.cs.cmu.edu/~yxu2/), preserved unchanged.
