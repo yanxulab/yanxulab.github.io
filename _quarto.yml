@@ -24,6 +24,7 @@ website:
   search: false
   navbar:
     title: "Home"
+    pinned: true
     background: "#faf9f6"
     foreground: "#20211e"
     right:
