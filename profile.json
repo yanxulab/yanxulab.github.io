@@ -49,6 +49,17 @@
     {
       "kind": "Research",
       "year": 2027,
+      "venue": "ICLR Under Review",
+      "title": "CamRM: Motion-grounded rating for camera-motion control",
+      "paper_title": "CamRM: Towards Reliable Camera-Motion Control in Video Generation with Motion-Grounded Rating Models",
+      "summary": "Combines optical flow and global motion cues to assess camera-motion alignment and guide iterative refinement of generated videos.",
+      "image": "assets/research-camrm.png",
+      "image_alt": "CamRM method overview: a motion-grounded rating model, a tool-calling variant, and a rating-guided video refinement loop.",
+      "links": []
+    },
+    {
+      "kind": "Research",
+      "year": 2027,
       "venue": "WACV",
       "title": "CamPrompt: Camera-Controlled Video-to-Video Generation from Text Prompt",
       "paper_title": "CamPrompt: Camera-Controlled Video-to-Video Generation from Text Prompt",
@@ -62,17 +73,6 @@
           "url": "https://openreview.net/pdf?id=kZf9CioKSM"
         }
       ]
-    },
-    {
-      "kind": "Research",
-      "year": 2026,
-      "venue": "ICLR Under Review",
-      "title": "CamRM: Motion-grounded rating for camera-motion control",
-      "paper_title": "CamRM: Towards Reliable Camera-Motion Control in Video Generation with Motion-Grounded Rating Models",
-      "summary": "Combines optical flow and global motion cues to assess camera-motion alignment and guide iterative refinement of generated videos.",
-      "image": "assets/research-camrm.png",
-      "image_alt": "CamRM method overview: a motion-grounded rating model, a tool-calling variant, and a rating-guided video refinement loop.",
-      "links": []
     },
     {
       "kind": "Research",

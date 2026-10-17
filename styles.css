@@ -262,6 +262,8 @@ pre, code { font-family: var(--mono); }
   .section-heading { padding-top: 23px; margin-bottom: 23px; }
   .section-heading h2 { font-size: 28px; }
   .section-aside { font-size: 14px; max-width: 130px; text-align: right; }
+  .selected-work .section-heading { flex-wrap: wrap; row-gap: 8px; }
+  .selected-work .section-aside { margin-left: auto; white-space: nowrap; }
   .timeline-entry { grid-template-columns: 67px minmax(0, 1fr); gap: 14px; }
   .timeline-date { font-size: 13px; }
   .timeline-detail { padding-left: 19px; }

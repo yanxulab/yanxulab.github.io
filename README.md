@@ -58,7 +58,7 @@ Use only dates and roles you have confirmed. `url` and `logo` are optional.
 
 ## Add research or multimedia
 
-The homepage’s **Selected Work** lists papers and projects newest first, with a year beside each venue or submission status. Add entries to `work` in that order:
+The homepage’s **Selected Work** lists papers and projects newest first, with a year beside each venue or submission status. The **All publications ↗** link beside the heading opens the Google Scholar URL configured in `scholar`. Add entries to `work` in that order:
 
 ```json
 {
