@@ -22,14 +22,14 @@
     {
       "years": "2025–",
       "organization": "Google",
-      "title": "Machine Learning Engineer",
+      "title": "Software Engineer · Machine Learning",
       "description": "Improved long-tail video classification accuracy by 10% through Gemini SFT and repeated refinement of training data, enabling production deployment. Developed RLFT workflows for long-context video understanding and customer-data evaluations used to assess Gemini launch readiness on Google Cloud. Trained Gemini as a multimodal judge whose scores serve as RL rewards for Nano Banana and Gemini Omni.",
       "url": "https://www.google.com/"
     },
     {
       "years": "2022–2025",
       "organization": "Waymo",
-      "title": "Machine Learning Engineer",
+      "title": "Software Engineer · Machine Learning",
       "description": "Used perception foundation models to relabel difficult freeway scenes, reducing vehicle false-negative and false-positive rates by 9.5% and 19%, respectively. This work helped unblock a freeway launch. Developed and deployed a Transformer-based detector for human–object interactions, resolving 10 of 12 safety-critical hard-braking cases.",
       "url": "https://waymo.com/"
     },
