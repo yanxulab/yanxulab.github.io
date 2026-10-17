@@ -30,7 +30,7 @@
     {
       "years": "2022–2025",
       "organization": "Waymo",
-      "title": "Software Engineer",
+      "title": "Software Engineer · Machine Learning",
       "description": "Developed perception foundation models and a Transformer-based onboard detector for autonomous driving. Used foundation-model auto-labeling and targeted data refinement to improve long-tail pedestrian and vehicle detection. Took models from data collection and training through launch-quality evaluation and fleet deployment.",
       "highlights": ["perception foundation models", "auto-labeling", "fleet deployment"],
       "url": "https://waymo.com/"

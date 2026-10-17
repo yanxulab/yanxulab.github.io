@@ -43,7 +43,7 @@ ICONS = {
     "x": '<path d="M4 3h4l12 18h-4L4 3ZM20 3 4 21"/>',
     "linkedin": '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.1M11 17v-7m0 3a3 3 0 0 1 6 0v4"/>',
 }
-LABELS = {"scholar": "Google Scholar", "email": "Email", "linkedin": "LinkedIn", "github": "GitHub", "x": "X"}
+LABELS = {"linkedin": "LinkedIn", "email": "Email", "scholar": "Google Scholar", "github": "GitHub", "x": "X"}
 
 
 def socials(profile):
