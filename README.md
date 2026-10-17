@@ -18,6 +18,8 @@ quarto render
 
 Pushing to `main` runs `.github/workflows/publish.yml` and deploys `_site/` to GitHub Pages. The custom domain is set in `CNAME`, `_quarto.yml`, and the repository’s Pages settings.
 
+After rendering, `scripts/version_stylesheet.py` adds a content hash to the generated stylesheet filename and updates page links. This keeps cached CSS from a different build from changing the restored layout. Continue editing `styles.css` as usual.
+
 ### Private development
 
 During development, keep changes local and open <http://127.0.0.1:4321> after starting the preview above. The helper rebuilds the site and explicitly binds to the loopback address, limiting preview access to this computer. Stop preview with `Ctrl+C`. It uses installed Quarto, with a fallback to the temporary runtime downloaded for this checkout.

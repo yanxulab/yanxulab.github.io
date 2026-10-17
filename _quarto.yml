@@ -7,6 +7,8 @@ project:
     - "roadmap/**/*.qmd"
   pre-render:
     - python3 scripts/render_profile.py
+  post-render:
+    - python3 scripts/version_stylesheet.py
   resources:
     - CNAME
     - assets/site.js
