@@ -105,6 +105,21 @@
     },
     {
       "kind": "Research",
+      "year": 2025,
+      "venue": "Preprint",
+      "title": "PerceptionLM: World-Simulation as Pre-Training for Scalable Perception",
+      "paper_title": "World-Simulation as Pre-Training for Scalable Perception",
+      "authors": "Hao Xiang, Zhaoqi Leng, Alex Zihao Zhu, Kan Chen, Mengtian Li, Xia Chen, Yingwei Li, Tong He, Yanhui Liang, Junwen Yao, Yan Xu, Anant Subramanian, Cheolho Park, Runsheng Xu, Dragomir Anguelov, Mingxing Tan",
+      "summary": "Introduces PerceptionLM, using autoregressive world-model pre-training and a decoder adapter to transfer visual knowledge into dense perception tasks, including depth estimation and semantic segmentation.",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://openreview.net/forum?id=dgb4rfPzaw"
+        }
+      ]
+    },
+    {
+      "kind": "Research",
       "year": 2024,
       "venue": "arXiv",
       "title": "Multi-Person 3D Pose Estimation from Multi-View Uncalibrated Depth Cameras",
