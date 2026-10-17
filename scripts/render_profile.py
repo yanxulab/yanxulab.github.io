@@ -116,6 +116,8 @@ def works(profile):
         actions = "".join(link(action["label"] + " ↗", action["url"]) for action in item["links"])
         actions = f'<div class="work-links">{actions}</div>' if actions else ""
         title = item.get("paper_title") or item["title"]
+        paper_url = next((action["url"] for action in item["links"] if action["label"].strip().casefold() == "paper"), None)
+        heading = link(title, paper_url, "work-title-link") if paper_url else esc(title)
         authors = f'<span class="work-authors">{esc(item["authors"])}</span>' if item.get("authors") else ""
         if len(item.get("authors", "")) > 180:
             names = item["authors"].split(", ")
@@ -127,7 +129,7 @@ def works(profile):
         if item.get("year"):
             venue = f'{item["year"]} · {venue}'
         metadata = f'<div class="work-meta">{authors}<span class="work-venue">{esc(venue)}</span></div>'
-        rows.append(f'<article class="{row_class}">{media}<div class="work-copy"><h3>{esc(title)}</h3>{metadata}<p class="work-summary">{esc(item["summary"])}</p>{actions}</div></article>')
+        rows.append(f'<article class="{row_class}">{media}<div class="work-copy"><h3>{heading}</h3>{metadata}<p class="work-summary">{esc(item["summary"])}</p>{actions}</div></article>')
     return "".join(rows)
 
 
