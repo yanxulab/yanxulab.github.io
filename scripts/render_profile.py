@@ -96,13 +96,14 @@ def career(profile):
 
 def works(profile):
     rows = []
+    expand_icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>'
     for item in profile["work"]:
         image = f'<img src="{url(item["image"])}" alt="{esc(item["image_alt"])}" loading="lazy" width="800" height="480">' if item.get("image") else ""
         if item.get("video"):
             poster = f' poster="{url(item["image"])}"' if item.get("image") else ""
             media = f'<video controls playsinline preload="none"{poster} aria-label="{esc(item["title"])}"><source src="{url(item["video"])}" type="video/mp4">{image}</video>'
         elif image:
-            media = f'<a href="{url(item["image"])}" class="work-image" aria-label="Enlarge: {esc(item["title"])}">{image}<span class="image-expand" aria-hidden="true">↗</span></a>'
+            media = f'<a href="{url(item["image"])}" class="work-image" aria-label="Enlarge: {esc(item["title"])}">{image}<span class="image-expand" aria-hidden="true">{expand_icon}</span></a>'
         else:
             media = ""
         row_class = "work-row" if media else "work-row work-row-text"

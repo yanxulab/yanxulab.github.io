@@ -12,6 +12,7 @@ project:
   resources:
     - CNAME
     - assets/site.js
+    - assets/figure-viewer.js
     - notebooks/*.ipynb
 
 website:

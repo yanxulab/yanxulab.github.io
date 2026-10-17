@@ -84,6 +84,8 @@ When a paper has no figure yet, omit `image` and `image_alt`; it appears as a te
 
 For a playable video, add `"video": "assets/demo.mp4"`; `image` becomes its poster. Videos use controls and do not autoplay. For YouTube or Drive videos, add a `Video` link instead. Images enlarge when clicked. `paper_title` and `authors` are optional, so the same layout works for demos, talks, and visual projects.
 
+Paper figures share a white frame and open in a keyboard-accessible preview. Readers can zoom, open the original, or close with Esc; without JavaScript the image link opens the original directly. Hover feedback respects reduced-motion preferences.
+
 Put smaller notebooks and figures in `experiments`; they appear under **From the workbench** on the blog page. Keep the homepage to a few strong examples.
 
 ## Write a blog post
