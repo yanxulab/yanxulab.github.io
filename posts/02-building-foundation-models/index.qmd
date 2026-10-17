@@ -17,7 +17,7 @@ This is a living essay under active development. Every chapter will be backed by
 
 > **Thesis.** Model capability is not produced by architecture alone. Data, compute allocation, optimization, adaptation, modality interfaces, inference strategy, and evaluation form one coupled system.
 
-## What the reader will build
+## What the Reader Will Build
 
 - A small pre-training data-cleaning and packing pipeline
 - A Transformer compute and memory estimator
@@ -26,94 +26,94 @@ This is a living essay under active development. Every chapter will be backed by
 - A toy diffusion model with a visual denoising trajectory
 - A prompt and evaluation harness with confidence intervals
 
-## Chapter 1 · Data becomes model behavior
+## Chapter 1 · Data Becomes Model Behavior
 
-### History and theory
+### History and Theory
 <!-- Curated corpora → web-scale mixtures → filtering, deduplication, contamination, synthetic data. -->
 
 ### Mathematics
 <!-- Sampling weights, token budgets, repetition, effective data size, and compute estimates. -->
 
-### Colab implementation
+### Colab Implementation
 <!-- Clean, deduplicate, tokenize, mix, and pack a small multi-domain corpus. -->
 
-### Ablation and visualization
+### Ablation and Visualization
 <!-- Data quality, duplication rate, and mixture weights versus validation loss. -->
 
-### Failure analysis and interview takeaways
+### Failure Analysis and Interview Takeaways
 <!-- Leakage, benchmark contamination, PII, memorization, and irreproducible recipes. -->
 
-## Chapter 2 · Scaling training without losing control
+## Chapter 2 · Scaling Training Without Losing Control
 
-### History and theory
+### History and Theory
 <!-- DDP, FSDP/ZeRO, tensor, pipeline, context, and expert parallelism. -->
 
 ### Mathematics
 <!-- Parameters, gradients, optimizer state, activations, communication, and MFU. -->
 
-### Colab implementation
+### Colab Implementation
 <!-- Build a compute/memory estimator; demonstrate accumulation and checkpointing. -->
 
-### Ablation and visualization
+### Ablation and Visualization
 <!-- Sequence length, microbatch size, precision, checkpointing, memory, and step time. -->
 
-## Chapter 3 · Sparse models and efficient adaptation
+## Chapter 3 · Sparse Models and Efficient Adaptation
 
-### History and theory
+### History and Theory
 <!-- Switch Transformer, Mixtral, fine-grained MoE, LoRA, QLoRA, merging, model soups. -->
 
 ### Mathematics
 <!-- Router probability, balance loss, active parameters, low-rank ΔW = BA, averaging assumptions. -->
 
-### Colab implementation
+### Colab Implementation
 <!-- Train a toy router and two adapters; merge them using several soup weights. -->
 
-### Ablation and visualization
+### Ablation and Visualization
 <!-- Expert collapse, top-k, capacity, LoRA rank, and interpolation weight. -->
 
-## Chapter 4 · Extending language models to vision
+## Chapter 4 · Extending Language Models to Vision
 
-### History and theory
+### History and Theory
 <!-- ViT, CLIP, Flamingo, LLaVA, visual tokens, projectors, resamplers, cross-attention. -->
 
 ### Mathematics
 <!-- Patch embeddings, contrastive loss, cross-attention, and multimodal token budgets. -->
 
-### Colab implementation
+### Colab Implementation
 <!-- Implement patchify + encoder + projector, or train a miniature CLIP. -->
 
-### Ablation and visualization
+### Ablation and Visualization
 <!-- Patch size, projector depth, frozen versus trainable encoders, attention maps. -->
 
-## Chapter 5 · Diffusion and generative media
+## Chapter 5 · Diffusion and Generative Media
 
-### History and theory
+### History and Theory
 <!-- VAE/GAN → DDPM → latent diffusion → DiT → flow matching. -->
 
 ### Mathematics
 <!-- Forward noising, epsilon/v prediction, CFG, schedulers, flow-matching intuition. -->
 
-### Colab implementation
+### Colab Implementation
 <!-- Train a toy DDPM and visualize its denoising trajectory. -->
 
-### Ablation and visualization
+### Ablation and Visualization
 <!-- Sampling steps, scheduler, guidance, seed, quality, and latency. -->
 
-## Chapter 6 · Prompt optimization and honest evaluation
+## Chapter 6 · Prompt Optimization and Honest Evaluation
 
-### History and theory
+### History and Theory
 <!-- Zero/few-shot, CoT, self-consistency, ReAct, prompt search, modality-specific controls. -->
 
 ### Mathematics
 <!-- Accuracy, pass@k, Elo/Bradley–Terry, bootstrap CI, FID, and judge bias. -->
 
-### Colab implementation
+### Colab Implementation
 <!-- Build one harness for prompt variants, pairwise comparisons, and reports. -->
 
-### Model landscape
+### Model Landscape
 <!-- Family, evolution, public architecture facts, strengths, weaknesses, and benchmarks. -->
 
-## Reproducibility checklist
+## Reproducibility Checklist
 
 - [ ] Data sources, filters, and sampling weights are documented
 - [ ] Compute and memory estimates state their assumptions

@@ -17,7 +17,7 @@ code-fold: show
 This is a living essay under active development. Each chapter is backed by a reproducible notebook and will be expanded during the 18-day sprint.
 :::
 
-## What the reader will build
+## What the Reader Will Build
 
 - A tokenizer and input/output embedding path
 - Multi-head causal self-attention from tensor operations
@@ -31,13 +31,13 @@ This is a living essay under active development. Each chapter is backed by a rep
 
 
 
-## Chapter 1 · Tokens in, logits out
+## Chapter 1 · Tokens In, Logits Out
 
-### Historical problem
+### Historical Problem
 
 <!-- Why sequence modeling moved from recurrent state to token-parallel representations. -->
 
-### Tensor contract
+### Tensor Contract
 
 <!-- State every shape: token IDs [B,T], embeddings [B,T,D], logits [B,T,V]. -->
 
@@ -49,11 +49,11 @@ This is a living essay under active development. Each chapter is backed by a rep
 
 <!-- Link Colab and embed the smallest important code excerpt. -->
 
-### Ablation and visualization
+### Ablation and Visualization
 
 <!-- Vocabulary size vs sequence length / embedding parameters / compression. -->
 
-### Interview takeaways
+### Interview Takeaways
 
 <!-- Five crisp questions and answers. -->
 
@@ -63,31 +63,31 @@ This is a living essay under active development. Each chapter is backed by a rep
 
 
 
-## Chapter 2 · Self-attention from first principles
+## Chapter 2 · Self-Attention from First Principles
 
-### From additive attention to Q/K/V
+### From Additive Attention to Q/K/V
 
 <!-- Explain the design pressure and the scaling term. -->
 
-### Mathematics and dimensions
+### Mathematics and Dimensions
 
 <!-- Derive masked scaled dot-product attention and MHA. -->
 
-### Implementation and tests
+### Implementation and Tests
 
 <!-- Implement without nn.MultiheadAttention; compare outputs and gradients. -->
 
-### Ablation and visualization
+### Ablation and Visualization
 
 <!-- Scaling, masking, head count, attention maps. -->
 
-## Chapter 3 · The modern decoder block
+## Chapter 3 · The Modern Decoder Block
 
-### Architecture evolution
+### Architecture Evolution
 
 <!-- Post-LN→Pre-LN, LayerNorm→RMSNorm, absolute position→RoPE, MHA→GQA. -->
 
-### Components and parameter ledger
+### Components and Parameter Ledger
 
 <!-- RMSNorm, RoPE, GQA, SwiGLU, residual stream. -->
 
@@ -95,35 +95,35 @@ This is a living essay under active development. Each chapter is backed by a rep
 
 <!-- One readable PyTorch block with shape assertions. -->
 
-### Ablation and visualization
+### Ablation and Visualization
 
 <!-- Gradient flow, position extrapolation, attention variants. -->
 
 ## Chapter 4 · Training a Tiny GPT
 
-### Objective, data, and optimization
+### Objective, Data, and Optimization
 
 <!-- Next-token loss, packing, initialization, AdamW, schedule, mixed precision. -->
 
-### End-to-end implementation
+### End-To-End Implementation
 
 <!-- Config, model, dataloader, training loop, checkpoint, generation. -->
 
-### Ablation and visualization
+### Ablation and Visualization
 
 <!-- Width/depth, learning rate, weight decay; loss and gradient curves. -->
 
-### Failure analysis
+### Failure Analysis
 
 <!-- Memorization, unstable runs, data leakage, misleading perplexity. -->
 
-## Chapter 5 · Decoding and KV cache
+## Chapter 5 · Decoding and KV Cache
 
-### Prefill versus decode
+### Prefill Versus Decode
 
 <!-- Explain compute-bound vs memory-bound behavior. -->
 
-### Cache mathematics
+### Cache Mathematics
 
 <!-- Complexity and bytes/token formulas, including GQA. -->
 
@@ -131,29 +131,29 @@ This is a living essay under active development. Each chapter is backed by a rep
 
 <!-- Add cache to Tiny GPT and prove cached/uncached logits match. -->
 
-### Systems benchmark
+### Systems Benchmark
 
 <!-- Latency, throughput, peak memory, sequence length, sampling settings. -->
 
-## Chapter 6 · Anatomy of real models
+## Chapter 6 · Anatomy of Real Models
 
-### What is public and what is not
+### What Is Public and What Is Not
 
 <!-- Label every architecture fact: official / estimate / unknown. -->
 
-### Config-to-weights inspection
+### Config-To-Weights Inspection
 
 <!-- Traverse a small open model; print modules, tensors, shapes, parameter counts. -->
 
-### Model-family comparison
+### Model-Family Comparison
 
 <!-- GPT, Claude, Gemini, Llama, Qwen, Mistral, DeepSeek: evolution and trade-offs. -->
 
-### Final mental model
+### Final Mental Model
 
 <!-- Close with one end-to-end trace and the limits of the toy implementation. -->
 
-## Reproducibility checklist
+## Reproducibility Checklist
 
 - [ ] Colab links run from a clean runtime
 - [ ] Package/model/data versions are pinned

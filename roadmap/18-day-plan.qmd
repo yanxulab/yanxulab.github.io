@@ -6,7 +6,7 @@ toc: true
 
 The complete plan is maintained in [`18-day-foundation-model-plan.md`](../18-day-foundation-model-plan.md). It starts with Transformer fundamentals, builds a full foundation-model systems map, and then specializes in post-training and reinforcement learning.
 
-## Daily cadence
+## Daily Cadence
 
 | Block | Time |
 |---|---:|
@@ -16,7 +16,7 @@ The complete plan is maintained in [`18-day-foundation-model-plan.md`](../18-day
 | Ablation and visualization | 45 min |
 | Flagship essay chapter | 30 min |
 
-## Weekly outputs
+## Weekly Outputs
 
 1. **Inside a Modern LLM: From Tokens to KV Cache**
 2. **How Foundation Models Are Built and Extended Beyond Text**

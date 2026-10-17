@@ -82,7 +82,7 @@ def bio(profile):
 def career(profile):
     entries = profile.get("career", [])
     if not entries:
-        return '<div class="timeline"><div class="timeline-entry"><div class="timeline-date">Now</div><div class="timeline-detail"><h3>Foundation models &amp; post-training</h3><p>Studying the objectives, implementations, and systems behind language and multimodal models.</p></div></div></div>'
+        return '<div class="timeline"><div class="timeline-entry"><div class="timeline-date">Now</div><div class="timeline-detail"><h3>Foundation Models &amp; Post-Training</h3><p>Studying the objectives, implementations, and systems behind language and multimodal models.</p></div></div></div>'
     rows = []
     for entry in entries:
         organization = esc(entry["organization"])
@@ -94,7 +94,7 @@ def career(profile):
     return '<ol class="timeline">' + "".join(rows) + "</ol>"
 
 
-def works(profile):
+def works(profile, publications=True):
     rows = []
     expand_icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>'
     for index, item in enumerate(profile["work"]):
@@ -110,15 +110,17 @@ def works(profile):
         if preview:
             preview_id, method_id = f"work-preview-{index}", f"work-method-{index}"
             video = f'<div class="work-video-shell"><video src="{url(preview["video"])}" poster="{url(preview["poster"])}" controls loop muted playsinline preload="none" data-work-video aria-label="{esc(item["title"])}: generated video excerpt"></video></div>'
-            media = f'<div class="media-panel" id="{preview_id}" data-media-panel="preview">{video}</div><div class="media-panel" id="{method_id}" data-media-panel="method">{media}</div><div class="media-toolbar"><div class="media-switch" role="group" aria-label="Choose project media" hidden><button type="button" data-media-choice="preview" aria-controls="{preview_id}" aria-pressed="true">Video preview</button><button type="button" data-media-choice="method" aria-controls="{method_id}" aria-pressed="false">Method</button></div><span class="media-note">12s · silent excerpt</span></div>'
+            media = f'<div class="media-panel" id="{preview_id}" data-media-panel="preview">{video}</div><div class="media-panel" id="{method_id}" data-media-panel="method">{media}</div><div class="media-toolbar"><div class="media-switch" role="group" aria-label="Choose Project Media" hidden><button type="button" data-media-choice="preview" aria-controls="{preview_id}" aria-pressed="true">Video Preview</button><button type="button" data-media-choice="method" aria-controls="{method_id}" aria-pressed="false">Method</button></div><span class="media-note">12s · Silent Excerpt</span></div>'
         row_class = "work-row" if media else "work-row work-row-text"
+        if publications:
+            row_class += " publication-card"
         media = f'<div class="work-media"{(" data-work-media" if preview else "")}>{media}</div>' if media else ""
         actions = "".join(link(action["label"] + " ↗", action["url"]) for action in item["links"])
-        actions = f'<div class="work-links">{actions}</div>' if actions else ""
+        actions = f'<div class="work-links">{actions}</div>' if actions or publications else ""
         title = item.get("paper_title") or item["title"]
         paper_url = next((action["url"] for action in item["links"] if action["label"].strip().casefold() == "paper"), None)
         heading = link(title, paper_url, "work-title-link") if paper_url else esc(title)
-        authors = f'<span class="work-authors">{esc(item["authors"])}</span>' if item.get("authors") else ""
+        authors = f'<span class="work-authors">{esc(item.get("authors", ""))}</span>' if item.get("authors") or publications else ""
         if len(item.get("authors", "")) > 180:
             names = item["authors"].split(", ")
             own_name = profile.get("name")
@@ -127,9 +129,12 @@ def works(profile):
             authors = f'<details class="work-authors"><summary>{esc(abbreviated)}</summary><p>{esc(item["authors"])}</p></details>'
         venue = item.get("venue") or item["kind"].removeprefix("Research · ")
         if item.get("year"):
-            venue = f'{item["year"]} · {venue}'
+            venue = f'{venue} {item["year"]}' if publications else f'{item["year"]} · {venue}'
+        if item.get("status"):
+            venue += f' ({item["status"]})'
         metadata = f'<div class="work-meta">{authors}<span class="work-venue">{esc(venue)}</span></div>'
-        rows.append(f'<article class="{row_class}">{media}<div class="work-copy"><h3>{heading}</h3>{metadata}<p class="work-summary">{esc(item["summary"])}</p>{actions}</div></article>')
+        summary = f'<p class="work-summary">{esc(item["summary"])}</p>' if not publications else ""
+        rows.append(f'<article class="{row_class}">{media}<div class="work-copy"><h3>{heading}</h3>{metadata}{summary}{actions}</div></article>')
     return "".join(rows)
 
 
@@ -137,14 +142,14 @@ EXPERIMENT = """
 <section class="experiment-section" aria-labelledby="experiment-title">
   <div class="experiment-intro">{intro}</div>
   <div class="temperature-demo" data-temperature-demo>
-    <div class="demo-heading"><span>Next-token probabilities</span><span class="demo-live">Interactive</span></div>
+    <div class="demo-heading"><span>Next-Token Probabilities</span><span class="demo-live">Interactive</span></div>
     <div class="probability-bars" role="img" aria-label="Illustrative next-token probabilities at temperature 1.0: the 56.4%, a 25.3%, one 11.4%, this 6.9%.">
       <div class="probability-row"><span class="token-label">the</span><div class="bar-track"><div class="bar-fill" style="width:56.4%"></div></div><span class="probability-value">56.4%</span></div>
       <div class="probability-row"><span class="token-label">a</span><div class="bar-track"><div class="bar-fill" style="width:25.3%"></div></div><span class="probability-value">25.3%</span></div>
       <div class="probability-row"><span class="token-label">one</span><div class="bar-track"><div class="bar-fill" style="width:11.4%"></div></div><span class="probability-value">11.4%</span></div>
       <div class="probability-row"><span class="token-label">this</span><div class="bar-track"><div class="bar-fill" style="width:6.9%"></div></div><span class="probability-value">6.9%</span></div>
     </div>
-    <div class="temperature-control"><label for="temperature">Temperature <output for="temperature" id="temperature-value">1.0</output></label><input id="temperature" type="range" min="0.2" max="2" step="0.1" value="1" aria-describedby="temperature-help" disabled><div class="slider-labels"><span>More focused</span><span>More varied</span></div></div>
+    <div class="temperature-control"><label for="temperature">Temperature <output for="temperature" id="temperature-value">1.0</output></label><input id="temperature" type="range" min="0.2" max="2" step="0.1" value="1" aria-describedby="temperature-help" disabled><div class="slider-labels"><span>More Focused</span><span>More Varied</span></div></div>
     <p class="demo-note" id="temperature-help">Fixed example logits: [2.0, 1.2, 0.4, −0.1]. Change T to compare the same four candidates.</p>
     <noscript><p class="demo-note">Enable JavaScript to adjust the temperature.</p></noscript>
   </div>
@@ -154,21 +159,21 @@ EXPERIMENT = """
 
 def experiment(home=False):
     if home:
-        intro = '<p class="eyebrow">Notes &amp; experiments</p><h2 id="experiment-title">From the equations<br>to the code.</h2><p>I learn by building. Small, hands-on experiments in foundation models and post-training.</p><p>Try the temperature slider to see how a model’s next-token probabilities change.</p><div class="experiment-links">' + link('Visit the blog ↗', 'essays.qmd') + link('Tokenizer notebook ↗', 'https://colab.research.google.com/github/yanxulab/yanxulab.github.io/blob/main/notebooks/01_tokenizer_embeddings.ipynb') + '</div>'
+        intro = '<p class="eyebrow">Notes &amp; Experiments</p><h2 id="experiment-title">From the Equations<br>to the Code.</h2><p>I learn by building. Small, hands-on experiments in foundation models and post-training.</p><p>Try the temperature slider to see how a model’s next-token probabilities change.</p><div class="experiment-links">' + link('Visit the Blog ↗', 'essays.qmd') + link('Tokenizer Notebook ↗', 'https://colab.research.google.com/github/yanxulab/yanxulab.github.io/blob/main/notebooks/01_tokenizer_embeddings.ipynb') + '</div>'
     else:
-        intro = '<p class="eyebrow">Interactive explanation</p><h2 id="experiment-title">How temperature changes sampling</h2><p>Adjust the temperature to see how fixed model scores become next-token probabilities.</p><p class="experiment-formula"><code>p = softmax(logits / T)</code></p>'
+        intro = '<p class="eyebrow">Interactive Explanation</p><h2 id="experiment-title">How Temperature Changes Sampling</h2><p>Adjust the temperature to see how fixed model scores become next-token probabilities.</p><p class="experiment-formula"><code>p = softmax(logits / T)</code></p>'
     return EXPERIMENT.format(intro=intro)
 
 
 def home(profile):
     portrait = f'<img class="portrait" src="{url(profile["portrait"])}" alt="{esc(profile["portrait_alt"])}" width="220" height="220">' if profile.get("portrait") else '<div class="hero-note" aria-hidden="true"><span class="note-index">A working notebook</span><div class="tensor-motif"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>Build.<br>Measure.<br>Understand.</span></div>'
-    timeline_title = "Experience" if profile.get("career") else "Current focus"
-    all_publications = f'<span class="section-aside">{link("All publications ↗", profile["scholar"])}</span>' if profile.get("scholar") else ""
+    timeline_title = "Experience" if profile.get("career") else "Current Focus"
+    scholar_link = f'<span class="section-aside">{link("Google Scholar ↗", profile["scholar"])}</span>' if profile.get("scholar") else ""
     return f"""
 <div class="home-shell">
 <section class="intro" aria-labelledby="intro-name"><h1 id="intro-name">{esc(profile['name'])}</h1><div class="bio">{bio(profile)}</div><div class="intro-profile">{portrait}{socials(profile)}</div></section>
 {experiment(home=True)}
-<section class="selected-work" id="selected-work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Selected Work</h2>{all_publications}</div>{works(profile)}</section>
+<section class="selected-work" id="selected-work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Selected Work</h2>{scholar_link}</div>{works(profile)}</section>
 <section class="career-section" aria-labelledby="career-title"><div class="section-heading"><h2 id="career-title">{timeline_title}</h2><span class="section-aside">{link('CV ↗', 'cv.qmd')}</span></div>{career(profile)}</section>
 </div>
 """
@@ -180,15 +185,15 @@ def blog(profile):
         number = f"{index:02}"
         contents.append(f'<li><a href="#{esc(item["id"])}"><span>{number}</span>{esc(item["title"])}</a></li>')
         title = link(item["title"], item["url"]) if item["published"] else esc(item["title"])
-        action = link("Read essay →", item["url"], "essay-read") if item["published"] else '<p class="preparation-note">This essay is in preparation.</p>'
+        action = link("Read Essay →", item["url"], "essay-read") if item["published"] else '<p class="preparation-note">This essay is in preparation.</p>'
         topics = "".join(f'<li>{esc(topic)}</li>' for topic in item["topics"])
         entries.append(f'<section class="essay-entry" id="{esc(item["id"])}"><div class="essay-index">{number}</div><div class="essay-copy"><div class="essay-status">{esc(item["status"])}</div><h2>{title}</h2><p class="essay-subtitle">{esc(item["subtitle"])}</p><p>{esc(item["description"])}</p><ul class="essay-topics">{topics}</ul>{action}</div></section>')
     return f"""
-<div class="reading-shell"><header class="reading-header"><p class="eyebrow">The blog</p><h1>Notes on<br> learning machines.</h1><p class="reading-deck">Foundation models, post-training, and the systems behind them. From first principles to working code.</p><p class="reading-byline">By {esc(profile['name'])}</p></header>
-<nav class="contents-panel" aria-label="Blog contents"><p class="eyebrow">Contents</p><ol>{''.join(contents)}</ol><a class="contents-extra" href="#workbench">From the workbench ↓</a></nav>
+<div class="reading-shell"><header class="reading-header"><p class="eyebrow">The Blog</p><h1>Notes on<br>Learning Machines.</h1><p class="reading-deck">Foundation models, post-training, and the systems behind them. From first principles to working code.</p><p class="reading-byline">By {esc(profile['name'])}</p></header>
+<nav class="contents-panel" aria-label="Blog contents"><p class="eyebrow">Contents</p><ol>{''.join(contents)}</ol><a class="contents-extra" href="#workbench">From the Workbench ↓</a></nav>
 <p class="blog-intro">I’m putting together three connected essays. Each will pair the core ideas with derivations, code, and controlled experiments.</p>
 {''.join(entries)}
-<section class="workbench" id="workbench"><p class="eyebrow">From the workbench</p><h2>Start with something small.</h2><p>Notebooks and visual explanations, alongside the longer essays.</p>{works({'work': profile.get('experiments', [])})}</section>
+<section class="workbench" id="workbench"><p class="eyebrow">From the Workbench</p><h2>Start With Something Small.</h2><p>Notebooks and visual explanations, alongside the longer essays.</p>{works({'work': profile.get('experiments', [])}, publications=False)}</section>
 {experiment()}
 </div>
 """
@@ -196,8 +201,8 @@ def blog(profile):
 
 def cv(profile):
     pdf = f'<p>{link("Download CV (PDF) ↓", profile["cv_pdf"], "text-cta")}</p>' if profile.get("cv_pdf") else '<p class="cv-status">A full CV will be added here.</p>'
-    title = "Experience & education" if profile.get("career") else "Current focus"
-    return f'<div class="reading-shell"><header class="reading-header"><p class="eyebrow">Curriculum vitae</p><h1>{esc(profile["name"])}</h1>{pdf}</header><section class="cv-summary"><h2>Research interests</h2>{bio(profile)}{socials(profile)}</section><section class="cv-experience"><h2>{title}</h2>{career(profile)}</section><section class="cv-work"><h2>Selected Work</h2>{works(profile)}</section></div>'
+    title = "Experience & Education" if profile.get("career") else "Current Focus"
+    return f'<div class="reading-shell"><header class="reading-header"><p class="eyebrow">Curriculum Vitae</p><h1>{esc(profile["name"])}</h1>{pdf}</header><section class="cv-summary"><h2>Research Interests</h2>{bio(profile)}{socials(profile)}</section><section class="cv-experience"><h2>{title}</h2>{career(profile)}</section><section class="cv-work"><h2>Selected Work</h2>{works(profile)}</section></div>'
 
 
 def main():

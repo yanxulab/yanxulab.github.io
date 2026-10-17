@@ -20,7 +20,7 @@ quarto render
 
 Pushing to `main` runs `.github/workflows/publish.yml` and deploys `_site/` to GitHub Pages. The custom domain is set in `CNAME`, `_quarto.yml`, and the repository’s Pages settings.
 
-After rendering, `scripts/version_stylesheet.py` adds content hashes to the generated stylesheet and `assets/site.js` filenames, then updates page links. This keeps cached CSS or interaction code from a different build from affecting the current page. Continue editing `styles.css` and `assets/site.js` as usual.
+After rendering, `scripts/version_stylesheet.py` adds content hashes to the generated stylesheet, `assets/site.js`, and `assets/figure-viewer.js` filenames, then updates page links. This keeps cached CSS or interaction code from a different build from affecting the current page. Continue editing the original source files as usual.
 
 ### Private development
 
@@ -60,7 +60,7 @@ Use only dates and roles you have confirmed. `url` and `logo` are optional.
 
 ## Add research or multimedia
 
-The homepage’s **Selected Work** lists papers and projects newest first, with a year beside each venue or submission status. The **All publications ↗** link beside the heading opens the Google Scholar URL configured in `scholar`. Paper titles link to the entry’s `Paper` URL, while the existing action links remain below; entries without a `Paper` URL keep plain-text titles. Add entries to `work` in that order:
+The homepage’s **Selected Work** lists papers newest first. **Google Scholar ↗** opens the profile URL configured in `scholar`. Each publication uses the same order: linked title, authors, venue/year/status, then action links. Summaries remain in `profile.json` but are currently hidden for publications. Entries without a confirmed author list retain an empty author row; entries without a `Paper` URL keep plain-text titles. Add entries to `work` in that order:
 
 ```json
 {
@@ -80,17 +80,17 @@ The homepage’s **Selected Work** lists papers and projects newest first, with 
 }
 ```
 
-For a manuscript under review, use `"venue": "Manuscript under review"` and `"links": []` until public links are available. Add the confirmed author list when ready. `year` and `venue` are optional for other types of work.
+For a manuscript under review, use the venue name and a separate `status`, for example `"venue": "ICLR"`, `"year": 2027`, and `"status": "Under Review"`, displayed as **ICLR 2027 (Under Review)**. Use `"venue": "arXiv Preprint"` for verified arXiv manuscripts; OpenReview-only manuscripts stay **Preprint**. Keep `"links": []` until public links are available. Add the confirmed author list when ready.
 
 When a paper has no figure yet, omit `image` and `image_alt`; it appears as a text entry. Add its own figure later to use the image-and-text layout.
 
 For a playable video, add `"video": "assets/demo.mp4"`; `image` becomes its poster. Videos use controls and do not autoplay. For YouTube or Drive videos, add a `Video` link instead. Images enlarge when clicked. `paper_title` and `authors` are optional, so the same layout works for demos, talks, and visual projects.
 
-Paper figures share a white frame and open in a keyboard-accessible preview. Readers can zoom, open the original, or close with Esc; without JavaScript the image link opens the original directly. Hover feedback respects reduced-motion preferences.
+Publication cards group the figure and all metadata on a white surface. The whole card lifts on hover; figures do not move independently. Section rules are retained, and publications are separated by spacing and their surfaces. Figures open in a keyboard-accessible preview. Readers can zoom, open the original, or close with Esc; without JavaScript the image link opens the original directly. Hover motion respects reduced-motion preferences. Interface headings and short labels use Title Case; prose remains sentence case.
 
 For a result video alongside a method figure, add `"preview": {"video": "assets/project-preview.mp4", "poster": "assets/project-poster.jpg"}`. The video/method switch keeps both available. The current Co-Director preview is a locally hosted, silent 12-second excerpt of the official demo, compressed to about 1 MB. It plays only while visible, pauses when offscreen, and respects reduced-motion, data-saving, and manual pause preferences. Without JavaScript, native video controls and the method figure both remain available. Long author lists can be expanded in place.
 
-Put smaller notebooks and figures in `experiments`; they appear under **From the workbench** on the blog page. Keep the homepage to a few strong examples.
+Put smaller notebooks and figures in `experiments`; they appear under **From the Workbench** on the blog page, where their descriptions remain visible.
 
 ## Write a blog post
 

@@ -13,8 +13,8 @@
     <div class="figure-viewer-toolbar">
       <h2 id="figure-viewer-title"></h2>
       <div class="figure-viewer-controls">
-        <button class="figure-viewer-zoom" type="button" aria-pressed="false">Zoom in</button>
-        <a class="figure-viewer-original" target="_blank" rel="noopener">Open original ↗</a>
+        <button class="figure-viewer-zoom" type="button" aria-pressed="false">Zoom In</button>
+        <a class="figure-viewer-original" target="_blank" rel="noopener">Open Original ↗</a>
         <button class="figure-viewer-close" type="button" aria-label="Close figure">×</button>
       </div>
     </div>
@@ -34,7 +34,7 @@
   function resetZoom() {
     viewer.removeAttribute("data-zoomed");
     zoom.setAttribute("aria-pressed", "false");
-    zoom.textContent = "Zoom in";
+    zoom.textContent = "Zoom In";
     viewport.scrollTo(0, 0);
   }
 
@@ -59,7 +59,7 @@
   zoom.addEventListener("click", () => {
     const zoomed = viewer.toggleAttribute("data-zoomed");
     zoom.setAttribute("aria-pressed", String(zoomed));
-    zoom.textContent = zoomed ? "Fit to view" : "Zoom in";
+    zoom.textContent = zoomed ? "Fit to View" : "Zoom In";
     viewport.scrollTo(0, 0);
   });
   close.addEventListener("click", () => viewer.close());

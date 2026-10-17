@@ -49,7 +49,8 @@
     {
       "kind": "Research",
       "year": 2027,
-      "venue": "ICLR Under Review",
+      "venue": "ICLR",
+      "status": "Under Review",
       "title": "CamRM: Motion-grounded rating for camera-motion control",
       "paper_title": "CamRM: Towards Reliable Camera-Motion Control in Video Generation with Motion-Grounded Rating Models",
       "summary": "Combines optical flow and global motion cues to assess camera-motion alignment and guide iterative refinement of generated videos.",
@@ -111,6 +112,8 @@
       "paper_title": "World-Simulation as Pre-Training for Scalable Perception",
       "authors": "Hao Xiang, Zhaoqi Leng, Alex Zihao Zhu, Kan Chen, Mengtian Li, Xia Chen, Yingwei Li, Tong He, Yanhui Liang, Junwen Yao, Yan Xu, Anant Subramanian, Cheolho Park, Runsheng Xu, Dragomir Anguelov, Mingxing Tan",
       "summary": "Introduces PerceptionLM, using autoregressive world-model pre-training and a decoder adapter to transfer visual knowledge into dense perception tasks, including depth estimation and semantic segmentation.",
+      "image": "assets/research-perceptionlm.png",
+      "image_alt": "PerceptionLM architecture: autoregressive pre-training on video, depth, and semantic tokens, followed by decoder adaptation for dense and sparse perception targets.",
       "links": [
         {
           "label": "Paper",
@@ -121,7 +124,7 @@
     {
       "kind": "Research",
       "year": 2024,
-      "venue": "arXiv",
+      "venue": "arXiv Preprint",
       "title": "Multi-Person 3D Pose Estimation from Multi-View Uncalibrated Depth Cameras",
       "paper_title": "Multi-Person 3D Pose Estimation from Multi-View Uncalibrated Depth Cameras",
       "authors": "Yu-Jhe Li, Yan Xu, Rawal Khirodkar, Jinhyung Park, Kris Kitani",
@@ -138,7 +141,7 @@
     {
       "kind": "Research",
       "year": 2023,
-      "venue": "arXiv",
+      "venue": "arXiv Preprint",
       "title": "Multi-View Person Matching and 3D Pose Estimation with Arbitrary Uncalibrated Camera Networks",
       "paper_title": "Multi-View Person Matching and 3D Pose Estimation with Arbitrary Uncalibrated Camera Networks",
       "authors": "Yan Xu, Kris Kitani",
@@ -216,28 +219,28 @@
     {
       "id": "inside-an-llm",
       "title": "Inside a Modern LLM",
-      "subtitle": "From tokens to KV cache",
+      "subtitle": "From Tokens to KV Cache",
       "description": "Follow the tensors through tokenization, attention, a modern decoder, training, and cached generation.",
       "topics": [
-        "Tokens & embeddings",
-        "Attention & decoder blocks",
-        "Training & inference"
+        "Tokens & Embeddings",
+        "Attention & Decoder Blocks",
+        "Training & Inference"
       ],
-      "status": "In preparation",
+      "status": "In Preparation",
       "published": false,
       "url": "posts/01-inside-modern-llm/index.qmd"
     },
     {
       "id": "building-foundation-models",
       "title": "Building Foundation Models",
-      "subtitle": "Data, scale, and the move beyond text",
+      "subtitle": "Data, Scale, and the Move Beyond Text",
       "description": "A practical map of data pipelines, sparse models, efficient adaptation, multimodality, and evaluation.",
       "topics": [
-        "Data & scaling",
-        "MoE & adaptation",
-        "Multimodal systems"
+        "Data & Scaling",
+        "MoE & Adaptation",
+        "Multimodal Systems"
       ],
-      "status": "In preparation",
+      "status": "In Preparation",
       "published": false,
       "url": "posts/02-building-foundation-models/index.qmd"
     },
@@ -247,11 +250,11 @@
       "subtitle": "SFT, RLHF, DPO, and GRPO",
       "description": "Derive the objectives, implement the learning loops, and compare the methods under a shared evaluation setup.",
       "topics": [
-        "Supervised fine-tuning",
-        "Preference learning",
-        "Reinforcement learning"
+        "Supervised Fine-Tuning",
+        "Preference Learning",
+        "Reinforcement Learning"
       ],
-      "status": "In preparation",
+      "status": "In Preparation",
       "published": false,
       "url": "posts/03-post-training-from-first-principles/index.qmd"
     }
@@ -259,7 +262,7 @@
   "experiments": [
     {
       "kind": "Notebook",
-      "title": "Tokens in, logits out",
+      "title": "Tokens In, Logits Out",
       "summary": "Build a byte-level BPE tokenizer, trace the path from token IDs to next-token loss, and see what weight tying changes.",
       "image": "assets/tokenizer-path.svg",
       "image_alt": "Token IDs pass through an embedding table to logits and next-token probabilities.",
@@ -275,18 +278,18 @@
       ]
     },
     {
-      "kind": "Visual explanation",
-      "title": "A closer look at activation functions",
+      "kind": "Visual Explanation",
+      "title": "A Closer Look at Activation Functions",
       "summary": "Sigmoid, GELU, SiLU, and softmax, side by side. An illustrated reference for the nonlinearities inside a neural network.",
       "image": "assets/activation-functions.svg",
       "image_alt": "Eight labeled panels compare activation functions and softmax probabilities.",
       "links": [
         {
-          "label": "Explore the figure",
+          "label": "Explore the Figure",
           "url": "assets/activation-functions.svg"
         },
         {
-          "label": "Source code",
+          "label": "Source Code",
           "url": "https://github.com/yanxulab/yanxulab.github.io/blob/main/scripts/plot_activation_functions.py"
         }
       ]

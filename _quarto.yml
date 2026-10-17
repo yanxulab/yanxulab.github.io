@@ -41,7 +41,7 @@ website:
   page-footer:
     left: "© Yan Xu"
     center: '<span class="visitor-welcome" data-visitor-welcome aria-live="polite">Welcome, and thanks for stopping by.</span>'
-    right: "[GitHub ↗](https://github.com/yanxulab) · [Back to top ↑](#)"
+    right: "[GitHub ↗](https://github.com/yanxulab) · [Back to Top ↑](#)"
 
 format:
   html:
