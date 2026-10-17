@@ -1,10 +1,10 @@
 /* Typography-led layouts for research, experiments, and writing. */
 :root {
-  --paper: #faf9f6;
+  --paper: #ffffff;
   --ink: #20211e;
   --muted: #4c4d47;
   --green: #26483c;
-  --green-soft: #f2f1eb;
+  --green-soft: #f4f6f8;
   --link: #245a9a;
   --link-hover: #173f70;
   --rule: #d9ded8;

@@ -28,7 +28,7 @@ website:
   navbar:
     title: "Home"
     pinned: true
-    background: "#faf9f6"
+    background: "#ffffff"
     foreground: "#20211e"
     right:
       - href: index.qmd#selected-work
