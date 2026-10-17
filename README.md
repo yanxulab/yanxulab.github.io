@@ -2,6 +2,8 @@
 
 Yan Xu’s personal website: selected research, visual experiments, and technical writing. Built with Quarto and published to GitHub Pages at <https://yanxu.io>.
 
+The homepage leads with the bio, an interactive writing/experiments preview, and selected work; the experience timeline follows. The CV retains its experience-first structure.
+
 ## Preview and publish
 
 Install [Quarto](https://quarto.org/docs/get-started/), then run:
@@ -18,7 +20,7 @@ quarto render
 
 Pushing to `main` runs `.github/workflows/publish.yml` and deploys `_site/` to GitHub Pages. The custom domain is set in `CNAME`, `_quarto.yml`, and the repository’s Pages settings.
 
-After rendering, `scripts/version_stylesheet.py` adds a content hash to the generated stylesheet filename and updates page links. This keeps cached CSS from a different build from changing the restored layout. Continue editing `styles.css` as usual.
+After rendering, `scripts/version_stylesheet.py` adds content hashes to the generated stylesheet and `assets/site.js` filenames, then updates page links. This keeps cached CSS or interaction code from a different build from affecting the current page. Continue editing `styles.css` and `assets/site.js` as usual.
 
 ### Private development
 
@@ -85,6 +87,8 @@ When a paper has no figure yet, omit `image` and `image_alt`; it appears as a te
 For a playable video, add `"video": "assets/demo.mp4"`; `image` becomes its poster. Videos use controls and do not autoplay. For YouTube or Drive videos, add a `Video` link instead. Images enlarge when clicked. `paper_title` and `authors` are optional, so the same layout works for demos, talks, and visual projects.
 
 Paper figures share a white frame and open in a keyboard-accessible preview. Readers can zoom, open the original, or close with Esc; without JavaScript the image link opens the original directly. Hover feedback respects reduced-motion preferences.
+
+For a result video alongside a method figure, add `"preview": {"video": "assets/project-preview.mp4", "poster": "assets/project-poster.jpg"}`. The video/method switch keeps both available. The current Co-Director preview is a locally hosted, silent 12-second excerpt of the official demo, compressed to about 1 MB. It plays only while visible, pauses when offscreen, and respects reduced-motion, data-saving, and manual pause preferences. Without JavaScript, native video controls and the method figure both remain available. Long author lists can be expanded in place.
 
 Put smaller notebooks and figures in `experiments`; they appear under **From the workbench** on the blog page. Keep the homepage to a few strong examples.
 

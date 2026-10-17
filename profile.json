@@ -64,7 +64,7 @@
       "title": "CamPrompt: Camera-Controlled Video-to-Video Generation from Text Prompt",
       "paper_title": "CamPrompt: Camera-Controlled Video-to-Video Generation from Text Prompt",
       "authors": "Xinhao Liu, Kan Chen, Yuan Zhong, Pengchong Jin, Yan Xu, Zhuoyuan Chen, Ting Yu",
-      "summary": "Camera-controlled video-to-video generation guided by text prompts.",
+      "summary": "Re-shoots a source video along a camera trajectory specified in natural language, using dense prompt conditioning and text–camera alignment. Enables intuitive camera control without requiring users to provide camera parameters or flow maps.",
       "image": "assets/research-camprompt.png",
       "image_alt": "CamPrompt architecture showing source and target video latents, a diffusion transformer, text-camera alignment, and dense aggregated temporal attention.",
       "links": [
@@ -84,6 +84,10 @@
       "summary": "A hierarchical multi-agent framework combines multi-armed bandit search with multimodal self-refinement to generate videos with coherent narratives and consistent visual identities.",
       "image": "assets/research-co-director.jpg",
       "image_alt": "Co-Director pipeline: a multi-armed bandit orchestrates pre-production, video generation, and post-production agents using multimodal judge feedback.",
+      "preview": {
+        "video": "assets/research-co-director-preview.mp4",
+        "poster": "assets/research-co-director-poster.jpg"
+      },
       "links": [
         {
           "label": "Project",

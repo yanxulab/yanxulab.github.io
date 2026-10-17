@@ -28,4 +28,63 @@
     update();
   }
 
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  for (const media of document.querySelectorAll("[data-work-media]")) {
+    const video = media.querySelector("[data-work-video]");
+    const panels = [...media.querySelectorAll("[data-media-panel]")];
+    const choices = [...media.querySelectorAll("[data-media-choice]")];
+    const note = media.querySelector(".media-note");
+    let selected = "preview";
+    let visible = false;
+    let userPaused = false;
+    let internalPause = false;
+
+    function stop() {
+      if (!video.paused) {
+        internalPause = true;
+        video.pause();
+      }
+    }
+    function shouldPlay() {
+      return selected === "preview" && visible && !document.hidden &&
+        !reducedMotion.matches && !navigator.connection?.saveData && !userPaused;
+    }
+    function sync() {
+      if (!shouldPlay()) return stop();
+      video.play().then(() => { if (!shouldPlay()) stop(); }).catch(() => {});
+    }
+    function choose(value) {
+      selected = value;
+      for (const panel of panels) panel.hidden = panel.dataset.mediaPanel !== value;
+      for (const choice of choices) choice.setAttribute("aria-pressed", String(choice.dataset.mediaChoice === value));
+      note.hidden = value !== "preview";
+      sync();
+    }
+
+    video.muted = true;
+    video.addEventListener("play", () => { userPaused = false; });
+    video.addEventListener("pause", () => {
+      if (internalPause) internalPause = false;
+      else userPaused = true;
+    });
+    video.addEventListener("error", () => {
+      choose("method");
+      media.querySelector('[data-media-choice="preview"]').disabled = true;
+    });
+    for (const choice of choices) {
+      choice.addEventListener("click", () => choose(choice.dataset.mediaChoice));
+    }
+    media.querySelector(".media-switch").hidden = false;
+    choose("preview");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(([entry]) => {
+        visible = entry.isIntersecting && entry.intersectionRatio >= 0.35;
+        sync();
+      }, {threshold: [0, 0.35]});
+      observer.observe(media);
+    }
+    reducedMotion.addEventListener("change", sync);
+    document.addEventListener("visibilitychange", sync);
+  }
+
 })();

@@ -14,6 +14,8 @@ project:
     - assets/site.js
     - assets/figure-viewer.js
     - assets/visitor-counter.js
+    - assets/*-preview.mp4
+    - assets/*-poster.jpg
     - notebooks/*.ipynb
 
 website:
