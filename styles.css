@@ -84,7 +84,13 @@ a.social-icon:hover { color: var(--green); }
 .timeline-detail p { color: var(--ink); font-size: 16px; line-height: 1.6; margin: 0; max-width: 570px; }
 .timeline-detail .timeline-role { color: var(--ink); margin-bottom: 5px; }
 .career-logo { float: right; object-fit: contain; margin: 3px 0 10px 15px; }
-.career-section { margin-bottom: 30px; }
+/* Keep Experience in the original timeline's type, colors, and spacing. */
+.career-section { --ink: #191c1a; --green: #205a3e; --rule: #d9ded8; color: var(--ink); margin-bottom: 14px; }
+.career-section .section-heading { padding-top: 22px; border-top: 1px solid var(--rule); margin-bottom: 20px; }
+.career-section .section-heading h2 { font-family: var(--sans); font-size: 29px; font-weight: 650; }
+.career-section .timeline-detail { border-left-color: #d7dfd2; }
+.career-section .timeline-detail::before { background: #7c9970; }
+.career-section .timeline-detail h3 a { color: var(--green); }
 /* Selected work uses open image/text rows, without a wall of cards. */
 .selected-work { margin-bottom: 38px; }
 .selected-work .section-heading { margin-bottom: 24px; }
@@ -239,6 +245,8 @@ pre, code { font-family: var(--mono); }
   .timeline-detail h3 { font-size: 17px; }
   .timeline-detail p { font-size: 15px; }
   .career-section { margin-bottom: 25px; }
+  .career-section .section-heading { padding-top: 23px; margin-bottom: 23px; }
+  .career-section .section-heading h2 { font-size: 28px; }
   .work-row, .cv-page .work-row, .workbench .work-row { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-bottom: 28px; margin-bottom: 28px; }
   .work-media img, .cv-page .work-media img, .workbench .work-media img { height: auto; aspect-ratio: 5 / 3; }
   .work-copy h3 { font-size: 22px; }
