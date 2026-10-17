@@ -22,25 +22,22 @@
     {
       "years": "2025–",
       "organization": "Google",
-      "title": "Gemini · Post-Training & Evaluation",
-      "description": "Develops Gemini post-training for long-context video understanding using supervised fine-tuning (SFT) and reinforcement learning fine-tuning (RLFT). Builds customer-data evaluations to assess model quality and release readiness for Gemini on Google Cloud. Trains Gemini as a multimodal judge whose scores provide RL rewards for image and video generation models, including Nano Banana and Gemini Omni.",
-      "highlights": ["SFT", "RLFT", "release readiness", "multimodal judge"],
+      "title": "Machine Learning Engineer",
+      "description": "Improved long-tail video classification accuracy by 10% through Gemini SFT and repeated refinement of training data, enabling production deployment. Developed RLFT workflows for long-context video understanding and customer-data evaluations used to assess Gemini launch readiness on Google Cloud. Trained Gemini as a multimodal judge whose scores serve as RL rewards for Nano Banana and Gemini Omni.",
       "url": "https://www.google.com/"
     },
     {
       "years": "2022–2025",
       "organization": "Waymo",
-      "title": "Software Engineer · Machine Learning",
-      "description": "Developed perception foundation models and a Transformer-based onboard detector for autonomous driving. Used foundation-model auto-labeling and targeted data refinement to improve long-tail pedestrian and vehicle detection. Took models from data collection and training through launch-quality evaluation and fleet deployment.",
-      "highlights": ["perception foundation models", "auto-labeling", "fleet deployment"],
+      "title": "Machine Learning Engineer",
+      "description": "Used perception foundation models to relabel difficult freeway scenes, reducing vehicle false-negative and false-positive rates by 9.5% and 19%, respectively. This work helped unblock a freeway launch. Developed and deployed a Transformer-based detector for human–object interactions, resolving 10 of 12 safety-critical hard-braking cases.",
       "url": "https://waymo.com/"
     },
     {
       "years": "2016–2022",
       "organization": "Carnegie Mellon University",
-      "title": "Ph.D. · Advisor: Kris Kitani",
-      "description": "Developed methods for joint 3D human pose estimation and camera calibration in uncalibrated, wide-baseline camera networks. Combined person re-identification, tracking, and bundle adjustment for geometric estimation. Explored Transformer-based cross-camera association and learning camera pose from synthetic trajectories.",
-      "highlights": ["3D human pose estimation", "camera calibration", "bundle adjustment"],
+      "title": "Ph.D. in Electrical & Computer Engineering",
+      "description": "Developed a framework that jointly estimates 3D human pose and camera calibration from uncalibrated, widely separated cameras. Combined person re-identification, tracking, and bundle adjustment to reduce reprojection error by 53.2% over prior state-of-the-art methods. Also showed that camera pose could be learned from synthetic human trajectories and transferred to real videos without real-world training labels.",
       "url": "https://www.cs.cmu.edu/~yxu2/"
     }
   ],

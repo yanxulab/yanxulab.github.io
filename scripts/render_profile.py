@@ -89,12 +89,7 @@ def career(profile):
         if entry.get("url"):
             organization = link(entry["organization"], entry["url"])
         logo = f'<img class="career-logo" src="{url(entry["logo"])}" alt="" width="36" height="36" loading="lazy">' if entry.get("logo") else ""
-        description = esc(entry.get("description", ""))
-        highlights = sorted(entry.get("highlights", []), key=len, reverse=True)
-        if highlights:
-            pattern = r"(?<!\w)(?:" + "|".join(re.escape(esc(term)) for term in highlights) + r")(?!\w)"
-            description = re.sub(pattern, lambda match: f'<strong>{match.group()}</strong>', description)
-        rows.append(f'<li class="timeline-entry"><div class="timeline-date">{esc(entry["years"])}</div><div class="timeline-detail">{logo}<h3>{organization}</h3><p class="timeline-role">{esc(entry["title"])}</p><p>{description}</p></div></li>')
+        rows.append(f'<li class="timeline-entry"><div class="timeline-date">{esc(entry["years"])}</div><div class="timeline-detail">{logo}<h3>{organization}</h3><p class="timeline-role">{esc(entry["title"])}</p><p>{esc(entry.get("description", ""))}</p></div></li>')
     return '<ol class="timeline">' + "".join(rows) + "</ol>"
 
 
