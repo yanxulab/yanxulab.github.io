@@ -113,14 +113,14 @@ def works(profile, publications=True):
             media = f'<div class="media-panel" id="{preview_id}" data-media-panel="preview">{video}</div><div class="media-panel" id="{method_id}" data-media-panel="method">{media}</div><div class="media-toolbar"><div class="media-switch" role="group" aria-label="Choose Project Media" hidden><button type="button" data-media-choice="preview" aria-controls="{preview_id}" aria-pressed="true">Video Preview</button><button type="button" data-media-choice="method" aria-controls="{method_id}" aria-pressed="false">Method</button></div><span class="media-note">12s · Silent Excerpt</span></div>'
         row_class = "work-row" if media else "work-row work-row-text"
         if publications:
-            row_class += " publication-card"
+            row_class += " publication-row"
         media = f'<div class="work-media"{(" data-work-media" if preview else "")}>{media}</div>' if media else ""
         actions = "".join(link(action["label"] + " ↗", action["url"]) for action in item["links"])
-        actions = f'<div class="work-links">{actions}</div>' if actions or publications else ""
+        actions = f'<div class="work-links">{actions}</div>' if actions else ""
         title = item.get("paper_title") or item["title"]
         paper_url = next((action["url"] for action in item["links"] if action["label"].strip().casefold() == "paper"), None)
         heading = link(title, paper_url, "work-title-link") if paper_url else esc(title)
-        authors = f'<span class="work-authors">{esc(item.get("authors", ""))}</span>' if item.get("authors") or publications else ""
+        authors = f'<span class="work-authors">{esc(item["authors"])}</span>' if item.get("authors") else ""
         if len(item.get("authors", "")) > 180:
             names = item["authors"].split(", ")
             own_name = profile.get("name")
@@ -133,7 +133,7 @@ def works(profile, publications=True):
         if item.get("status"):
             venue += f' ({item["status"]})'
         metadata = f'<div class="work-meta">{authors}<span class="work-venue">{esc(venue)}</span></div>'
-        summary = f'<p class="work-summary">{esc(item["summary"])}</p>' if not publications else ""
+        summary = f'<p class="work-summary">{esc(item["summary"])}</p>'
         rows.append(f'<article class="{row_class}">{media}<div class="work-copy"><h3>{heading}</h3>{metadata}{summary}{actions}</div></article>')
     return "".join(rows)
 
@@ -168,7 +168,7 @@ def experiment(home=False):
 def home(profile):
     portrait = f'<img class="portrait" src="{url(profile["portrait"])}" alt="{esc(profile["portrait_alt"])}" width="220" height="220">' if profile.get("portrait") else '<div class="hero-note" aria-hidden="true"><span class="note-index">A working notebook</span><div class="tensor-motif"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>Build.<br>Measure.<br>Understand.</span></div>'
     timeline_title = "Experience" if profile.get("career") else "Current Focus"
-    scholar_link = f'<span class="section-aside">{link("Google Scholar ↗", profile["scholar"])}</span>' if profile.get("scholar") else ""
+    scholar_link = f'<span class="section-aside">{link("All Publications ↗", profile["scholar"])}</span>' if profile.get("scholar") else ""
     return f"""
 <div class="home-shell">
 <section class="intro" aria-labelledby="intro-name"><h1 id="intro-name">{esc(profile['name'])}</h1><div class="bio">{bio(profile)}</div><div class="intro-profile">{portrait}{socials(profile)}</div></section>

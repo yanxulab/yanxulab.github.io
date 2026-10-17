@@ -53,7 +53,7 @@
       "status": "Under Review",
       "title": "CamRM: Motion-grounded rating for camera-motion control",
       "paper_title": "CamRM: Towards Reliable Camera-Motion Control in Video Generation with Motion-Grounded Rating Models",
-      "summary": "Combines optical flow and global motion cues to assess camera-motion alignment and guide iterative refinement of generated videos.",
+      "summary": "Uses motion-grounded ratings to assess camera-motion alignment and guide iterative refinement of generated videos.",
       "image": "assets/research-camrm.png",
       "image_alt": "CamRM method overview: a motion-grounded rating model, a tool-calling variant, and a rating-guided video refinement loop.",
       "links": []
@@ -65,7 +65,7 @@
       "title": "CamPrompt: Camera-Controlled Video-to-Video Generation from Text Prompt",
       "paper_title": "CamPrompt: Camera-Controlled Video-to-Video Generation from Text Prompt",
       "authors": "Xinhao Liu, Kan Chen, Yuan Zhong, Pengchong Jin, Yan Xu, Zhuoyuan Chen, Ting Yu",
-      "summary": "Re-shoots a source video along a camera trajectory specified in natural language, using dense prompt conditioning and text–camera alignment. Enables intuitive camera control without requiring users to provide camera parameters or flow maps.",
+      "summary": "Controls camera motion in video-to-video generation through natural-language prompts, using dense prompt conditioning and text–camera alignment.",
       "image": "assets/research-camprompt.png",
       "image_alt": "CamPrompt architecture showing source and target video latents, a diffusion transformer, text-camera alignment, and dense aggregated temporal attention.",
       "links": [
@@ -82,7 +82,7 @@
       "title": "Co-Director: Agentic Generative Video Storytelling",
       "paper_title": "Co-Director: Agentic Generative Video Storytelling",
       "authors": "Yale Song, Yiwen Song, Nick Losier, Nathan Hodson, Ye Jin, Rhyard Zhu, Yan Xu, Daniel Vlasic, Carina Claassen, Jasmine Leon, Khanh G. LeViet, Zack Chomyn, Joe Timmons, Brett Slatkin, Scott Penberthy, Tomas Pfister",
-      "summary": "A hierarchical multi-agent framework combines multi-armed bandit search with multimodal self-refinement to generate videos with coherent narratives and consistent visual identities.",
+      "summary": "Combines hierarchical agents, multi-armed bandit search, and multimodal feedback to generate videos with coherent narratives and consistent visual identities.",
       "image": "assets/research-co-director.jpg",
       "image_alt": "Co-Director pipeline: a multi-armed bandit orchestrates pre-production, video generation, and post-production agents using multimodal judge feedback.",
       "preview": {
@@ -111,7 +111,7 @@
       "title": "PerceptionLM: World-Simulation as Pre-Training for Scalable Perception",
       "paper_title": "World-Simulation as Pre-Training for Scalable Perception",
       "authors": "Hao Xiang, Zhaoqi Leng, Alex Zihao Zhu, Kan Chen, Mengtian Li, Xia Chen, Yingwei Li, Tong He, Yanhui Liang, Junwen Yao, Yan Xu, Anant Subramanian, Cheolho Park, Runsheng Xu, Dragomir Anguelov, Mingxing Tan",
-      "summary": "Introduces PerceptionLM, using autoregressive world-model pre-training and a decoder adapter to transfer visual knowledge into dense perception tasks, including depth estimation and semantic segmentation.",
+      "summary": "Pre-trains PerceptionLM through autoregressive world simulation, then adapts it for perception tasks such as depth estimation and semantic segmentation.",
       "image": "assets/research-perceptionlm.png",
       "image_alt": "PerceptionLM architecture: autoregressive pre-training on video, depth, and semantic tokens, followed by decoder adaptation for dense and sparse perception targets.",
       "links": [
@@ -128,7 +128,7 @@
       "title": "Multi-Person 3D Pose Estimation from Multi-View Uncalibrated Depth Cameras",
       "paper_title": "Multi-Person 3D Pose Estimation from Multi-View Uncalibrated Depth Cameras",
       "authors": "Yu-Jhe Li, Yan Xu, Rawal Khirodkar, Jinhyung Park, Kris Kitani",
-      "summary": "Combines 3D re-identification with depth-guided camera calibration and triangulation to recover multi-person 3D poses from sparse, uncalibrated RGBD cameras.",
+      "summary": "Combines 3D re-identification, depth-guided calibration, and triangulation to estimate multi-person 3D poses from uncalibrated RGBD cameras.",
       "image": "assets/research-depth-pose.png",
       "image_alt": "RGBD camera views, projected 3D point clouds, and reconstructed human skeletons with estimated camera positions.",
       "links": [
@@ -145,7 +145,7 @@
       "title": "Multi-View Person Matching and 3D Pose Estimation with Arbitrary Uncalibrated Camera Networks",
       "paper_title": "Multi-View Person Matching and 3D Pose Estimation with Arbitrary Uncalibrated Camera Networks",
       "authors": "Yan Xu, Kris Kitani",
-      "summary": "Matches people across camera views with constrained clustering, then estimates 3D poses through triangulation and bundle adjustment. Works without known camera poses or scene-specific 3D training data.",
+      "summary": "Uses constrained clustering, triangulation, and bundle adjustment to recover multi-person 3D poses from arbitrary, uncalibrated camera networks.",
       "image": "assets/research-person-matching.jpg",
       "image_alt": "Multi-view images, recovered camera positions, and color-coded 3D human poses reconstructed in a shared scene.",
       "links": [
@@ -162,7 +162,7 @@
       "title": "3D human pose, without calibrated cameras",
       "paper_title": "Multi-View Multi-Person 3D Pose Estimation with Uncalibrated Camera Networks",
       "authors": "Yan Xu, Kris Kitani",
-      "summary": "Estimates multi-person 3D poses from uncalibrated camera networks, extending pose estimation beyond calibrated laboratory setups.",
+      "summary": "Estimates multi-person 3D poses from uncalibrated camera networks, extending pose estimation beyond controlled laboratory settings.",
       "image": "assets/research-uncalibrated-pose.png",
       "image_alt": "Paper figure illustrating multi-person 3D pose estimation from uncalibrated camera views.",
       "links": [
@@ -187,7 +187,7 @@
       "title": "Visio-Temporal Attention for Multi-Camera Multi-Target Association",
       "paper_title": "Visio-Temporal Attention for Multi-Camera Multi-Target Association",
       "authors": "Yu-Jhe Li, Xinshuo Weng, Yan Xu, Kris M. Kitani",
-      "summary": "Combines appearance and motion cues with Transformer attention to match pedestrians across uncalibrated cameras.",
+      "summary": "Combines appearance and motion cues with Transformer attention to associate people across uncalibrated cameras.",
       "image": "assets/research-visio-temporal.png",
       "image_alt": "Visio-Temporal Attention overview showing person tracklets and attention-based matching across multiple camera views.",
       "links": [

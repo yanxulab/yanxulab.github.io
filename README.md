@@ -60,7 +60,7 @@ Use only dates and roles you have confirmed. `url` and `logo` are optional.
 
 ## Add research or multimedia
 
-The homepage’s **Selected Work** lists papers newest first. **Google Scholar ↗** opens the profile URL configured in `scholar`. Each publication uses the same order: linked title, authors, venue/year/status, then action links. Summaries remain in `profile.json` but are currently hidden for publications. Entries without a confirmed author list retain an empty author row; entries without a `Paper` URL keep plain-text titles. Add entries to `work` in that order:
+The homepage’s **Selected Work** lists papers newest first. **All Publications ↗** opens the Google Scholar profile configured in `scholar`. Each publication shows its linked title, authors, venue/year/status, a short one- or two-sentence summary, then action links. Unconfirmed author lists are omitted; entries without a `Paper` URL keep plain-text titles. Add entries to `work` in that order:
 
 ```json
 {
@@ -86,7 +86,7 @@ When a paper has no figure yet, omit `image` and `image_alt`; it appears as a te
 
 For a playable video, add `"video": "assets/demo.mp4"`; `image` becomes its poster. Videos use controls and do not autoplay. For YouTube or Drive videos, add a `Video` link instead. Images enlarge when clicked. `paper_title` and `authors` are optional, so the same layout works for demos, talks, and visual projects.
 
-Publication cards group the figure and all metadata on a white surface. The whole card lifts on hover; figures do not move independently. Section rules are retained, and publications are separated by spacing and their surfaces. Figures open in a keyboard-accessible preview. Readers can zoom, open the original, or close with Esc; without JavaScript the image link opens the original directly. Hover motion respects reduced-motion preferences. Interface headings and short labels use Title Case; prose remains sentence case.
+Publications use open image-and-text rows, separated by whitespace without enclosing cards or article rules. Rules are reserved for sections. Figures retain a white frame and subtle hover feedback, and open in a keyboard-accessible preview. Readers can zoom, open the original, or close with Esc; without JavaScript the image link opens the original directly. Hover motion respects reduced-motion preferences. Interface headings and short labels use Title Case; prose remains sentence case.
 
 For a result video alongside a method figure, add `"preview": {"video": "assets/project-preview.mp4", "poster": "assets/project-poster.jpg"}`. The video/method switch keeps both available. The current Co-Director preview is a locally hosted, silent 12-second excerpt of the official demo, compressed to about 1 MB. It plays only while visible, pauses when offscreen, and respects reduced-motion, data-saving, and manual pause preferences. Without JavaScript, native video controls and the method figure both remain available. Long author lists can be expanded in place.
 
@@ -122,7 +122,6 @@ Existing article URLs are preserved. Their source outlines remain directly acces
 - `assets/site.js`: the interactive temperature demonstration.
 - `assets/figure-viewer.js`: accessible figure previews with zoom and keyboard controls.
 - `assets/favicon.svg`: the dark-navy tab icon with a white Y; the previous YX variant is retained in `assets/favicon-yx.svg`.
-- `assets/visitor-counter.js`: adds [Busuanzi](https://ibruce.info/2015/04/04/busuanzi/) visitor counts to the small, gray footer on `yanxu.io` and `www.yanxu.io`. The approximate cumulative `site_uv` count starts when tracking is enabled; it does not recover earlier traffic. Local previews make no counting requests. If the service is blocked, unavailable, or returns an invalid count, the footer keeps its welcome message. Production visitors send a request to `busuanzi.ibruce.info`, exposing their IP address, browser request information, and this site’s origin; the full page URL is omitted from the referrer.
 - `scripts/render_profile.py`: generates static HTML from the profile data.
 - `assets/portrait-original.jpg`: the original photo migrated from the supplied [CMU website](https://www.cs.cmu.edu/~yxu2/), preserved unchanged.
 - `assets/portrait-headshot.jpg`: a closer head-and-shoulders version used by the site; [editing details](docs/portrait-edit.md).

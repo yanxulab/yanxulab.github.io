@@ -94,11 +94,10 @@ a.social-icon:hover { color: var(--link-hover); }
 .career-section { --ink: #191c1a; --rule: #d9ded8; color: var(--ink); margin-bottom: 14px; }
 .career-section .timeline-detail { border-left-color: #d7dfd2; }
 .career-section .timeline-detail::before { background: #7c9970; }
-/* Section rules separate chapters; publication surfaces group individual works. */
-.selected-work { margin-bottom: 46px; }
-.work-row { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 26px; align-items: start; margin-bottom: 28px; }
+/* Open image/text rows use whitespace; rules are reserved for sections. */
+.selected-work { margin-bottom: 38px; }
+.work-row { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 30px; align-items: start; margin-bottom: 38px; }
 .work-row:last-child { margin-bottom: 0; }
-.publication-card { position: relative; padding: 18px; margin-bottom: 18px; border: 0; border-radius: 10px; background: #fff; box-shadow: 0 2px 8px #19231e09; transition: box-shadow .2s ease; }
 .work-row-text { display: block; }
 .work-row-text .work-copy { max-width: var(--reading-width); }
 .work-media { min-width: 0; }
@@ -120,19 +119,13 @@ a.social-icon:hover { color: var(--link-hover); }
 .work-venue { color: var(--ink); font-weight: 600; }
 .work-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 .work-links a { font-size: 15px; font-weight: 600; }
-.publication-card .work-meta { display: block; margin-bottom: 0; }
-.publication-card .work-authors { display: block; margin: 0 0 5px; font-size: 14px; line-height: 1.5; }
-.publication-card .work-authors:empty { min-height: 21px; }
-.publication-card .work-authors summary { margin: 0; }
-.publication-card .work-venue { display: block; font-size: 14px; line-height: 1.5; }
-.publication-card .work-links { min-height: 21px; margin-top: 8px; gap: 6px 17px; }
-.publication-card .work-links a { font-size: 14px; }
-.publication-card .work-image { border: 0; border-radius: 6px; box-shadow: none; transition: none; }
-.publication-card .work-image img { inset: 0; width: 100%; height: 100%; }
+.publication-row .work-meta { display: block; }
+.publication-row .work-authors { display: block; margin: 0 0 5px; }
+.publication-row .work-authors summary { margin: 0; }
+.publication-row .work-venue { display: block; }
 /* Real result previews sit in the same frame as their method figures. */
 .work-video-shell { position: relative; aspect-ratio: 5 / 3; overflow: hidden; border: 1px solid #e1e4df; border-radius: 5px; box-shadow: 0 2px 8px #19231e08; background: #101519; }
 .work-video-shell video { width: 100%; height: 100%; aspect-ratio: auto; object-fit: contain; border-radius: 0; background: transparent; }
-.publication-card .work-video-shell { border: 0; border-radius: 6px; box-shadow: none; }
 .media-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 .media-switch { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid #d9ded8; border-radius: 20px; }
 .media-switch button { font: inherit; font-size: 12px; line-height: 1.5; padding: 4px 9px; border: 0; border-radius: 15px; background: transparent; color: var(--muted); cursor: pointer; }
@@ -140,13 +133,10 @@ a.social-icon:hover { color: var(--link-hover); }
 .media-note { color: #62665f; font-size: 12px; }
 .work-media [hidden] { display: none !important; }
 @media (hover: hover) and (pointer: fine) {
-  .work-row:not(.publication-card) .work-image:hover, .work-row:not(.publication-card) .work-image:focus-visible { border-color: #9ab3cf; box-shadow: 0 16px 32px #19231e24; }
-  .publication-card:hover, .publication-card:focus-within { box-shadow: 0 12px 30px #19231e1a; }
+  .work-image:hover, .work-image:focus-visible { border-color: #9ab3cf; box-shadow: 0 16px 32px #19231e24; }
 }
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .work-row:not(.publication-card) .work-image:hover { transform: translateY(-5px) scale(1.015); }
-  .publication-card { transition: transform .2s ease, box-shadow .2s ease; }
-  .publication-card:hover, .publication-card:focus-within { transform: translateY(-4px); }
+  .work-image:hover { transform: translateY(-5px) scale(1.015); }
 }
 /* Native figure preview: fit the whole diagram, then zoom to inspect details. */
 html.figure-preview-open { overflow: hidden; }
@@ -256,9 +246,6 @@ pre, code { font-family: var(--mono); }
 .cv-page .work-summary { font-size: 16px; }
 .footer .nav-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: min(var(--page-width), calc(100% - 64px)); min-height: 74px; margin: auto; padding: 20px 0; border-top: 1px solid var(--rule); background: var(--paper); color: var(--muted); }
 .nav-footer .nav-footer-left, .nav-footer .nav-footer-right { flex: 0 0 auto; margin: 0; font-size: 14px; }
-.nav-footer .nav-footer-center { flex: 1; min-height: 0; margin: 0; font-size: 13px; line-height: 1.5; color: #62665f; text-align: center; }
-.nav-footer .nav-footer-center p { font-size: inherit; line-height: inherit; }
-.visitor-welcome { font-size: 13px; line-height: 1.5; font-variant-numeric: tabular-nums; }
 .nav-footer a { color: var(--link); }
 .nav-footer a:hover { color: var(--link-hover); }
 .nav-footer p { margin-bottom: 0; }
@@ -303,7 +290,6 @@ pre, code { font-family: var(--mono); }
   .timeline-detail p { font-size: 15px; }
   .career-section { margin-bottom: 25px; }
   .work-row, .cv-page .work-row, .workbench .work-row { grid-template-columns: minmax(0, 1fr); gap: 20px; }
-  .publication-card { padding: 15px; }
   .work-copy h3, .cv-page .work-copy h3 { font-size: 19px; }
   .work-copy .work-summary { font-size: 16px; }
   .figure-viewer { width: calc(100vw - 20px); max-height: calc(100dvh - 20px); }
@@ -338,7 +324,6 @@ pre, code { font-family: var(--mono); }
   body.essay-page main.content > p, body.essay-page main.content > ul, body.essay-page main.content section > p, body.essay-page main.content section > ul { font-size: 18px; }
   body.essay-page h2 { font-size: 27px; }
   .footer .nav-footer { width: calc(100% - 40px); flex-wrap: wrap; gap: 12px 20px; }
-  .nav-footer .nav-footer-center { order: 3; flex-basis: 100%; text-align: left; }
   .nav-footer .nav-footer-left, .nav-footer .nav-footer-right { font-size: 13px; text-align: left; }
 }
 @media (max-width: 360px) {
