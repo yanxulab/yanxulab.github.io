@@ -85,16 +85,6 @@ a.social-icon:hover { color: var(--green); }
 .timeline-detail .timeline-role { color: var(--ink); margin-bottom: 5px; }
 .career-logo { float: right; object-fit: contain; margin: 3px 0 10px 15px; }
 .career-section { margin-bottom: 30px; }
-/* Homepage experience emphasizes work; the CV retains the dated timeline. */
-.experience-list { list-style: none; padding: 0; margin: 0; }
-.experience-entry { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 32px; padding: 20px 0; border-bottom: 1px solid var(--rule); }
-.experience-entry:first-child { padding-top: 0; }
-.experience-entry:last-child { padding-bottom: 0; border-bottom: 0; }
-.experience-entry h3 { font-family: var(--sans); font-size: 20px; font-weight: 650; line-height: 1.5; margin: 0; }
-.experience-entry h3 a { color: var(--ink); font-weight: inherit; }
-.experience-detail p { font-size: 16px; line-height: 1.6; color: var(--ink); margin: 0; }
-.experience-detail .experience-role { font-size: 17px; font-weight: 500; margin-bottom: 5px; }
-.experience-detail .experience-role:last-child { margin-bottom: 0; }
 /* Selected work uses open image/text rows, without a wall of cards. */
 .selected-work { margin-bottom: 38px; }
 .selected-work .section-heading { margin-bottom: 24px; }
@@ -249,9 +239,6 @@ pre, code { font-family: var(--mono); }
   .timeline-detail h3 { font-size: 17px; }
   .timeline-detail p { font-size: 15px; }
   .career-section { margin-bottom: 25px; }
-  .experience-entry { grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 18px 0; }
-  .experience-entry h3 { font-size: 19px; }
-  .experience-detail p { font-size: 16px; }
   .work-row, .cv-page .work-row, .workbench .work-row { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-bottom: 28px; margin-bottom: 28px; }
   .work-media img, .cv-page .work-media img, .workbench .work-media img { height: auto; aspect-ratio: 5 / 3; }
   .work-copy h3 { font-size: 22px; }
