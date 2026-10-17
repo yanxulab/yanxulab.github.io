@@ -222,8 +222,11 @@ pre, code { font-family: var(--mono); }
 .cv-page .work-row { grid-template-columns: 235px minmax(0, 1fr); gap: 28px; }
 .cv-page .work-copy h3 { font-size: 21px; }
 .cv-page .work-summary { font-size: 16px; }
-.nav-footer { width: min(var(--page-width), calc(100% - 64px)); min-height: 74px; margin: auto; padding: 20px 0; border-top: 1px solid var(--rule); background: var(--paper); color: var(--muted); }
-.nav-footer-left, .nav-footer-right { font-size: 14px; }
+.footer .nav-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: min(var(--page-width), calc(100% - 64px)); min-height: 74px; margin: auto; padding: 20px 0; border-top: 1px solid var(--rule); background: var(--paper); color: var(--muted); }
+.nav-footer .nav-footer-left, .nav-footer .nav-footer-right { flex: 0 0 auto; margin: 0; font-size: 14px; }
+.nav-footer .nav-footer-center { flex: 1; min-height: 0; margin: 0; font-size: 13px; line-height: 1.5; color: #62665f; text-align: center; }
+.nav-footer .nav-footer-center p { font-size: inherit; line-height: inherit; }
+.visitor-welcome { font-size: 13px; line-height: 1.5; font-variant-numeric: tabular-nums; }
 .nav-footer a { color: var(--link); }
 .nav-footer a:hover { color: var(--link-hover); }
 .nav-footer p { margin-bottom: 0; }
@@ -299,8 +302,9 @@ pre, code { font-family: var(--mono); }
   body.essay-page #title-block-header h1 { font-size: 35px; }
   body.essay-page main.content > p, body.essay-page main.content > ul, body.essay-page main.content section > p, body.essay-page main.content section > ul { font-size: 18px; }
   body.essay-page h2 { font-size: 27px; }
-  .nav-footer { width: calc(100% - 40px); gap: 15px; }
-  .nav-footer-left, .nav-footer-right { font-size: 13px; text-align: left; }
+  .footer .nav-footer { width: calc(100% - 40px); flex-wrap: wrap; gap: 12px 20px; }
+  .nav-footer .nav-footer-center { order: 3; flex-basis: 100%; text-align: left; }
+  .nav-footer .nav-footer-left, .nav-footer .nav-footer-right { font-size: 13px; text-align: left; }
 }
 @media (max-width: 360px) {
   .intro h1 { font-size: 36px; letter-spacing: -1.2px; }

@@ -19,7 +19,7 @@ website:
   title: "Yan Xu"
   site-url: "https://yanxu.io"
   description: "Foundation models, post-training, reinforcement learning, and multimodal systems—from first principles to working code."
-  favicon: assets/favicon.svg
+  favicon: assets/favicon-yx.svg
   open-graph: true
   twitter-card: true
   search: false
@@ -37,6 +37,7 @@ website:
         text: CV
   page-footer:
     left: "© Yan Xu"
+    center: '<span class="visitor-welcome" data-visitor-welcome aria-live="polite">Welcome, and thanks for stopping by.</span>'
     right: "[GitHub ↗](https://github.com/yanxulab) · [Back to top ↑](#)"
 
 format:

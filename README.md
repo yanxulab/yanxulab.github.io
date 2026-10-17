@@ -58,7 +58,7 @@ Use only dates and roles you have confirmed. `url` and `logo` are optional.
 
 ## Add research or multimedia
 
-The homepage’s **Research** lists papers newest first, with a year beside each venue or submission status. Add entries to `work` in that order:
+The homepage’s **Selected Work** lists papers and projects newest first, with a year beside each venue or submission status. Add entries to `work` in that order:
 
 ```json
 {
@@ -116,6 +116,9 @@ Existing article URLs are preserved. Their source outlines remain directly acces
 
 - `styles.css`: shared design, responsive layouts, and article typography.
 - `assets/site.js`: the interactive temperature demonstration.
+- `assets/figure-viewer.js`: accessible figure previews with zoom and keyboard controls.
+- `assets/favicon-yx.svg`: the warm-white and blue YX tab icon; the original icon remains in `assets/favicon.svg`.
+- The footer includes a small, gray welcome message. It currently makes no visitor-counting or analytics requests.
 - `scripts/render_profile.py`: generates static HTML from the profile data.
 - `assets/portrait-original.jpg`: the original photo migrated from the supplied [CMU website](https://www.cs.cmu.edu/~yxu2/), preserved unchanged.
 - `assets/portrait-headshot.jpg`: a closer head-and-shoulders version used by the site; [editing details](docs/portrait-edit.md).

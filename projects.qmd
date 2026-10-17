@@ -1,6 +1,6 @@
 ---
-title: "Research"
-description: "Research papers and projects by Yan Xu."
+title: "Selected Work"
+description: "Selected papers and projects by Yan Xu."
 ---
 
 {{< include _includes/work.html >}}
