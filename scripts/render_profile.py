@@ -103,11 +103,14 @@ def works(profile):
         else:
             media = f'<a href="{url(item["image"])}" class="work-image" aria-label="Enlarge: {esc(item["title"])}">{image}<span class="image-expand" aria-hidden="true">↗</span></a>'
         actions = "".join(link(action["label"] + " ↗", action["url"]) for action in item["links"])
+        actions = f'<div class="work-links">{actions}</div>' if actions else ""
         title = item.get("paper_title") or item["title"]
         authors = f'<span class="work-authors">{esc(item["authors"])}</span>' if item.get("authors") else ""
         venue = item.get("venue") or item["kind"].removeprefix("Research · ")
+        if item.get("year"):
+            venue = f'{item["year"]} · {venue}'
         metadata = f'<p class="work-meta">{authors}<span class="work-venue">{esc(venue)}</span></p>'
-        rows.append(f'<article class="work-row"><div class="work-media">{media}</div><div class="work-copy"><h3>{esc(title)}</h3>{metadata}<p class="work-summary">{esc(item["summary"])}</p><div class="work-links">{actions}</div></div></article>')
+        rows.append(f'<article class="work-row"><div class="work-media">{media}</div><div class="work-copy"><h3>{esc(title)}</h3>{metadata}<p class="work-summary">{esc(item["summary"])}</p>{actions}</div></article>')
     return "".join(rows)
 
 
@@ -137,7 +140,7 @@ def home(profile):
 <div class="home-shell">
 <section class="intro" aria-labelledby="intro-name"><h1 id="intro-name">{esc(profile['name'])}</h1><div class="bio">{bio(profile)}</div><div class="intro-profile">{portrait}{socials(profile)}</div></section>
 <section class="career-section" aria-labelledby="career-title"><div class="section-heading"><h2 id="career-title">{timeline_title}</h2><span class="section-aside">{link('CV ↗', 'cv.qmd')}</span></div>{career(profile)}</section>
-<section class="selected-work" id="selected-work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Selected work</h2></div>{works(profile)}</section>
+<section class="selected-work" id="selected-work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Research</h2></div>{works(profile)}</section>
 <section class="writing-preview" aria-labelledby="writing-title"><div><p class="eyebrow">Writing</p><h2 id="writing-title">From the equations<br>to the code.</h2><p>Long-form notes on foundation models and post-training.<br>Currently taking shape, one experiment at a time.</p></div><a class="text-cta" href="/essays.html">Visit the blog <span aria-hidden="true">↗</span></a></section>
 </div>
 """
@@ -166,7 +169,7 @@ def blog(profile):
 def cv(profile):
     pdf = f'<p>{link("Download CV (PDF) ↓", profile["cv_pdf"], "text-cta")}</p>' if profile.get("cv_pdf") else '<p class="cv-status">A full CV will be added here.</p>'
     title = "Experience & education" if profile.get("career") else "Current focus"
-    return f'<div class="reading-shell"><header class="reading-header"><p class="eyebrow">Curriculum vitae</p><h1>{esc(profile["name"])}</h1>{pdf}</header><section class="cv-summary"><h2>Research interests</h2>{bio(profile)}{socials(profile)}</section><section class="cv-experience"><h2>{title}</h2>{career(profile)}</section><section class="cv-work"><h2>Selected work</h2>{works(profile)}</section></div>'
+    return f'<div class="reading-shell"><header class="reading-header"><p class="eyebrow">Curriculum vitae</p><h1>{esc(profile["name"])}</h1>{pdf}</header><section class="cv-summary"><h2>Research interests</h2>{bio(profile)}{socials(profile)}</section><section class="cv-experience"><h2>{title}</h2>{career(profile)}</section><section class="cv-work"><h2>Research</h2>{works(profile)}</section></div>'
 
 
 def main():

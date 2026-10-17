@@ -58,11 +58,13 @@ Use only dates and roles you have confirmed. `url` and `logo` are optional.
 
 ## Add research or multimedia
 
-The homepage’s **Selected work** is curated rather than exhaustive. Add entries to `work`:
+The homepage’s **Research** lists papers newest first, with a year beside each venue or submission status. Add entries to `work` in that order:
 
 ```json
 {
-  "kind": "Research · Venue Year",
+  "kind": "Research",
+  "year": 2026,
+  "venue": "Venue name",
   "title": "A short, readable headline",
   "paper_title": "The full paper title",
   "authors": "Author list",
@@ -75,6 +77,8 @@ The homepage’s **Selected work** is curated rather than exhaustive. Add entrie
   ]
 }
 ```
+
+For a manuscript under review, use `"venue": "Manuscript under review"` and `"links": []` until public links are available. Add the confirmed author list when ready. `year` and `venue` are optional for other types of work.
 
 For a playable video, add `"video": "assets/demo.mp4"`; `image` becomes its poster. Videos use controls and do not autoplay. For YouTube or Drive videos, add a `Video` link instead. Images enlarge when clicked. `paper_title` and `authors` are optional, so the same layout works for demos, talks, and visual projects.
 
@@ -111,7 +115,7 @@ Existing article URLs are preserved. Their source outlines remain directly acces
 - `scripts/render_profile.py`: generates static HTML from the profile data.
 - `assets/portrait-original.jpg`: the original photo migrated from the supplied [CMU website](https://www.cs.cmu.edu/~yxu2/), preserved unchanged.
 - `assets/portrait-headshot.jpg`: a closer head-and-shoulders version used by the site; [editing details](docs/portrait-edit.md).
-- `assets/research-*.png`: paper figures migrated from the CMU website.
+- `assets/research-*.png`: paper figures, including the supplied CamRM overview and figures migrated from the CMU website.
 - `notebooks/`: experiments; the Day 1 tokenizer notebook is linked from the blog.
 
 The existing experimental work and learning roadmap are retained. Do not publish unsupported closed-model architecture or parameter-count claims; distinguish official facts, estimates, and unknowns.

@@ -47,7 +47,20 @@
   ],
   "work": [
     {
+      "kind": "Research",
+      "year": 2026,
+      "venue": "Manuscript under review",
+      "title": "CamRM: Motion-grounded rating for camera-motion control",
+      "paper_title": "CamRM: Towards Reliable Camera-Motion Control in Video Generation with Motion-Grounded Rating Models",
+      "summary": "Combines optical flow and global motion cues to assess camera-motion alignment and guide iterative refinement of generated videos.",
+      "image": "assets/research-camrm.png",
+      "image_alt": "CamRM method overview: a motion-grounded rating model, a tool-calling variant, and a rating-guided video refinement loop.",
+      "links": []
+    },
+    {
       "kind": "Research · BMVC 2022",
+      "year": 2022,
+      "venue": "BMVC",
       "title": "3D human pose, without calibrated cameras",
       "paper_title": "Multi-View Multi-Person 3D Pose Estimation with Uncalibrated Camera Networks",
       "authors": "Yan Xu, Kris Kitani",
@@ -71,6 +84,8 @@
     },
     {
       "kind": "Research · CVPR 2021",
+      "year": 2021,
+      "venue": "CVPR",
       "title": "People as a bridge between cameras",
       "paper_title": "Wide-Baseline Multi-Camera Calibration using Person Re-Identification",
       "authors": "Yan Xu, Yu-Jhe Li, Xinshuo Weng, Kris Kitani",
@@ -86,6 +101,8 @@
     },
     {
       "kind": "Research · WACV 2020",
+      "year": 2020,
+      "venue": "WACV",
       "title": "Camera geometry from everyday motion",
       "paper_title": "Estimating 3D Camera Pose from 2D Pedestrian Trajectories",
       "authors": "Yan Xu, Vivek Roy, Kris Kitani",
