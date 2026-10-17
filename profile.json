@@ -48,8 +48,23 @@
   "work": [
     {
       "kind": "Research",
+      "year": 2027,
+      "venue": "WACV",
+      "title": "CamPrompt: Camera-Controlled Video-to-Video Generation from Text Prompt",
+      "paper_title": "CamPrompt: Camera-Controlled Video-to-Video Generation from Text Prompt",
+      "authors": "Xinhao Liu, Kan Chen, Yuan Zhong, Pengchong Jin, Yan Xu, Zhuoyuan Chen, Ting Yu",
+      "summary": "Camera-controlled video-to-video generation guided by text prompts.",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://openreview.net/pdf?id=kZf9CioKSM"
+        }
+      ]
+    },
+    {
+      "kind": "Research",
       "year": 2026,
-      "venue": "Manuscript under review",
+      "venue": "ICLR Under Review",
       "title": "CamRM: Motion-grounded rating for camera-motion control",
       "paper_title": "CamRM: Towards Reliable Camera-Motion Control in Video Generation with Motion-Grounded Rating Models",
       "summary": "Combines optical flow and global motion cues to assess camera-motion alignment and guide iterative refinement of generated videos.",
@@ -112,6 +127,23 @@
       ]
     },
     {
+      "kind": "Research",
+      "year": 2021,
+      "venue": "ICCV",
+      "title": "Visio-Temporal Attention for Multi-Camera Multi-Target Association",
+      "paper_title": "Visio-Temporal Attention for Multi-Camera Multi-Target Association",
+      "authors": "Yu-Jhe Li, Xinshuo Weng, Yan Xu, Kris M. Kitani",
+      "summary": "Combines appearance and motion cues with Transformer attention to match pedestrians across uncalibrated cameras.",
+      "image": "assets/research-visio-temporal.png",
+      "image_alt": "Visio-Temporal Attention overview showing person tracklets and attention-based matching across multiple camera views.",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Li_Visio-Temporal_Attention_for_Multi-Camera_Multi-Target_Association_ICCV_2021_paper.html"
+        }
+      ]
+    },
+    {
       "kind": "Research · CVPR 2021",
       "year": 2021,
       "venue": "CVPR",
@@ -125,31 +157,6 @@
         {
           "label": "Paper",
           "url": "https://arxiv.org/abs/2104.08568"
-        }
-      ]
-    },
-    {
-      "kind": "Research · WACV 2020",
-      "year": 2020,
-      "venue": "WACV",
-      "title": "Camera geometry from everyday motion",
-      "paper_title": "Estimating 3D Camera Pose from 2D Pedestrian Trajectories",
-      "authors": "Yan Xu, Vivek Roy, Kris Kitani",
-      "summary": "Estimates 3D camera pose from observed 2D pedestrian trajectories, using human motion as a geometric cue.",
-      "image": "assets/research-trajectories.png",
-      "image_alt": "Paper figure showing camera pose estimation from pedestrian trajectories.",
-      "links": [
-        {
-          "label": "Paper",
-          "url": "https://arxiv.org/abs/1912.05758"
-        },
-        {
-          "label": "Code",
-          "url": "https://github.com/yanxo/TrajCamPose"
-        },
-        {
-          "label": "Video",
-          "url": "https://drive.google.com/file/d/1W3tlBa9UTavN01dBwFjcWo2VesbtybEx/view"
         }
       ]
     }

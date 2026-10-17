@@ -80,6 +80,8 @@ The homepage’s **Research** lists papers newest first, with a year beside each
 
 For a manuscript under review, use `"venue": "Manuscript under review"` and `"links": []` until public links are available. Add the confirmed author list when ready. `year` and `venue` are optional for other types of work.
 
+When a paper has no figure yet, omit `image` and `image_alt`; it appears as a text entry. Add its own figure later to use the image-and-text layout.
+
 For a playable video, add `"video": "assets/demo.mp4"`; `image` becomes its poster. Videos use controls and do not autoplay. For YouTube or Drive videos, add a `Video` link instead. Images enlarge when clicked. `paper_title` and `authors` are optional, so the same layout works for demos, talks, and visual projects.
 
 Put smaller notebooks and figures in `experiments`; they appear under **From the workbench** on the blog page. Keep the homepage to a few strong examples.

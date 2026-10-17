@@ -97,11 +97,16 @@ def career(profile):
 def works(profile):
     rows = []
     for item in profile["work"]:
-        image = f'<img src="{url(item["image"])}" alt="{esc(item["image_alt"])}" loading="lazy" width="800" height="480">'
+        image = f'<img src="{url(item["image"])}" alt="{esc(item["image_alt"])}" loading="lazy" width="800" height="480">' if item.get("image") else ""
         if item.get("video"):
-            media = f'<video controls playsinline preload="none" poster="{url(item["image"])}" aria-label="{esc(item["title"])}"><source src="{url(item["video"])}" type="video/mp4">{image}</video>'
-        else:
+            poster = f' poster="{url(item["image"])}"' if item.get("image") else ""
+            media = f'<video controls playsinline preload="none"{poster} aria-label="{esc(item["title"])}"><source src="{url(item["video"])}" type="video/mp4">{image}</video>'
+        elif image:
             media = f'<a href="{url(item["image"])}" class="work-image" aria-label="Enlarge: {esc(item["title"])}">{image}<span class="image-expand" aria-hidden="true">↗</span></a>'
+        else:
+            media = ""
+        row_class = "work-row" if media else "work-row work-row-text"
+        media = f'<div class="work-media">{media}</div>' if media else ""
         actions = "".join(link(action["label"] + " ↗", action["url"]) for action in item["links"])
         actions = f'<div class="work-links">{actions}</div>' if actions else ""
         title = item.get("paper_title") or item["title"]
@@ -110,7 +115,7 @@ def works(profile):
         if item.get("year"):
             venue = f'{item["year"]} · {venue}'
         metadata = f'<p class="work-meta">{authors}<span class="work-venue">{esc(venue)}</span></p>'
-        rows.append(f'<article class="work-row"><div class="work-media">{media}</div><div class="work-copy"><h3>{esc(title)}</h3>{metadata}<p class="work-summary">{esc(item["summary"])}</p>{actions}</div></article>')
+        rows.append(f'<article class="{row_class}">{media}<div class="work-copy"><h3>{esc(title)}</h3>{metadata}<p class="work-summary">{esc(item["summary"])}</p>{actions}</div></article>')
     return "".join(rows)
 
 
