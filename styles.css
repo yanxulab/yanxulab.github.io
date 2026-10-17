@@ -5,9 +5,9 @@
   --muted: #4c4d47;
   --green: #26483c;
   --green-soft: #f2f1eb;
-  --link: #0969da;
-  --link-hover: #054da6;
-  --rule: #deded7;
+  --link: #245a9a;
+  --link-hover: #173f70;
+  --rule: #d9ded8;
   --page-width: 920px;
   --reading-width: 720px;
   --serif: Georgia, "Times New Roman", serif;
@@ -17,8 +17,8 @@
   --bs-body-color: var(--ink);
   --bs-link-color: var(--link);
   --bs-link-hover-color: var(--link-hover);
-  --bs-link-color-rgb: 9, 105, 218;
-  --bs-link-hover-color-rgb: 5, 77, 166;
+  --bs-link-color-rgb: 36, 90, 154;
+  --bs-link-hover-color-rgb: 23, 63, 112;
 }
 html { scroll-padding-top: 90px; }
 body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
@@ -76,28 +76,26 @@ a.social-icon:hover { color: var(--link-hover); }
 .tensor-motif i:nth-child(3n) { background: #64835f; }
 .portrait { display: block; flex-shrink: 0; width: 220px; height: 220px; aspect-ratio: 1; object-fit: cover; object-position: 50% 40%; border-radius: 50%; }
 /* Career timeline. */
-.section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding-top: 23px; border-top: 2px solid var(--ink); margin-bottom: 24px; }
-.section-heading h2 { font-family: var(--serif); font-weight: 700; font-size: 31px; letter-spacing: -.7px; line-height: 1.3; margin: 0; }
+.section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding-top: 22px; border-top: 1px solid var(--rule); margin-bottom: 20px; }
+.section-heading h2 { font-family: var(--sans); font-weight: 650; font-size: 29px; letter-spacing: -.7px; line-height: 1.3; margin: 0; }
 .section-aside { color: var(--ink); font-size: 14px; line-height: 1.6; }
 .timeline { list-style: none; margin: 0; padding: 0; }
-.timeline-entry { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 22px; padding: 0 0 20px; }
+.timeline-entry { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 22px; padding: 0 0 28px; }
+.timeline-entry:last-child { padding-bottom: 20px; }
 .timeline-date { color: var(--ink); font-size: 14px; font-family: var(--mono); padding-top: 4px; }
 .timeline-detail { border-left: 1px solid var(--rule); padding: 0 0 4px 25px; position: relative; }
 .timeline-detail::before { content: ""; width: 7px; height: 7px; background: var(--ink); border: 3px solid var(--paper); box-sizing: content-box; border-radius: 50%; position: absolute; top: 7px; left: -7px; }
 .timeline-detail h3 { font-family: var(--sans); font-size: 18px; font-weight: 650; margin: 0 0 6px; line-height: 1.5; }
-.timeline-detail p { color: var(--ink); font-size: 16px; line-height: 1.6; margin: 0; max-width: 570px; }
+.timeline-detail p { color: var(--ink); font-size: 16px; line-height: 1.6; margin: 0; max-width: 640px; }
 .timeline-detail .timeline-role { color: #62665f; margin-bottom: 5px; }
 .timeline-detail .timeline-impact { margin-top: 6px; }
 .career-logo { float: right; object-fit: contain; margin: 3px 0 10px 15px; }
-/* Keep Experience in the original timeline's type and spacing. */
+/* Experience timeline colors. */
 .career-section { --ink: #191c1a; --rule: #d9ded8; color: var(--ink); margin-bottom: 14px; }
-.career-section .section-heading { padding-top: 22px; border-top: 1px solid var(--rule); margin-bottom: 20px; }
-.career-section .section-heading h2 { font-family: var(--sans); font-size: 29px; font-weight: 650; }
 .career-section .timeline-detail { border-left-color: #d7dfd2; }
 .career-section .timeline-detail::before { background: #7c9970; }
 /* Selected work uses open image/text rows, without a wall of cards. */
 .selected-work { margin-bottom: 38px; }
-.selected-work .section-heading { margin-bottom: 24px; }
 .work-row { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 30px; align-items: center; padding-bottom: 0; margin-bottom: 38px; }
 .work-row:last-child { margin-bottom: 0; border-bottom: 0; padding-bottom: 0; }
 .work-media { min-width: 0; }
@@ -137,8 +135,8 @@ a.social-icon:hover { color: var(--link-hover); }
 .slider-labels { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; }
 .demo-note { color: var(--muted); font-size: 12px; line-height: 1.65; margin: 14px 0 0; }
 /* Writing invitation. */
-.writing-preview { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding-top: 30px; border-top: 1px solid var(--rule); }
-.writing-preview h2 { font-family: var(--serif); font-size: 34px; font-weight: 700; line-height: 1.25; letter-spacing: -.8px; margin: 0 0 15px; }
+.writing-preview { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding-top: 22px; border-top: 1px solid var(--rule); }
+.writing-preview h2 { font-family: var(--sans); font-size: 29px; font-weight: 650; line-height: 1.3; letter-spacing: -.7px; margin: 0 0 15px; }
 .writing-preview p:not(.eyebrow) { color: var(--ink); font-size: 16px; line-height: 1.6; margin-bottom: 0; }
 .text-cta { font-size: 16px; font-weight: 600; color: var(--link); white-space: nowrap; }
 .text-cta > span { display: inline-block; margin-left: 14px; }
@@ -248,8 +246,6 @@ pre, code { font-family: var(--mono); }
   .timeline-detail h3 { font-size: 17px; }
   .timeline-detail p { font-size: 15px; }
   .career-section { margin-bottom: 25px; }
-  .career-section .section-heading { padding-top: 23px; margin-bottom: 23px; }
-  .career-section .section-heading h2 { font-size: 28px; }
   .work-row, .cv-page .work-row, .workbench .work-row { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-bottom: 28px; margin-bottom: 28px; }
   .work-media img, .cv-page .work-media img, .workbench .work-media img { height: auto; aspect-ratio: 5 / 3; }
   .work-copy h3 { font-size: 22px; }
@@ -260,8 +256,8 @@ pre, code { font-family: var(--mono); }
   .experiment-intro > p:not(.eyebrow) { max-width: none; }
   .experiment-intro .experiment-formula { display: none; }
   .temperature-demo { padding: 22px; }
-  .writing-preview { align-items: flex-start; flex-direction: column; gap: 25px; padding-top: 33px; }
-  .writing-preview h2 { font-size: 31px; }
+  .writing-preview { align-items: flex-start; flex-direction: column; gap: 25px; padding-top: 23px; }
+  .writing-preview h2 { font-size: 28px; }
   .reading-header { padding-top: 46px; }
   .reading-header h1 { font-size: 43px; letter-spacing: -1.5px; }
   .reading-deck { font-size: 18px; }
