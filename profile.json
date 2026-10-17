@@ -8,7 +8,8 @@
     "Gemini": "https://deepmind.google/models/gemini/",
     "Nano Banana": "https://deepmind.google/models/gemini-image/",
     "Gemini Omni": "https://deepmind.google/models/gemini-omni/",
-    "Kris Kitani": "https://kriskitani.github.io/"
+    "Kris Kitani": "https://kriskitani.github.io/",
+    "perception foundation models": "https://waymo.com/blog/2024/10/ai-and-ml-at-waymo/"
   },
   "portrait": "assets/portrait-headshot.jpg",
   "portrait_alt": "Yan Xu, head-and-shoulders portrait",
@@ -23,24 +24,24 @@
       "years": "2025–",
       "organization": "Google",
       "title": "Software Engineer · Machine Learning",
-      "description": "Develops Gemini post-training for long-context video understanding and multimodal judging using SFT, RLFT, and customer-data evaluation.",
-      "impact": "Supports Gemini launches on Google Cloud and provides reinforcement learning rewards for improving image and video generation.",
+      "description": "I work on Gemini post-training for long-context video understanding, evaluation for enterprise customer applications, and multimodal judging for generative models.",
+      "impact": "Our work supports Gemini launches on Google Cloud and provides reward signals for training Nano Banana and Gemini Omni through reinforcement learning.",
       "url": "https://www.google.com/"
     },
     {
       "years": "2022–2025",
       "organization": "Waymo",
       "title": "Software Engineer · Machine Learning",
-      "description": "Developed foundation models and Transformer-based detectors for onboard perception, using auto-labeling to improve training data.",
-      "impact": "Improved detection of pedestrians and vehicles in challenging driving scenarios and enabled fleet deployment.",
+      "description": "I worked on perception foundation models and Transformer-based onboard detectors, using auto-labeling for iterative data refinement and model training.",
+      "impact": "Our work improved pedestrian and vehicle detection in challenging driving scenarios, including freeway driving, and supported fleet-wide deployment.",
       "url": "https://waymo.com/"
     },
     {
       "years": "2016–2022",
       "organization": "Carnegie Mellon University",
       "title": "Ph.D. · Computer Vision & Machine Learning",
-      "description": "Developed methods for joint 3D human pose estimation and camera calibration using person re-identification, tracking, and bundle adjustment.",
-      "impact": "Extended multi-person 3D pose estimation to uncalibrated camera networks beyond controlled laboratory settings.",
+      "description": "My Ph.D. research focused on joint 3D human pose estimation and camera calibration, using person re-identification and multi-view geometry.",
+      "impact": "I developed methods that extended multi-person 3D pose estimation to uncalibrated camera networks beyond controlled laboratory settings.",
       "url": "https://www.cs.cmu.edu/~yxu2/"
     }
   ],

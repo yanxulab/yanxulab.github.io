@@ -86,7 +86,7 @@ a.social-icon:hover { color: var(--link-hover); }
 .timeline-detail::before { content: ""; width: 7px; height: 7px; background: var(--ink); border: 3px solid var(--paper); box-sizing: content-box; border-radius: 50%; position: absolute; top: 7px; left: -7px; }
 .timeline-detail h3 { font-family: var(--sans); font-size: 18px; font-weight: 650; margin: 0 0 6px; line-height: 1.5; }
 .timeline-detail p { color: var(--ink); font-size: 16px; line-height: 1.6; margin: 0; max-width: 570px; }
-.timeline-detail .timeline-role { color: var(--ink); margin-bottom: 5px; }
+.timeline-detail .timeline-role { color: #62665f; margin-bottom: 5px; }
 .timeline-detail .timeline-impact { margin-top: 6px; }
 .career-logo { float: right; object-fit: contain; margin: 3px 0 10px 15px; }
 /* Keep Experience in the original timeline's type and spacing. */
