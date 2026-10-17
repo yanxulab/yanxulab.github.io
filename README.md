@@ -37,7 +37,7 @@ Edit **`profile.json`**, then preview or render. `_includes/home.html`, `blog.ht
 - `email`, `scholar`, `x`, `linkedin`: currently `null` as requested. Add the full profile URL, or just the address for `email`. Empty entries appear as non-clickable icons with a descriptive tooltip.
 - `github`: the existing lab GitHub link.
 - `cv_pdf`: a local PDF path or public URL. When filled, a download link appears on the CV page.
-- `career`: timeline entries, latest first. Dates and roles currently reflect the supplied CMU site; update them as needed.
+- `career`: entries, latest first. The homepage shows organizations, roles, and work summaries without dates; the CV also shows `years`. Google’s current role is left unspecified until more detail is supplied.
 
 Example career entry:
 

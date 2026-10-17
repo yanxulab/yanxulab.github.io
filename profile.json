@@ -1,8 +1,8 @@
 {
   "name": "Yan Xu",
   "bio": [
-    "My background is in 3D perception and multi-view geometry, spanning computer vision research and autonomous driving systems.",
-    "I received my Ph.D. at Carnegie Mellon University, advised by Kris Kitani, studying multi-person 3D pose estimation with uncalibrated camera networks. In December 2022, I joined Waymo to work on 3D object detection, from model development to deployment.",
+    "I’m currently at Google, with a background in 3D perception and multi-view geometry across computer vision research and autonomous driving systems.",
+    "Previously, I worked on 3D object detection at Waymo, from model development to deployment. I received my Ph.D. at Carnegie Mellon University, advised by Kris Kitani, studying multi-person 3D pose estimation with uncalibrated camera networks.",
     "I’m currently exploring foundation models, post-training, and reinforcement learning through hands-on implementations and controlled experiments."
   ],
   "portrait": "assets/portrait-headshot.jpg",
@@ -15,16 +15,22 @@
   "cv_pdf": null,
   "career": [
     {
-      "years": "2022",
+      "years": "2025–Present",
+      "organization": "Google",
+      "title": "Current",
+      "url": "https://www.google.com/"
+    },
+    {
+      "years": "2022–2025",
       "organization": "Waymo",
-      "title": "Joined as a Software Engineer",
+      "title": "Software Engineer",
       "description": "3D object detection for autonomous driving, spanning model development, training, evaluation, and deployment.",
       "url": "https://waymo.com/"
     },
     {
-      "years": "Ph.D.",
+      "years": "2016–2022",
       "organization": "Carnegie Mellon University",
-      "title": "Computer Vision · Advisor: Kris Kitani",
+      "title": "Ph.D. · Advisor: Kris Kitani",
       "description": "Multi-view geometry and multi-person 3D human pose estimation beyond calibrated laboratory settings.",
       "url": "https://www.cs.cmu.edu/~yxu2/"
     }

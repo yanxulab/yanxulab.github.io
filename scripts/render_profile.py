@@ -76,6 +76,21 @@ def career(profile):
     return '<ol class="timeline">' + "".join(rows) + "</ol>"
 
 
+def experience_summary(profile):
+    """Keep the homepage focused on organizations and work; dates live on the CV."""
+    if not profile.get("career"):
+        return career(profile)
+    rows = []
+    for entry in profile["career"]:
+        organization = esc(entry["organization"])
+        if entry.get("url"):
+            organization = link(entry["organization"], entry["url"])
+        role = f'<p class="experience-role">{esc(entry["title"])}</p>' if entry.get("title") else ""
+        description = f'<p>{esc(entry["description"])}</p>' if entry.get("description") else ""
+        rows.append(f'<li class="experience-entry"><h3>{organization}</h3><div class="experience-detail">{role}{description}</div></li>')
+    return '<ul class="experience-list">' + "".join(rows) + "</ul>"
+
+
 def works(profile):
     rows = []
     for item in profile["work"]:
@@ -118,7 +133,7 @@ def home(profile):
     return f"""
 <div class="home-shell">
 <section class="intro" aria-labelledby="intro-name"><div class="intro-copy"><h1 id="intro-name">{esc(profile['name'])}</h1><div class="bio">{bio(profile)}</div></div><div class="intro-profile">{portrait}{socials(profile)}</div></section>
-<section class="career-section" aria-labelledby="career-title"><div class="section-heading"><h2 id="career-title">{timeline_title}</h2><span class="section-aside">{link('CV ↗', 'cv.qmd')}</span></div>{career(profile)}</section>
+<section class="career-section" aria-labelledby="career-title"><div class="section-heading"><h2 id="career-title">{timeline_title}</h2><span class="section-aside">{link('CV ↗', 'cv.qmd')}</span></div>{experience_summary(profile)}</section>
 <section class="selected-work" id="selected-work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Selected work</h2></div>{works(profile)}</section>
 <section class="writing-preview" aria-labelledby="writing-title"><div><p class="eyebrow">Writing</p><h2 id="writing-title">From the equations<br>to the code.</h2><p>Long-form notes on foundation models and post-training.<br>Currently taking shape, one experiment at a time.</p></div><a class="text-cta" href="/essays.html">Visit the blog <span aria-hidden="true">↗</span></a></section>
 </div>
