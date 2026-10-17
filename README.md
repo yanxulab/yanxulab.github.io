@@ -115,7 +115,7 @@ Existing article URLs are preserved. Their source outlines remain directly acces
 - `scripts/render_profile.py`: generates static HTML from the profile data.
 - `assets/portrait-original.jpg`: the original photo migrated from the supplied [CMU website](https://www.cs.cmu.edu/~yxu2/), preserved unchanged.
 - `assets/portrait-headshot.jpg`: a closer head-and-shoulders version used by the site; [editing details](docs/portrait-edit.md).
-- `assets/research-*.png`: paper figures, including the supplied CamRM overview and figures migrated from the CMU website.
+- `assets/research-*`: paper figures, including the supplied CamRM overview, the official Co-Director pipeline, and figures migrated from the CMU website. [Figure sources](docs/research-assets.md).
 - `notebooks/`: experiments; the Day 1 tokenizer notebook is linked from the blog.
 
 The existing experimental work and learning roadmap are retained. Do not publish unsupported closed-model architecture or parameter-count claims; distinguish official facts, estimates, and unknowns.
