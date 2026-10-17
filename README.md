@@ -105,7 +105,9 @@ Existing article URLs are preserved. Their source outlines remain directly acces
 - `styles.css`: shared design, responsive layouts, and article typography.
 - `assets/site.js`: the interactive temperature demonstration.
 - `scripts/render_profile.py`: generates static HTML from the profile data.
-- `assets/portrait.jpg`, `assets/research-*.png`: migrated from the supplied [CMU website](https://www.cs.cmu.edu/~yxu2/).
+- `assets/portrait-original.jpg`: the original photo migrated from the supplied [CMU website](https://www.cs.cmu.edu/~yxu2/), preserved unchanged.
+- `assets/portrait-headshot.jpg`: a closer head-and-shoulders version used by the site; [editing details](docs/portrait-edit.md).
+- `assets/research-*.png`: paper figures migrated from the CMU website.
 - `notebooks/`: experiments; the Day 1 tokenizer notebook is linked from the blog.
 
 The existing experimental work and learning roadmap are retained. Do not publish unsupported closed-model architecture or parameter-count claims; distinguish official facts, estimates, and unknowns.

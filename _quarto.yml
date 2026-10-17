@@ -22,8 +22,8 @@ website:
   search: false
   navbar:
     title: "Home"
-    background: "#ffffff"
-    foreground: "#191c1a"
+    background: "#faf9f6"
+    foreground: "#20211e"
     right:
       - href: index.qmd#selected-work
         text: Work

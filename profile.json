@@ -1,12 +1,12 @@
 {
   "name": "Yan Xu",
   "bio": [
-    "I work on learning systems, from 3D perception to foundation models.",
-    "I completed my Ph.D. at Carnegie Mellon University, advised by Kris Kitani, with a focus on multi-view geometry and 3D human pose estimation. In December 2022, I joined Waymo to work on 3D perception for autonomous driving.",
-    "I’m now exploring foundation models, post-training, and reinforcement learning through hands-on implementations and experiments."
+    "My background is in 3D perception and multi-view geometry, spanning computer vision research and autonomous driving systems.",
+    "I received my Ph.D. at Carnegie Mellon University, advised by Kris Kitani, studying multi-person 3D pose estimation with uncalibrated camera networks. In December 2022, I joined Waymo to work on 3D object detection, from model development to deployment.",
+    "I’m currently exploring foundation models, post-training, and reinforcement learning through hands-on implementations and controlled experiments."
   ],
-  "portrait": "assets/portrait.jpg",
-  "portrait_alt": "Yan Xu",
+  "portrait": "assets/portrait-headshot.jpg",
+  "portrait_alt": "Yan Xu, head-and-shoulders portrait",
   "email": null,
   "scholar": null,
   "github": "https://github.com/yanxulab",
@@ -35,7 +35,7 @@
       "title": "3D human pose, without calibrated cameras",
       "paper_title": "Multi-View Multi-Person 3D Pose Estimation with Uncalibrated Camera Networks",
       "authors": "Yan Xu, Kris Kitani",
-      "summary": "Reconstructing multiple people in 3D beyond a calibrated camera setup. A study at the intersection of human pose estimation and multi-view geometry.",
+      "summary": "Estimates multi-person 3D poses from uncalibrated camera networks, extending pose estimation beyond calibrated laboratory setups.",
       "image": "assets/research-uncalibrated-pose.png",
       "image_alt": "Paper figure illustrating multi-person 3D pose estimation from uncalibrated camera views.",
       "links": [
@@ -58,7 +58,7 @@
       "title": "People as a bridge between cameras",
       "paper_title": "Wide-Baseline Multi-Camera Calibration using Person Re-Identification",
       "authors": "Yan Xu, Yu-Jhe Li, Xinshuo Weng, Kris Kitani",
-      "summary": "Using person re-identification to connect camera views and estimate their relative geometry, even across wide baselines.",
+      "summary": "Uses person re-identification to establish cross-view correspondences for wide-baseline camera calibration.",
       "image": "assets/research-camera-calibration.png",
       "image_alt": "Paper figure connecting people observed across camera views for wide-baseline calibration.",
       "links": [
@@ -73,7 +73,7 @@
       "title": "Camera geometry from everyday motion",
       "paper_title": "Estimating 3D Camera Pose from 2D Pedestrian Trajectories",
       "authors": "Yan Xu, Vivek Roy, Kris Kitani",
-      "summary": "What can the paths of walking pedestrians tell us about a camera? Estimating 3D camera pose using observed 2D trajectories.",
+      "summary": "Estimates 3D camera pose from observed 2D pedestrian trajectories, using human motion as a geometric cue.",
       "image": "assets/research-trajectories.png",
       "image_alt": "Paper figure showing camera pose estimation from pedestrian trajectories.",
       "links": [

@@ -85,10 +85,11 @@ def works(profile):
         else:
             media = f'<a href="{url(item["image"])}" class="work-image" aria-label="Enlarge: {esc(item["title"])}">{image}<span class="image-expand" aria-hidden="true">↗</span></a>'
         actions = "".join(link(action["label"] + " ↗", action["url"]) for action in item["links"])
-        paper_title = f'<p class="paper-title">{esc(item["paper_title"])}</p>' if item.get("paper_title") else ""
-        metadata = f'<p class="work-meta">{esc(item["authors"])}</p>' if item.get("authors") else ""
-        venue = f'<p class="work-venue">{esc(item["venue"])}</p>' if item.get("venue") else ""
-        rows.append(f'<article class="work-row"><div class="work-media">{media}</div><div class="work-copy"><p class="eyebrow">{esc(item["kind"])}</p><h3>{esc(item["title"])}</h3>{paper_title}{metadata}{venue}<p>{esc(item["summary"])}</p><div class="work-links">{actions}</div></div></article>')
+        title = item.get("paper_title") or item["title"]
+        authors = f'<span class="work-authors">{esc(item["authors"])}</span>' if item.get("authors") else ""
+        venue = item.get("venue") or item["kind"].removeprefix("Research · ")
+        metadata = f'<p class="work-meta">{authors}<span class="work-venue">{esc(venue)}</span></p>'
+        rows.append(f'<article class="work-row"><div class="work-media">{media}</div><div class="work-copy"><h3>{esc(title)}</h3>{metadata}<p class="work-summary">{esc(item["summary"])}</p><div class="work-links">{actions}</div></div></article>')
     return "".join(rows)
 
 
