@@ -94,7 +94,7 @@ a.social-icon:hover { color: var(--link-hover); }
 .career-section { --ink: #191c1a; --rule: #d9ded8; color: var(--ink); margin-bottom: 14px; }
 .career-section .timeline-detail { border-left-color: #d7dfd2; }
 .career-section .timeline-detail::before { background: #7c9970; }
-/* Publication layers use whitespace and shadows; rules are reserved for sections. */
+/* Open publication rows use alignment and whitespace; rules separate sections. */
 .selected-work { margin-bottom: 38px; }
 .work-row { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 30px; align-items: start; margin-bottom: 38px; }
 .work-row:last-child { margin-bottom: 0; }
@@ -115,12 +115,12 @@ a.social-icon:hover { color: var(--link-hover); }
 .work-venue { color: var(--ink); font-weight: 600; }
 .work-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 .work-links a { font-size: 15px; font-weight: 600; }
-.publication-row { position: relative; isolation: isolate; }
+.publication-row { margin-bottom: 50px; }
 .publication-row .work-meta { display: block; }
 .publication-row .work-authors { display: block; margin: 0 0 5px; }
 .publication-row .work-venue { display: block; }
 .publication-row .work-summary { color: var(--muted); margin: 10px 0 0; }
-.publication-row :is(.work-image, .work-video-shell) { transition: none; }
+.publication-row :is(.work-image, .work-video-shell) { border-color: #e6e8eb; border-radius: 2px; box-shadow: none; transition: none; }
 /* Real result previews sit in the same frame as their method figures. */
 .work-video-shell { position: relative; aspect-ratio: 5 / 3; overflow: hidden; border: 1px solid #e1e4df; border-radius: 5px; box-shadow: 0 2px 8px #19231e08; background: #101519; }
 .work-video-shell video { width: 100%; height: 100%; aspect-ratio: auto; object-fit: contain; border-radius: 0; background: transparent; }
@@ -130,11 +130,6 @@ a.social-icon:hover { color: var(--link-hover); }
 .media-switch button[aria-pressed="true"] { color: var(--link-hover); background: #e8eef5; }
 .media-note { color: #62665f; font-size: 12px; }
 .work-media [hidden] { display: none !important; }
-/* Two static layers remain visible on desktop and touch devices. */
-@media screen {
-  .publication-row::before { content: ""; position: absolute; inset: -14px; z-index: -1; border-radius: 8px; background: var(--paper); box-shadow: 0 10px 28px #17203317; pointer-events: none; }
-  .publication-row :is(.work-image, .work-video-shell) { border-color: #b2c2d4; box-shadow: 0 12px 26px #19231e20; }
-}
 @media screen and (hover: hover) and (pointer: fine) {
   .work-row:not(.publication-row) .work-image:is(:hover, :focus-visible) { border-color: #9ab3cf; box-shadow: 0 16px 32px #19231e24; }
 }
@@ -158,11 +153,11 @@ html.figure-preview-open { overflow: hidden; }
 /* A functional probability experiment. */
 .experiment-section { display: grid; grid-template-columns: 1fr 1.15fr; gap: 36px; padding: 30px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .experiment-intro { align-self: center; }
-.experiment-intro h2 { font-family: var(--serif); font-size: 31px; font-weight: 400; line-height: 1.24; letter-spacing: -.75px; margin: 0 0 17px; }
+.experiment-intro :is(h2, h3) { font-family: var(--serif); font-size: 31px; font-weight: 400; line-height: 1.24; letter-spacing: -.75px; margin: 0 0 17px; }
 .experiment-intro > p:not(.eyebrow) { font-size: 16px; line-height: 1.6; color: var(--ink); max-width: 350px; }
 .experiment-intro .experiment-formula { margin: 19px 0 0; }
 .experiment-formula code { background: transparent; color: var(--green); padding: 0; font-size: 13px; }
-.home-page .experiment-section { border-bottom: 0; margin-bottom: 8px; padding: 30px 0; }
+.home-page .experiment-section { border: 0; margin-bottom: 0; padding: 6px 0 30px; }
 .experiment-links { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 20px; }
 .experiment-links a { font-size: 15px; font-weight: 600; }
 .temperature-demo { background: var(--green-soft); border-radius: 2px; padding: 24px 27px 20px; }
@@ -302,7 +297,7 @@ pre, code { font-family: var(--mono); }
   .figure-full-image { max-height: calc(100dvh - 190px); }
   .selected-work { margin-bottom: 37px; }
   .experiment-section { grid-template-columns: minmax(0, 1fr); gap: 22px; padding: 28px 0; }
-  .experiment-intro h2 { font-size: 29px; }
+  .experiment-intro :is(h2, h3) { font-size: 29px; }
   .experiment-intro > p:not(.eyebrow) { max-width: none; }
   .experiment-intro .experiment-formula { display: none; }
   .temperature-demo { padding: 22px; }

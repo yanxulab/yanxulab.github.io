@@ -60,7 +60,7 @@ Use only dates and roles you have confirmed. `url` and `logo` are optional.
 
 ## Add research or multimedia
 
-The homepage’s **Selected Work** lists papers newest first. **All Publications ↗** opens the Google Scholar profile configured in `scholar`. Each publication shows its linked title, full author list, venue/year/status, action links, then a short one- or two-sentence summary in the same gray as the authors. Unconfirmed author lists are omitted; entries without a `Paper` URL keep plain-text titles. Add entries to `work` in that order:
+The homepage follows **Bio → Experience → Selected Work → Tech Blog**. The temperature experiment sits in Tech Blog after the publications. **Selected Work** lists papers newest first, and **All Publications ↗** opens the Google Scholar profile configured in `scholar`. Each publication shows its linked title, full author list, venue/year/status, action links, then a short one- or two-sentence summary in the same gray as the authors. Unconfirmed author lists are omitted; entries without a `Paper` URL keep plain-text titles. Add entries to `work` in that order:
 
 ```json
 {
@@ -86,7 +86,7 @@ When a paper has no figure yet, omit `image` and `image_alt`; it appears as a te
 
 For a playable video, add `"video": "assets/demo.mp4"`; `image` becomes its poster. Videos use controls and do not autoplay. For YouTube or Drive videos, add a `Video` link instead. Images enlarge when clicked. `paper_title` and `authors` are optional, so the same layout works for demos, talks, and visual projects.
 
-Publications use image-and-text rows separated by whitespace, with no article rules. Rules are reserved for sections. Each entry has a permanent soft shadow, and its figure or video has a second shadow for depth. Both layers remain static on desktop and touch devices, without hover movement. Figures retain a white frame and open in a keyboard-accessible preview. Readers can zoom, open the original, or close with Esc; without JavaScript the image link opens the original directly. Interface headings and short labels use Title Case; prose remains sentence case.
+Publications use open image-and-text rows with 50px between entries and no enclosing cards, shadows, or article rules. Rules are reserved for sections. Figures and videos have the same thin, light-gray border and remain static on desktop and touch devices. Figures retain a white frame and open in a keyboard-accessible preview. Readers can zoom, open the original, or close with Esc; without JavaScript the image link opens the original directly. Interface headings and short labels use Title Case; prose remains sentence case.
 
 For a result video alongside a method figure, add `"preview": {"video": "assets/project-preview.mp4", "poster": "assets/project-poster.jpg"}`. The video/method switch keeps both available. The current Co-Director preview is a locally hosted, silent 12-second excerpt of the official demo, compressed to about 1 MB. It plays only while visible, pauses when offscreen, and respects reduced-motion, data-saving, and manual pause preferences. Without JavaScript, native video controls and the method figure both remain available. Author lists are always shown in full.
 

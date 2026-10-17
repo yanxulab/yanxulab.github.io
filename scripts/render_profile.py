@@ -154,7 +154,7 @@ EXPERIMENT = """
 
 def experiment(home=False):
     if home:
-        intro = '<p class="eyebrow">Notes &amp; Experiments</p><h2 id="experiment-title">From the Equations<br>to the Code.</h2><p>I learn by building. Small, hands-on experiments in foundation models and post-training.</p><p>Try the temperature slider to see how a model’s next-token probabilities change.</p><div class="experiment-links">' + link('Visit the Blog ↗', 'essays.qmd') + link('Tokenizer Notebook ↗', 'https://colab.research.google.com/github/yanxulab/yanxulab.github.io/blob/main/notebooks/01_tokenizer_embeddings.ipynb') + '</div>'
+        intro = '<h3 id="experiment-title">From the Equations<br>to the Code.</h3><p>I learn by building. Small, hands-on experiments in foundation models and post-training.</p><p>Try the temperature slider to see how a model’s next-token probabilities change.</p><div class="experiment-links">' + link('Tokenizer Notebook ↗', 'https://colab.research.google.com/github/yanxulab/yanxulab.github.io/blob/main/notebooks/01_tokenizer_embeddings.ipynb') + '</div>'
     else:
         intro = '<p class="eyebrow">Interactive Explanation</p><h2 id="experiment-title">How Temperature Changes Sampling</h2><p>Adjust the temperature to see how fixed model scores become next-token probabilities.</p><p class="experiment-formula"><code>p = softmax(logits / T)</code></p>'
     return EXPERIMENT.format(intro=intro)
@@ -167,9 +167,9 @@ def home(profile):
     return f"""
 <div class="home-shell">
 <section class="intro" aria-labelledby="intro-name"><h1 id="intro-name">{esc(profile['name'])}</h1><div class="bio">{bio(profile)}</div><div class="intro-profile">{portrait}{socials(profile)}</div></section>
-{experiment(home=True)}
-<section class="selected-work" id="selected-work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Selected Work</h2>{scholar_link}</div>{works(profile)}</section>
 <section class="career-section" aria-labelledby="career-title"><div class="section-heading"><h2 id="career-title">{timeline_title}</h2><span class="section-aside">{link('CV ↗', 'cv.qmd')}</span></div>{career(profile)}</section>
+<section class="selected-work" id="selected-work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Selected Work</h2>{scholar_link}</div>{works(profile)}</section>
+<section class="tech-blog-section" id="tech-blog" aria-labelledby="blog-title"><div class="section-heading"><h2 id="blog-title">Tech Blog</h2><span class="section-aside">{link('Visit the Blog ↗', 'essays.qmd')}</span></div>{experiment(home=True)}</section>
 </div>
 """
 
