@@ -108,7 +108,7 @@ a.social-icon:hover { color: var(--link-hover); }
 .image-expand svg { width: 15px; height: 15px; }
 .work-media video { display: block; width: 100%; aspect-ratio: 5 / 3; object-fit: contain; border-radius: 4px; background: #f2f5f0; }
 .work-copy h3 { font-size: 22px; font-weight: 650; line-height: 1.35; letter-spacing: -.3px; margin: 0 0 10px; }
-.work-title-link { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.work-title-link { color: var(--link); font-weight: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .work-title-link:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
 .work-copy > p { font-size: 17px; line-height: 1.6; color: var(--ink); margin: 0 0 12px; }
 .work-copy .work-meta { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; line-height: 1.5; color: var(--muted); margin-bottom: 12px; }
