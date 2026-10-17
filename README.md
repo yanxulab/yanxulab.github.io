@@ -36,7 +36,7 @@ Edit **`profile.json`**, then preview or render. `_includes/home.html`, `blog.ht
 - `bio_links`: optional name-to-URL mapping. Each name is linked only at its first occurrence in the bio; longer names take precedence, so `Gemini Omni` stays a single link.
 - `portrait`: an image path in `assets/`, or `null` for the notebook motif.
 - `email`, `scholar`, `x`, `linkedin`: add the full profile URL, or just the address for `email`. Empty entries appear as non-clickable icons with a descriptive tooltip. Icons are ordered Google Scholar, Email, LinkedIn, GitHub, X.
-- `github`: the existing lab GitHub link.
+- `github`: the profile or repository URL used by the GitHub icon.
 - `cv_pdf`: a local PDF path or public URL. When filled, a download link appears on the CV page.
 - `career`: timeline entries, latest first. Both the homepage and CV show `years`, organizations, roles, and work summaries. Google’s current role is left unspecified until more detail is supplied.
 

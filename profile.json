@@ -1,7 +1,8 @@
 {
   "name": "Yan Xu",
   "bio": [
-    "Yan Xu works on multimodal AI at Google. He focuses on Gemini post-training for long-context video understanding and on training Gemini as a multimodal judge to guide reinforcement learning for Nano Banana and Gemini Omni. Previously at Waymo, he worked on perception foundation models and onboard perception systems for autonomous driving. He received his Ph.D. in Electrical and Computer Engineering from Carnegie Mellon University, advised by Kris Kitani, where he studied in-the-wild 3D human pose estimation."
+    "Yan Xu works on multimodal AI at Google. He focuses on Gemini post-training for long-context video understanding and on training Gemini as a multimodal judge to guide reinforcement learning for Nano Banana and Gemini Omni.",
+    "Previously at Waymo, he worked on perception foundation models and onboard perception systems for autonomous driving. He received his Ph.D. in Electrical and Computer Engineering from Carnegie Mellon University, advised by Kris Kitani, where he studied in-the-wild 3D human pose estimation."
   ],
   "bio_links": {
     "Gemini": "https://deepmind.google/models/gemini/",
@@ -13,7 +14,7 @@
   "portrait_alt": "Yan Xu, head-and-shoulders portrait",
   "email": "xuyan.efg@gmail.com",
   "scholar": "https://scholar.google.com/citations?user=U_R0PWEAAAAJ&hl=en",
-  "github": "https://github.com/yanxulab",
+  "github": "https://github.com/yanxulab/UncaliPose",
   "x": null,
   "linkedin": "https://www.linkedin.com/in/yan-xu-495406a6/",
   "cv_pdf": null,
@@ -59,7 +60,7 @@
         },
         {
           "label": "Code",
-          "url": "https://github.com/yan293/UncaliPose"
+          "url": "https://github.com/yanxulab/UncaliPose"
         }
       ]
     },
