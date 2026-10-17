@@ -94,7 +94,7 @@ a.social-icon:hover { color: var(--link-hover); }
 .career-section { --ink: #191c1a; --rule: #d9ded8; color: var(--ink); margin-bottom: 14px; }
 .career-section .timeline-detail { border-left-color: #d7dfd2; }
 .career-section .timeline-detail::before { background: #7c9970; }
-/* Open image/text rows use whitespace; rules are reserved for sections. */
+/* Publication layers use whitespace and shadows; rules are reserved for sections. */
 .selected-work { margin-bottom: 38px; }
 .work-row { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 30px; align-items: start; margin-bottom: 38px; }
 .work-row:last-child { margin-bottom: 0; }
@@ -112,18 +112,15 @@ a.social-icon:hover { color: var(--link-hover); }
 .work-title-link:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
 .work-copy > p { font-size: 17px; line-height: 1.6; color: var(--ink); margin: 0 0 12px; }
 .work-copy .work-meta { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; line-height: 1.5; color: var(--muted); margin-bottom: 12px; }
-.work-meta details { flex-basis: 100%; }
-.work-authors summary { cursor: pointer; }
-.work-authors summary::marker { color: var(--link); }
-.work-authors > p { margin: 8px 0 0; font: inherit; }
 .work-venue { color: var(--ink); font-weight: 600; }
 .work-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 .work-links a { font-size: 15px; font-weight: 600; }
-.publication-row .work-meta { display: block; }
 .publication-row { position: relative; isolation: isolate; }
+.publication-row .work-meta { display: block; }
 .publication-row .work-authors { display: block; margin: 0 0 5px; }
-.publication-row .work-authors summary { margin: 0; }
 .publication-row .work-venue { display: block; }
+.publication-row .work-summary { color: var(--muted); margin: 10px 0 0; }
+.publication-row :is(.work-image, .work-video-shell) { transition: none; }
 /* Real result previews sit in the same frame as their method figures. */
 .work-video-shell { position: relative; aspect-ratio: 5 / 3; overflow: hidden; border: 1px solid #e1e4df; border-radius: 5px; box-shadow: 0 2px 8px #19231e08; background: #101519; }
 .work-video-shell video { width: 100%; height: 100%; aspect-ratio: auto; object-fit: contain; border-radius: 0; background: transparent; }
@@ -133,21 +130,16 @@ a.social-icon:hover { color: var(--link-hover); }
 .media-switch button[aria-pressed="true"] { color: var(--link-hover); background: #e8eef5; }
 .media-note { color: #62665f; font-size: 12px; }
 .work-media [hidden] { display: none !important; }
-/* Two hover layers: the complete entry, then its image or video frame. */
+/* Two static layers remain visible on desktop and touch devices. */
+@media screen {
+  .publication-row::before { content: ""; position: absolute; inset: -14px; z-index: -1; border-radius: 8px; background: var(--paper); box-shadow: 0 10px 28px #17203317; pointer-events: none; }
+  .publication-row :is(.work-image, .work-video-shell) { border-color: #b2c2d4; box-shadow: 0 12px 26px #19231e20; }
+}
 @media screen and (hover: hover) and (pointer: fine) {
-  .work-image:hover, .work-image:focus-visible { border-color: #9ab3cf; box-shadow: 0 16px 32px #19231e24; }
-  .publication-row::before { content: ""; position: absolute; inset: -14px; z-index: -1; border-radius: 8px; background: var(--paper); box-shadow: 0 10px 28px #17203317; opacity: 0; pointer-events: none; transition: opacity .2s ease; }
-  .publication-row:hover, .publication-row:focus-within { z-index: 1; }
-  .publication-row:hover::before, .publication-row:focus-within::before { opacity: 1; }
-  .publication-row .work-video-shell { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
-  .publication-row:is(:hover, :focus-within) :is(.work-image, .work-video-shell) { border-color: #b2c2d4; box-shadow: 0 6px 18px #17203317; }
-  .publication-row .work-image:is(:hover, :focus-visible), .publication-row .work-video-shell:is(:hover, :focus-within) { border-color: #9ab3cf; box-shadow: 0 16px 32px #19231e24; }
+  .work-row:not(.publication-row) .work-image:is(:hover, :focus-visible) { border-color: #9ab3cf; box-shadow: 0 16px 32px #19231e24; }
 }
 @media screen and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .work-image:hover { transform: translateY(-5px) scale(1.015); }
-  .publication-row { transition: transform .2s ease; }
-  .publication-row:hover, .publication-row:focus-within { transform: translateY(-3px); }
-  .publication-row .work-image:is(:hover, :focus-visible), .publication-row .work-video-shell:is(:hover, :focus-within) { transform: translateY(-4px) scale(1.012); }
+  .work-row:not(.publication-row) .work-image:hover { transform: translateY(-5px) scale(1.015); }
 }
 /* Native figure preview: fit the whole diagram, then zoom to inspect details. */
 html.figure-preview-open { overflow: hidden; }

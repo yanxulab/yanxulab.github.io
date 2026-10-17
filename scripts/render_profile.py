@@ -121,12 +121,6 @@ def works(profile, publications=True):
         paper_url = next((action["url"] for action in item["links"] if action["label"].strip().casefold() == "paper"), None)
         heading = link(title, paper_url, "work-title-link") if paper_url else esc(title)
         authors = f'<span class="work-authors">{esc(item["authors"])}</span>' if item.get("authors") else ""
-        if len(item.get("authors", "")) > 180:
-            names = item["authors"].split(", ")
-            own_name = profile.get("name")
-            middle = ["…", own_name] if own_name in names[2:-1] else []
-            abbreviated = ", ".join(names[:2] + middle + ["…", names[-1]])
-            authors = f'<details class="work-authors"><summary>{esc(abbreviated)}</summary><p>{esc(item["authors"])}</p></details>'
         venue = item.get("venue") or item["kind"].removeprefix("Research · ")
         if item.get("year"):
             venue = f'{venue} {item["year"]}' if publications else f'{item["year"]} · {venue}'
@@ -134,7 +128,8 @@ def works(profile, publications=True):
             venue += f' ({item["status"]})'
         metadata = f'<div class="work-meta">{authors}<span class="work-venue">{esc(venue)}</span></div>'
         summary = f'<p class="work-summary">{esc(item["summary"])}</p>'
-        rows.append(f'<article class="{row_class}">{media}<div class="work-copy"><h3>{heading}</h3>{metadata}{summary}{actions}</div></article>')
+        description = actions + summary if publications else summary + actions
+        rows.append(f'<article class="{row_class}">{media}<div class="work-copy"><h3>{heading}</h3>{metadata}{description}</div></article>')
     return "".join(rows)
 
 

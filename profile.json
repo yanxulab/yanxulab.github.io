@@ -139,23 +139,6 @@
       ]
     },
     {
-      "kind": "Research",
-      "year": 2023,
-      "venue": "arXiv Preprint",
-      "title": "Multi-View Person Matching and 3D Pose Estimation with Arbitrary Uncalibrated Camera Networks",
-      "paper_title": "Multi-View Person Matching and 3D Pose Estimation with Arbitrary Uncalibrated Camera Networks",
-      "authors": "Yan Xu, Kris Kitani",
-      "summary": "Uses constrained clustering, triangulation, and bundle adjustment to recover multi-person 3D poses from arbitrary, uncalibrated camera networks.",
-      "image": "assets/research-person-matching.jpg",
-      "image_alt": "Multi-view images, recovered camera positions, and color-coded 3D human poses reconstructed in a shared scene.",
-      "links": [
-        {
-          "label": "Paper",
-          "url": "https://arxiv.org/abs/2312.01561"
-        }
-      ]
-    },
-    {
       "kind": "Research · BMVC 2022",
       "year": 2022,
       "venue": "BMVC",
@@ -163,8 +146,8 @@
       "paper_title": "Multi-View Multi-Person 3D Pose Estimation with Uncalibrated Camera Networks",
       "authors": "Yan Xu, Kris Kitani",
       "summary": "Estimates multi-person 3D poses from uncalibrated camera networks, extending pose estimation beyond controlled laboratory settings.",
-      "image": "assets/research-uncalibrated-pose.png",
-      "image_alt": "Paper figure illustrating multi-person 3D pose estimation from uncalibrated camera views.",
+      "image": "assets/research-person-matching.jpg",
+      "image_alt": "Multi-view images, recovered camera positions, and color-coded 3D human poses reconstructed in a shared scene.",
       "links": [
         {
           "label": "Project",
