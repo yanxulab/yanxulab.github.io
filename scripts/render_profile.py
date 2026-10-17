@@ -2,6 +2,7 @@
 
 import html
 import json
+import re
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -59,7 +60,23 @@ def socials(profile):
 
 
 def bio(profile):
-    return "".join(f'<p>{esc(paragraph)}</p>' for paragraph in profile["bio"])
+    targets = profile.get("bio_links", {})
+    # Match complete names, preferring "Gemini Omni" over its "Gemini" prefix.
+    names = sorted(targets, key=len, reverse=True)
+    pattern = re.compile(r"(?<!\w)(?:" + "|".join(re.escape(name) for name in names) + r")(?!\w)") if names else None
+    linked, paragraphs = set(), []
+    for paragraph in profile["bio"]:
+        parts, start = [], 0
+        matches = pattern.finditer(paragraph) if pattern else ()
+        for match in matches:
+            parts.append(esc(paragraph[start:match.start()]))
+            name = match.group()
+            parts.append(link(name, targets[name]) if name not in linked else esc(name))
+            linked.add(name)
+            start = match.end()
+        parts.append(esc(paragraph[start:]))
+        paragraphs.append('<p>' + "".join(parts) + '</p>')
+    return "".join(paragraphs)
 
 
 def career(profile):

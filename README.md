@@ -33,6 +33,7 @@ GitHub Pages does not offer password protection for personal sites. Private Page
 Edit **`profile.json`**, then preview or render. `_includes/home.html`, `blog.html`, `cv.html`, `bio.html`, and `work.html` are generated; do not edit them directly.
 
 - `bio`: an array of paragraphs; plain text, not HTML.
+- `bio_links`: optional name-to-URL mapping. Each name is linked only at its first occurrence in the bio; longer names take precedence, so `Gemini Omni` stays a single link.
 - `portrait`: an image path in `assets/`, or `null` for the notebook motif.
 - `email`, `scholar`, `x`, `linkedin`: currently `null` as requested. Add the full profile URL, or just the address for `email`. Empty entries appear as non-clickable icons with a descriptive tooltip.
 - `github`: the existing lab GitHub link.
