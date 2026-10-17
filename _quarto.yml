@@ -21,9 +21,9 @@ website:
   twitter-card: true
   search: false
   navbar:
-    title: "Yan Xu<span class='brand-dot'>.</span>"
-    background: "#fdfdfb"
-    foreground: "#252c28"
+    title: "Home"
+    background: "#ffffff"
+    foreground: "#191c1a"
     right:
       - href: index.qmd#selected-work
         text: Work

@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Yan Xu"
 pagetitle: "Yan Xu"
 description: "Yan Xu — foundation models, post-training, and reinforcement learning. Selected experiments, visual explanations, and technical writing."
 page-layout: full

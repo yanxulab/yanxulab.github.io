@@ -94,7 +94,7 @@ def works(profile):
 
 EXPERIMENT = """
 <section class="experiment-section" aria-labelledby="experiment-title">
-  <div class="experiment-intro"><p class="eyebrow">A small experiment</p><h2 id="experiment-title">One knob.<br> Different possibilities.</h2><p>Temperature changes how a language model turns scores into next-token probabilities. Try it.</p><p class="experiment-formula"><code>p = softmax(logits / T)</code></p></div>
+  <div class="experiment-intro"><p class="eyebrow">Interactive explanation</p><h2 id="experiment-title">How temperature changes sampling</h2><p>Adjust the temperature to see how fixed model scores become next-token probabilities.</p><p class="experiment-formula"><code>p = softmax(logits / T)</code></p></div>
   <div class="temperature-demo" data-temperature-demo>
     <div class="demo-heading"><span>Next-token probabilities</span><span class="demo-live">Interactive</span></div>
     <div class="probability-bars" role="img" aria-label="Illustrative next-token probabilities at temperature 1.0: the 56.4%, a 25.3%, one 11.4%, this 6.9%.">
@@ -112,14 +112,13 @@ EXPERIMENT = """
 
 
 def home(profile):
-    portrait = f'<img class="portrait" src="{url(profile["portrait"])}" alt="{esc(profile["portrait_alt"])}" width="220" height="260">' if profile.get("portrait") else '<div class="hero-note" aria-hidden="true"><span class="note-index">A working notebook</span><div class="tensor-motif"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>Build.<br>Measure.<br>Understand.</span></div>'
-    timeline_title = "Career path" if profile.get("career") else "Current focus"
+    portrait = f'<img class="portrait" src="{url(profile["portrait"])}" alt="{esc(profile["portrait_alt"])}" width="220" height="220">' if profile.get("portrait") else '<div class="hero-note" aria-hidden="true"><span class="note-index">A working notebook</span><div class="tensor-motif"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>Build.<br>Measure.<br>Understand.</span></div>'
+    timeline_title = "Experience" if profile.get("career") else "Current focus"
     return f"""
 <div class="home-shell">
-<section class="intro" aria-labelledby="intro-name"><div class="intro-copy"><p class="eyebrow">{esc(profile['focus'])}</p><h1 id="intro-name">{esc(profile['name'])}<span class="name-period">.</span></h1><div class="bio">{bio(profile)}</div>{socials(profile)}</div>{portrait}</section>
+<section class="intro" aria-labelledby="intro-name"><div class="intro-copy"><h1 id="intro-name">{esc(profile['name'])}<span class="name-period">.</span></h1><div class="bio">{bio(profile)}</div>{socials(profile)}</div>{portrait}</section>
 <section class="career-section" aria-labelledby="career-title"><div class="section-heading"><h2 id="career-title">{timeline_title}</h2><span class="section-aside">{link('CV ↗', 'cv.qmd')}</span></div>{career(profile)}</section>
-<section class="selected-work" id="selected-work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Selected work</h2><span class="section-aside">Computer vision &amp; multi-view geometry</span></div>{works(profile)}</section>
-{EXPERIMENT}
+<section class="selected-work" id="selected-work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Selected work</h2></div>{works(profile)}</section>
 <section class="writing-preview" aria-labelledby="writing-title"><div><p class="eyebrow">Writing</p><h2 id="writing-title">From the equations<br>to the code.</h2><p>Long-form notes on foundation models and post-training.<br>Currently taking shape, one experiment at a time.</p></div><a class="text-cta" href="/essays.html">Visit the blog <span aria-hidden="true">↗</span></a></section>
 </div>
 """
@@ -139,7 +138,9 @@ def blog(profile):
 <nav class="contents-panel" aria-label="Blog contents"><p class="eyebrow">Contents</p><ol>{''.join(contents)}</ol><a class="contents-extra" href="#workbench">From the workbench ↓</a></nav>
 <p class="blog-intro">I’m putting together three connected essays. Each will pair the core ideas with derivations, code, and controlled experiments.</p>
 {''.join(entries)}
-<section class="workbench" id="workbench"><p class="eyebrow">From the workbench</p><h2>Start with something small.</h2><p>Notebooks and visual explanations, alongside the longer essays.</p>{works({'work': profile.get('experiments', [])})}</section></div>
+<section class="workbench" id="workbench"><p class="eyebrow">From the workbench</p><h2>Start with something small.</h2><p>Notebooks and visual explanations, alongside the longer essays.</p>{works({'work': profile.get('experiments', [])})}</section>
+{EXPERIMENT}
+</div>
 """
 
 

@@ -7,7 +7,7 @@ Yan Xu’s personal website: selected research, visual experiments, and technica
 Install [Quarto](https://quarto.org/docs/get-started/), then run:
 
 ```bash
-quarto preview
+bash scripts/preview.sh
 ```
 
 Python 3.9+ is required; the profile renderer uses only the standard library. Quarto automatically runs it before building. To build without opening a browser:
@@ -18,12 +18,19 @@ quarto render
 
 Pushing to `main` runs `.github/workflows/publish.yml` and deploys `_site/` to GitHub Pages. The custom domain is set in `CNAME`, `_quarto.yml`, and the repository’s Pages settings.
 
+### Private development
+
+During development, keep changes local and open <http://127.0.0.1:4321> after starting the preview above. The helper rebuilds the site and explicitly binds to the loopback address, limiting preview access to this computer. Stop preview with `Ctrl+C`. It uses installed Quarto, with a fallback to the temporary runtime downloaded for this checkout.
+
+The current public version on `yanxu.io` stays online; local edits do not update it. Push to `main` only when ready to publish. This repository is public, so pushing unfinished source to another branch would make that source public even though it does not deploy the site.
+
+GitHub Pages does not offer password protection for personal sites. Private Pages publication is an Enterprise Cloud feature for eligible organization project sites; see [GitHub’s access-control documentation](https://docs.github.com/en/enterprise-cloud@latest/pages/getting-started-with-github-pages/changing-the-visibility-of-your-github-pages-site). An online preview restricted to your identity needs authenticated hosting or an access-control service.
+
 ## Update personal information
 
 Edit **`profile.json`**, then preview or render. `_includes/home.html`, `blog.html`, `cv.html`, `bio.html`, and `work.html` are generated; do not edit them directly.
 
 - `bio`: an array of paragraphs; plain text, not HTML.
-- `focus`: the short line above your name.
 - `portrait`: an image path in `assets/`, or `null` for the notebook motif.
 - `email`, `scholar`, `x`, `linkedin`: currently `null` as requested. Add the full profile URL, or just the address for `email`. Empty entries appear as non-clickable icons with a descriptive tooltip.
 - `github`: the existing lab GitHub link.
