@@ -54,9 +54,9 @@ body.blog-page main.content, body.cv-page main.content { width: min(var(--readin
 .eyebrow { color: var(--green); font-size: 12px; font-weight: 650; letter-spacing: 1px; line-height: 1.5; text-transform: uppercase; margin: 0 0 12px; }
 /* Bio, with an optional portrait configured in profile.json. */
 .intro { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 22px 36px; align-items: start; padding: 48px 0 42px; }
-.intro h1 { grid-column: 1; grid-row: 1; font-family: var(--serif); font-size: 68px; font-weight: 700; line-height: 1.08; letter-spacing: -2.5px; margin: 0; }
+.intro h1 { grid-column: 1 / -1; grid-row: 1; font-family: var(--serif); font-size: 68px; font-weight: 700; line-height: 1.08; letter-spacing: -2.5px; margin: 0; }
 .intro .bio { grid-column: 1; grid-row: 2; }
-.intro-profile { grid-column: 2; grid-row: 1 / span 2; align-self: stretch; display: flex; flex-direction: column; align-items: center; justify-content: space-between; width: 220px; min-width: 0; }
+.intro-profile { grid-column: 2; grid-row: 2; align-self: start; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; width: 220px; min-width: 0; }
 .intro-profile .social-links { justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 18px; }
 .intro-profile .social-icon { width: 32px; height: 32px; flex: 0 0 32px; }
 .bio { font-size: 19px; line-height: 1.6; max-width: 720px; }
