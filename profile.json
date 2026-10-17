@@ -1,5 +1,6 @@
 {
   "name": "Yan Xu",
+  "name_zh": "徐岩",
   "bio": [
     "My background is in 3D perception and multi-view geometry, spanning computer vision research and autonomous driving systems.",
     "I received my Ph.D. at Carnegie Mellon University, advised by Kris Kitani, studying multi-person 3D pose estimation with uncalibrated camera networks. In December 2022, I joined Waymo to work on 3D object detection, from model development to deployment.",
