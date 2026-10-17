@@ -38,7 +38,7 @@ Edit **`profile.json`**, then preview or render. `_includes/home.html`, `blog.ht
 - `email`, `scholar`, `x`, `linkedin`: add the full profile URL, or just the address for `email`. Empty entries appear as non-clickable icons with a descriptive tooltip. Icons are ordered LinkedIn, Email, Google Scholar, GitHub, X.
 - `github`: the profile or repository URL used by the GitHub icon.
 - `cv_pdf`: a local PDF path or public URL. When filled, a download link appears on the CV page.
-- `career`: timeline entries, latest first. Both the homepage and CV show `years`, organizations, roles or work areas, and work summaries. Use an open end date such as `2025–` for a current role. Keep `description` as plain text describing the work, approach, and outcome.
+- `career`: timeline entries, latest first. Both the homepage and CV show `years`, organizations, roles or work areas, and work summaries. Use an open end date such as `2025–` for a current role. Write two plain-text sentences: `description` explains the work and methods; `impact` explains the qualitative result on a separate line. Do not publish internal metrics.
 
 Example career entry:
 
@@ -47,7 +47,8 @@ Example career entry:
   "years": "2022 – present",
   "organization": "Organization name",
   "title": "Your role",
-  "description": "One sentence about the work.",
+  "description": "What you did and the methods you used.",
+  "impact": "The qualitative result of this work.",
   "url": "https://example.com/",
   "logo": "assets/organization.svg"
 }

@@ -89,7 +89,8 @@ def career(profile):
         if entry.get("url"):
             organization = link(entry["organization"], entry["url"])
         logo = f'<img class="career-logo" src="{url(entry["logo"])}" alt="" width="36" height="36" loading="lazy">' if entry.get("logo") else ""
-        rows.append(f'<li class="timeline-entry"><div class="timeline-date">{esc(entry["years"])}</div><div class="timeline-detail">{logo}<h3>{organization}</h3><p class="timeline-role">{esc(entry["title"])}</p><p>{esc(entry.get("description", ""))}</p></div></li>')
+        impact = f'<p class="timeline-impact">{esc(entry["impact"])}</p>' if entry.get("impact") else ""
+        rows.append(f'<li class="timeline-entry"><div class="timeline-date">{esc(entry["years"])}</div><div class="timeline-detail">{logo}<h3>{organization}</h3><p class="timeline-role">{esc(entry["title"])}</p><p>{esc(entry.get("description", ""))}</p>{impact}</div></li>')
     return '<ol class="timeline">' + "".join(rows) + "</ol>"
 
 
