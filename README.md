@@ -2,7 +2,7 @@
 
 Yan Xu’s personal website: selected research, visual experiments, and technical writing. Built with Quarto and published to GitHub Pages at <https://yanxu.io>.
 
-The homepage leads with the bio, an interactive writing/experiments preview, and selected work; the experience timeline follows. The CV retains its experience-first structure.
+The homepage follows Bio, Experience, Project Demo, Selected Work, and Tech Blog. Large project videos show results before the publication list. Blog content is currently marked Under Development.
 
 ## Preview and publish
 
@@ -40,6 +40,8 @@ Edit **`profile.json`**, then preview or render. `_includes/home.html`, `blog.ht
 - `email`, `scholar`, `x`, `linkedin`: add the full profile URL, or just the address for `email`. Empty entries appear as non-clickable icons with a descriptive tooltip. Icons are ordered LinkedIn, Email, Google Scholar, GitHub, X.
 - `github`: the profile or repository URL used by the GitHub icon.
 - `cv_pdf`: a local PDF path or public URL. When filled, a download link appears on the CV page.
+- `blog_published`: keep `false` to show only Under Development on the homepage and Blog page. Set `true` when ready to restore the writing index and interactive experiment.
+- `project_demos`: large video/GIF previews between Experience and Selected Work. Each entry has a `title`, short `summary`, `links`, and either `video`/`poster` or `image`/`image_alt`. `media_note` is optional.
 - `career`: timeline entries, latest first. Both the homepage and CV show `years`, organizations, roles or work areas, and work summaries. Use an open end date such as `2025–` for a current role. Write two plain-text sentences: `description` explains the work and methods; `impact` explains the qualitative result on a separate line. Do not publish internal metrics.
 
 Example career entry:
@@ -60,7 +62,7 @@ Use only dates and roles you have confirmed. `url` and `logo` are optional.
 
 ## Add research or multimedia
 
-The homepage follows **Bio → Experience → Selected Work → Tech Blog**. The temperature experiment sits in Tech Blog after the publications. **Selected Work** lists papers newest first, and **All Publications ↗** opens the Google Scholar profile configured in `scholar`. Each publication shows its linked title, full author list, venue/year/status, action links, then a short one- or two-sentence summary in the same gray as the authors. Unconfirmed author lists are omitted; entries without a `Paper` URL keep plain-text titles. Add entries to `work` in that order:
+The homepage follows **Bio → Experience → Project Demo → Selected Work → Tech Blog**. **Selected Work** lists papers newest first, and **All Publications ↗** opens the Google Scholar profile configured in `scholar`. Each publication shows its linked title, full author list, venue/year/status, action links, then a short one- or two-sentence summary in the same gray as the authors. Unconfirmed author lists are omitted; entries without a `Paper` URL keep plain-text titles. Add entries to `work` in that order:
 
 ```json
 {
@@ -88,13 +90,13 @@ For a playable video, add `"video": "assets/demo.mp4"`; `image` becomes its post
 
 Publications use open image-and-text rows with 50px between entries and no enclosing cards, shadows, or article rules. Rules are reserved for sections. Figures and videos have the same thin, light-gray border and remain static on desktop and touch devices. Figures retain a white frame and open in a keyboard-accessible preview. Readers can zoom, open the original, or close with Esc; without JavaScript the image link opens the original directly. Interface headings and short labels use Title Case; prose remains sentence case.
 
-For a result video alongside a method figure, add `"preview": {"video": "assets/project-preview.mp4", "poster": "assets/project-poster.jpg"}`. The video/method switch keeps both available. The current Co-Director preview is a locally hosted, silent 12-second excerpt of the official demo, compressed to about 1 MB. It plays only while visible, pauses when offscreen, and respects reduced-motion, data-saving, and manual pause preferences. Without JavaScript, native video controls and the method figure both remain available. Author lists are always shown in full.
+Put result videos in `project_demos`; keep the paper’s method figure in `work`. The current Co-Director demo is a locally hosted, silent 12-second excerpt of the official demo, compressed to about 1 MB, displayed across the full content width. It plays only while visible, pauses when offscreen, and respects reduced-motion, data-saving, and manual pause preferences. Without JavaScript, native video controls remain available. Author lists are always shown in full.
 
-Put smaller notebooks and figures in `experiments`; they appear under **From the Workbench** on the blog page, where their descriptions remain visible.
+Put smaller notebooks and figures in `experiments`; they appear under **From the Workbench** when `blog_published` is enabled. Existing drafts and experiment sources are retained while the public Blog page is a placeholder.
 
 ## Write a blog post
 
-The blog index is `essays.qmd`. It follows a reading-first layout: title, contents navigation, then the essays. The three existing outlines are labeled **In preparation** and have no read link in the index.
+The blog index is `essays.qmd`. It currently shows **Under Development**. With `blog_published: true`, it uses a reading-first layout: title, contents navigation, then the essays. The three existing outlines remain drafts and have no read link until published.
 
 1. Write the article in `posts/<slug>/index.qmd`:
 

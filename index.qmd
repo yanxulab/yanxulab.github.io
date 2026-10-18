@@ -1,7 +1,7 @@
 ---
 title: "Yan Xu"
 pagetitle: "Yan Xu"
-description: "Yan Xu — foundation models, post-training, and reinforcement learning. Selected experiments, visual explanations, and technical writing."
+description: "Yan Xu — multimodal AI at Google, Gemini post-training, video understanding, and generative-model evaluation."
 page-layout: full
 body-classes: home-page
 toc: false

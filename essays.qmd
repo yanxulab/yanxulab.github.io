@@ -1,7 +1,7 @@
 ---
-title: ""
+title: "Blog"
 pagetitle: "Blog"
-description: "Notes on foundation models, post-training, and reinforcement learning, from the equations to the code."
+description: "Technical writing by Yan Xu. Under Development."
 page-layout: article
 body-classes: blog-page
 toc: false

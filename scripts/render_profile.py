@@ -160,21 +160,44 @@ def experiment(home=False):
     return EXPERIMENT.format(intro=intro)
 
 
+def project_demos(profile):
+    entries = []
+    for item in profile.get("project_demos", []):
+        project_url = next((action["url"] for action in item.get("links", []) if action["label"] == "Project"), None)
+        title = link(item["title"], project_url) if project_url else esc(item["title"])
+        actions = "".join(link(action["label"] + " ↗", action["url"]) for action in item.get("links", []))
+        if item.get("video"):
+            poster = f' poster="{url(item["poster"])}"' if item.get("poster") else ""
+            media = f'<video class="project-demo-media" src="{url(item["video"])}"{poster} controls loop muted playsinline preload="none" data-work-video aria-label="{esc(item["title"])}: silent project demo"></video>'
+        else:
+            media = f'<img class="project-demo-media" src="{url(item["image"])}" alt="{esc(item["image_alt"])}" loading="lazy">'
+        note = f'<span class="media-note">{esc(item["media_note"])}</span>' if item.get("media_note") else ""
+        entries.append(f'<article class="project-demo"{(" data-work-media" if item.get("video") else "")}><div class="project-demo-heading"><h3>{title}</h3><div class="work-links">{actions}</div></div>{media}<div class="project-demo-caption"><p>{esc(item["summary"])}</p>{note}</div></article>')
+    if not entries:
+        return ""
+    return '<section class="project-demos" id="project-demo" aria-labelledby="demo-title"><div class="section-heading"><h2 id="demo-title">Project Demo</h2></div>' + "".join(entries) + '</section>'
+
+
 def home(profile):
     portrait = f'<img class="portrait" src="{url(profile["portrait"])}" alt="{esc(profile["portrait_alt"])}" width="220" height="220">' if profile.get("portrait") else '<div class="hero-note" aria-hidden="true"><span class="note-index">A working notebook</span><div class="tensor-motif"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>Build.<br>Measure.<br>Understand.</span></div>'
     timeline_title = "Experience" if profile.get("career") else "Current Focus"
     scholar_link = f'<span class="section-aside">{link("All Publications ↗", profile["scholar"])}</span>' if profile.get("scholar") else ""
+    blog_link = f'<span class="section-aside">{link("Visit the Blog ↗", "essays.qmd")}</span>' if profile.get("blog_published") else ""
+    blog_preview = experiment(home=True) if profile.get("blog_published") else '<p class="section-status">Under Development</p>'
     return f"""
 <div class="home-shell">
 <section class="intro" aria-labelledby="intro-name"><h1 id="intro-name">{esc(profile['name'])}</h1><div class="bio">{bio(profile)}</div><div class="intro-profile">{portrait}{socials(profile)}</div></section>
 <section class="career-section" aria-labelledby="career-title"><div class="section-heading"><h2 id="career-title">{timeline_title}</h2><span class="section-aside">{link('CV ↗', 'cv.qmd')}</span></div>{career(profile)}</section>
+{project_demos(profile)}
 <section class="selected-work" id="selected-work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Selected Work</h2>{scholar_link}</div>{works(profile)}</section>
-<section class="tech-blog-section" id="tech-blog" aria-labelledby="blog-title"><div class="section-heading"><h2 id="blog-title">Tech Blog</h2><span class="section-aside">{link('Visit the Blog ↗', 'essays.qmd')}</span></div>{experiment(home=True)}</section>
+<section class="tech-blog-section" id="tech-blog" aria-labelledby="blog-title"><div class="section-heading"><h2 id="blog-title">Tech Blog</h2>{blog_link}</div>{blog_preview}</section>
 </div>
 """
 
 
 def blog(profile):
+    if not profile.get("blog_published"):
+        return '<div class="reading-shell"><div class="reading-header"><h1 id="blog-page-title">Blog</h1><p class="section-status">Under Development</p></div></div>'
     contents, entries = [], []
     for index, item in enumerate(profile["writing"], 1):
         number = f"{index:02}"

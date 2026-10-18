@@ -57,7 +57,7 @@
       selected = value;
       for (const panel of panels) panel.hidden = panel.dataset.mediaPanel !== value;
       for (const choice of choices) choice.setAttribute("aria-pressed", String(choice.dataset.mediaChoice === value));
-      note.hidden = value !== "preview";
+      if (note) note.hidden = value !== "preview";
       sync();
     }
 
@@ -68,13 +68,15 @@
       else userPaused = true;
     });
     video.addEventListener("error", () => {
-      choose("method");
-      media.querySelector('[data-media-choice="preview"]').disabled = true;
+      if (panels.some(panel => panel.dataset.mediaPanel === "method")) choose("method");
+      const previewChoice = media.querySelector('[data-media-choice="preview"]');
+      if (previewChoice) previewChoice.disabled = true;
     });
     for (const choice of choices) {
       choice.addEventListener("click", () => choose(choice.dataset.mediaChoice));
     }
-    media.querySelector(".media-switch").hidden = false;
+    const mediaSwitch = media.querySelector(".media-switch");
+    if (mediaSwitch) mediaSwitch.hidden = false;
     choose("preview");
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver(([entry]) => {

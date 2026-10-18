@@ -19,6 +19,21 @@
   "x": "https://x.com/yanxu28297754",
   "linkedin": "https://www.linkedin.com/in/yan-xu-495406a6/",
   "cv_pdf": null,
+  "blog_published": false,
+  "project_demos": [
+    {
+      "title": "Co-Director: Agentic Generative Video Storytelling",
+      "summary": "Agents coordinate image, video, and audio generation from a brief and reference images, with multimodal feedback guiding refinement.",
+      "video": "assets/research-co-director-preview.mp4",
+      "poster": "assets/research-co-director-poster.jpg",
+      "media_note": "12s · Silent Excerpt",
+      "links": [
+        {"label": "Project", "url": "https://co-director-agent.github.io/"},
+        {"label": "Paper", "url": "https://arxiv.org/abs/2604.24842"},
+        {"label": "Code", "url": "https://github.com/GoogleCloudPlatform/genmedia-izumi-agent/tree/main/demos/backend/ads_codirector"}
+      ]
+    }
+  ],
   "career": [
     {
       "years": "2025–",
@@ -85,10 +100,6 @@
       "summary": "Combines hierarchical agents, multi-armed bandit search, and multimodal feedback to generate videos with coherent narratives and consistent visual identities.",
       "image": "assets/research-co-director.jpg",
       "image_alt": "Co-Director pipeline: a multi-armed bandit orchestrates pre-production, video generation, and post-production agents using multimodal judge feedback.",
-      "preview": {
-        "video": "assets/research-co-director-preview.mp4",
-        "poster": "assets/research-co-director-poster.jpg"
-      },
       "links": [
         {
           "label": "Project",

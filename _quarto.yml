@@ -20,7 +20,7 @@ project:
 website:
   title: "Yan Xu"
   site-url: "https://yanxu.io"
-  description: "Foundation models, post-training, reinforcement learning, and multimodal systems—from first principles to working code."
+  description: "Yan Xu — multimodal AI at Google, Gemini post-training, video understanding, and generative-model evaluation."
   favicon: assets/favicon.svg
   open-graph: true
   twitter-card: true
@@ -31,7 +31,7 @@ website:
     background: "#ffffff"
     foreground: "#20211e"
     right:
-      - href: index.qmd#selected-work
+      - href: index.qmd#project-demo
         text: Work
       - href: essays.qmd
         text: Blog
