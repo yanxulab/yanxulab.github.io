@@ -35,6 +35,24 @@ def link(label, target, css=""):
     return f'<a class="{css}" href="{url(target)}">{esc(label)}</a>'
 
 
+def linked_text(value, targets, linked=None):
+    """Escape prose and link each configured phrase at its first occurrence."""
+    names = sorted((name for name in targets if name), key=len, reverse=True)
+    if not names:
+        return esc(value)
+    pattern = re.compile(r"(?<!\w)(?:" + "|".join(re.escape(name) for name in names) + r")(?!\w)")
+    linked = set() if linked is None else linked
+    parts, start = [], 0
+    for match in pattern.finditer(value):
+        parts.append(esc(value[start:match.start()]))
+        name = match.group()
+        parts.append(link(name, targets[name]) if name not in linked else esc(name))
+        linked.add(name)
+        start = match.end()
+    parts.append(esc(value[start:]))
+    return "".join(parts)
+
+
 # Small inline SVGs keep icons crisp and avoid external fonts or icon requests.
 ICONS = {
     "scholar": '<path d="m2 9 10-6 10 6-10 6L2 9Z"/><path d="M6 12v6c3 3 9 3 12 0v-6M22 9v8"/>',
@@ -61,22 +79,8 @@ def socials(profile):
 
 def bio(profile):
     targets = profile.get("bio_links", {})
-    # Match complete names, preferring "Gemini Omni" over its "Gemini" prefix.
-    names = sorted(targets, key=len, reverse=True)
-    pattern = re.compile(r"(?<!\w)(?:" + "|".join(re.escape(name) for name in names) + r")(?!\w)") if names else None
-    linked, paragraphs = set(), []
-    for paragraph in profile["bio"]:
-        parts, start = [], 0
-        matches = pattern.finditer(paragraph) if pattern else ()
-        for match in matches:
-            parts.append(esc(paragraph[start:match.start()]))
-            name = match.group()
-            parts.append(link(name, targets[name]) if name not in linked else esc(name))
-            linked.add(name)
-            start = match.end()
-        parts.append(esc(paragraph[start:]))
-        paragraphs.append('<p>' + "".join(parts) + '</p>')
-    return "".join(paragraphs)
+    linked = set()
+    return "".join('<p>' + linked_text(paragraph, targets, linked) + '</p>' for paragraph in profile["bio"])
 
 
 def career(profile):
@@ -89,8 +93,9 @@ def career(profile):
         if entry.get("url"):
             organization = link(entry["organization"], entry["url"])
         logo = f'<img class="career-logo" src="{url(entry["logo"])}" alt="" width="36" height="36" loading="lazy">' if entry.get("logo") else ""
-        impact = f'<p class="timeline-impact">{esc(entry["impact"])}</p>' if entry.get("impact") else ""
-        rows.append(f'<li class="timeline-entry"><div class="timeline-date">{esc(entry["years"])}</div><div class="timeline-detail">{logo}<h3>{organization}</h3><p class="timeline-role">{esc(entry["title"])}</p><p>{esc(entry.get("description", ""))}</p>{impact}</div></li>')
+        description = linked_text(entry.get("description", ""), entry.get("description_links", {}))
+        impact = '<p class="timeline-impact">' + linked_text(entry["impact"], entry.get("impact_links", {})) + '</p>' if entry.get("impact") else ""
+        rows.append(f'<li class="timeline-entry"><div class="timeline-date">{esc(entry["years"])}</div><div class="timeline-detail">{logo}<h3>{organization}</h3><p class="timeline-role">{esc(entry["title"])}</p><p>{description}</p>{impact}</div></li>')
     return '<ol class="timeline">' + "".join(rows) + "</ol>"
 
 

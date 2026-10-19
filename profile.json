@@ -60,7 +60,10 @@
       "organization": "Google",
       "title": "Software Engineer · Machine Learning",
       "description": "I work on Gemini post-training for long-context video understanding, evaluation for enterprise customer applications, and multimodal judging for generative models.",
-      "impact": "Our work supports Gemini launches on Google Cloud and provides reward signals for training Nano Banana and Gemini Omni through RL post-training.",
+      "impact": "My work supports Gemini multimodal launches and provides reward signals for training Nano Banana and Gemini Omni through RL post-training.",
+      "impact_links": {
+        "Gemini multimodal launches": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-agentic-video-in-gemini/"
+      },
       "url": "https://www.google.com/"
     },
     {
@@ -68,6 +71,9 @@
       "organization": "Waymo",
       "title": "Software Engineer · Machine Learning",
       "description": "I worked on perception foundation models and Transformer-based onboard detectors, using auto-labeling for iterative data refinement and model training.",
+      "description_links": {
+        "perception foundation models": "https://waymo.com/blog/2024/10/ai-and-ml-at-waymo/"
+      },
       "impact": "Our work improved pedestrian and vehicle detection in challenging driving scenarios, including freeway driving, and supported fleet-wide deployment.",
       "url": "https://waymo.com/"
     },
