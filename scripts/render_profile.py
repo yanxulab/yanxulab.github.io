@@ -210,7 +210,7 @@ def home(profile):
     return f"""
 <div class="home-shell">
 <section class="intro" aria-labelledby="intro-name"><h1 id="intro-name">{esc(profile['name'])}</h1><div class="bio">{bio(profile)}</div><div class="intro-profile">{portrait}{socials(profile)}</div></section>
-<section class="career-section" aria-labelledby="career-title"><div class="section-heading"><h2 id="career-title">{timeline_title}</h2><span class="section-aside">{link('CV ↗', 'cv.qmd')}</span></div>{career(profile)}</section>
+<section class="career-section" aria-labelledby="career-title"><div class="section-heading"><h2 id="career-title">{timeline_title}</h2><span class="section-aside">{link('CV ↗', profile.get('cv_pdf') or 'cv.qmd')}</span></div>{career(profile)}</section>
 {project_demos(profile)}
 <section class="selected-work" id="selected-work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Selected Work</h2>{scholar_link}</div>{works(profile)}</section>
 <section class="tech-blog-section" id="tech-blog" aria-labelledby="blog-title"><div class="section-heading"><h2 id="blog-title">Tech Blog</h2>{blog_link}</div>{blog_preview}</section>
@@ -241,7 +241,7 @@ def blog(profile):
 
 
 def cv(profile):
-    pdf = f'<p>{link("Download CV (PDF) ↓", profile["cv_pdf"], "text-cta")}</p>' if profile.get("cv_pdf") else '<p class="cv-status">A full CV will be added here.</p>'
+    pdf = f'<p>{link("View CV ↗", profile["cv_pdf"], "text-cta")}</p>' if profile.get("cv_pdf") else '<p class="cv-status">A full CV will be added here.</p>'
     title = "Experience & Education" if profile.get("career") else "Current Focus"
     return f'<div class="reading-shell"><header class="reading-header"><p class="eyebrow">Curriculum Vitae</p><h1>{esc(profile["name"])}</h1>{pdf}</header><section class="cv-summary"><h2>Research Interests</h2>{bio(profile)}{socials(profile)}</section><section class="cv-experience"><h2>{title}</h2>{career(profile)}</section><section class="cv-work"><h2>Selected Work</h2>{works(profile)}</section></div>'
 

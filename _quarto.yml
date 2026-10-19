@@ -35,7 +35,7 @@ website:
         text: Work
       - href: essays.qmd
         text: Blog
-      - href: cv.qmd
+      - href: "https://drive.google.com/file/d/1QIUxPINKNxTQX0JVOabTScNfoQfPyNxq/view?usp=sharing"
         text: CV
   page-footer:
     left: "© Yan Xu"
