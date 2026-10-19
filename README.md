@@ -62,7 +62,7 @@ Use only dates and roles you have confirmed. `url` and `logo` are optional.
 
 ## Add research or multimedia
 
-For a before-and-after gallery, combine each pair into one synchronized video with Before on top and After below, then set `"comparison": true` on that gallery video entry. The page labels both halves and preserves the combined 8:9 frame. The two examples sit side by side on desktop and stack on mobile. Earlier horizontal comparison assets are retained separately.
+For a before-and-after gallery, combine each pair into one synchronized video with Before on top and After below, then set `"comparison": true` on that gallery video entry. The page labels both halves and preserves the combined 10:9 frame. The CamRM clips use the same crop for both halves: 24 pixels from the top and 48 from the bottom of each original 640 × 360 frame. This reduces height by 20% without stretching the images. The two examples sit side by side on desktop and stack on mobile. Earlier horizontal and full-height stacked assets are retained separately.
 
 The homepage follows **Bio → Experience → Demo → Selected Work → Tech Blog**. **Selected Work** lists papers newest first, and **All Publications ↗** opens the Google Scholar profile configured in `scholar`. Each publication shows its linked title, full author list, venue/year/status, action links, then a short one- or two-sentence summary in the same gray as the authors. Unconfirmed author lists are omitted; entries without a `Paper` URL keep plain-text titles. Add entries to `work` in that order:
 

@@ -40,20 +40,20 @@
       ]
     },
     {
-      "title": "Precise Camera Motion Control",
+      "title": "Camera Motion Control",
       "summary": "Motion-grounded feedback refines generated videos to better follow the requested camera motion.",
       "videos": [
         {
           "title": "360° Rotation",
           "comparison": true,
-          "video": "assets/demo-camrm-rotation-stacked-preview.mp4",
-          "poster": "assets/demo-camrm-rotation-stacked-poster.jpg"
+          "video": "assets/demo-camrm-rotation-compact-preview.mp4",
+          "poster": "assets/demo-camrm-rotation-compact-poster.jpg"
         },
         {
           "title": "Truck Left",
           "comparison": true,
-          "video": "assets/demo-camrm-truck-left-stacked-preview.mp4",
-          "poster": "assets/demo-camrm-truck-left-stacked-poster.jpg"
+          "video": "assets/demo-camrm-truck-left-compact-preview.mp4",
+          "poster": "assets/demo-camrm-truck-left-compact-poster.jpg"
         }
       ]
     }
