@@ -169,8 +169,12 @@ def project_demos(profile):
     entries = []
     for item in profile.get("project_demos", []):
         if item.get("videos"):
-            videos = "".join(f'<figure class="project-demo-item" data-work-media>{demo_video(video)}<figcaption>{esc(video["title"])}</figcaption></figure>' for video in item["videos"])
-            entries.append(f'<article class="project-demo"><div class="project-demo-heading"><h3>{esc(item["title"])}</h3></div><div class="project-demo-grid">{videos}</div></article>')
+            videos = []
+            for video in item["videos"]:
+                prompt = f'<span class="project-demo-prompt">Prompt: “{esc(video["prompt"])}”</span>' if video.get("prompt") else ""
+                videos.append(f'<figure class="project-demo-item" data-work-media>{demo_video(video)}<figcaption><span class="project-demo-product">{esc(video["title"])}</span>{prompt}</figcaption></figure>')
+            summary = f'<p class="project-demo-description">{esc(item["summary"])}</p>' if item.get("summary") else ""
+            entries.append(f'<article class="project-demo"><div class="project-demo-heading"><h3>{esc(item["title"])}</h3></div>{summary}<div class="project-demo-grid">{"".join(videos)}</div></article>')
             continue
         project_url = next((action["url"] for action in item.get("links", []) if action["label"] == "Project"), None)
         title = link(item["title"], project_url) if project_url else esc(item["title"])

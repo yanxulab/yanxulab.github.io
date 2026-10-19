@@ -22,15 +22,18 @@
   "blog_published": false,
   "project_demos": [
     {
-      "title": "Ads video creation with one sentence",
+      "title": "Prompt-to-Ad Generation",
+      "summary": "Turns a single-sentence product brief into a complete video ad, with coordinated visuals and audio.",
       "videos": [
         {
-          "title": "Iphone",
+          "title": "iPhone",
+          "prompt": "Create a video ad for iPhone 17.",
           "video": "assets/demo-iphone-preview.mp4",
           "poster": "assets/demo-iphone-poster.jpg"
         },
         {
           "title": "Nike",
+          "prompt": "Create a video ad for Nike Air Jordan 1.",
           "video": "assets/demo-nike-preview.mp4",
           "poster": "assets/demo-nike-poster.jpg"
         }
