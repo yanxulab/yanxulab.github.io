@@ -160,22 +160,30 @@ def experiment(home=False):
     return EXPERIMENT.format(intro=intro)
 
 
+def demo_video(item):
+    poster = f' poster="{url(item["poster"])}"' if item.get("poster") else ""
+    return f'<video class="project-demo-media" src="{url(item["video"])}"{poster} controls loop muted playsinline preload="none" data-work-video aria-label="{esc(item["title"])}: video demo"></video>'
+
+
 def project_demos(profile):
     entries = []
     for item in profile.get("project_demos", []):
+        if item.get("videos"):
+            videos = "".join(f'<figure class="project-demo-item" data-work-media>{demo_video(video)}<figcaption>{esc(video["title"])}</figcaption></figure>' for video in item["videos"])
+            entries.append(f'<article class="project-demo"><div class="project-demo-heading"><h3>{esc(item["title"])}</h3></div><div class="project-demo-grid">{videos}</div></article>')
+            continue
         project_url = next((action["url"] for action in item.get("links", []) if action["label"] == "Project"), None)
         title = link(item["title"], project_url) if project_url else esc(item["title"])
         actions = "".join(link(action["label"] + " ↗", action["url"]) for action in item.get("links", []))
         if item.get("video"):
-            poster = f' poster="{url(item["poster"])}"' if item.get("poster") else ""
-            media = f'<video class="project-demo-media" src="{url(item["video"])}"{poster} controls loop muted playsinline preload="none" data-work-video aria-label="{esc(item["title"])}: silent project demo"></video>'
+            media = demo_video(item)
         else:
             media = f'<img class="project-demo-media" src="{url(item["image"])}" alt="{esc(item["image_alt"])}" loading="lazy">'
         note = f'<span class="media-note">{esc(item["media_note"])}</span>' if item.get("media_note") else ""
         entries.append(f'<article class="project-demo"{(" data-work-media" if item.get("video") else "")}><div class="project-demo-heading"><h3>{title}</h3><div class="work-links">{actions}</div></div>{media}<div class="project-demo-caption"><p>{esc(item["summary"])}</p>{note}</div></article>')
     if not entries:
         return ""
-    return '<section class="project-demos" id="project-demo" aria-labelledby="demo-title"><div class="section-heading"><h2 id="demo-title">Project Demo</h2></div>' + "".join(entries) + '</section>'
+    return '<section class="project-demos" id="project-demo" aria-labelledby="demo-title"><div class="section-heading"><h2 id="demo-title">Demo</h2></div>' + "".join(entries) + '</section>'
 
 
 def home(profile):

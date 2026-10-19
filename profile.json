@@ -22,6 +22,21 @@
   "blog_published": false,
   "project_demos": [
     {
+      "title": "Ads video creation with one sentence",
+      "videos": [
+        {
+          "title": "Iphone",
+          "video": "assets/demo-iphone-preview.mp4",
+          "poster": "assets/demo-iphone-poster.jpg"
+        },
+        {
+          "title": "Nike",
+          "video": "assets/demo-nike-preview.mp4",
+          "poster": "assets/demo-nike-poster.jpg"
+        }
+      ]
+    },
+    {
       "title": "Co-Director: Agentic Generative Video Storytelling",
       "summary": "Agents coordinate image, video, and audio generation from a brief and reference images, with multimodal feedback guiding refinement.",
       "video": "assets/research-co-director-preview.mp4",

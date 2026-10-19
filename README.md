@@ -2,7 +2,7 @@
 
 Yan Xu’s personal website: selected research, visual experiments, and technical writing. Built with Quarto and published to GitHub Pages at <https://yanxu.io>.
 
-The homepage follows Bio, Experience, Project Demo, Selected Work, and Tech Blog. Large project videos show results before the publication list. Blog content is currently marked Under Development.
+The homepage follows Bio, Experience, Demo, Selected Work, and Tech Blog. Large project videos show results before the publication list. Blog content is currently marked Under Development.
 
 ## Preview and publish
 
@@ -41,7 +41,7 @@ Edit **`profile.json`**, then preview or render. `_includes/home.html`, `blog.ht
 - `github`: the profile or repository URL used by the GitHub icon.
 - `cv_pdf`: a local PDF path or public URL. When filled, a download link appears on the CV page.
 - `blog_published`: keep `false` to show only Under Development on the homepage and Blog page. Set `true` when ready to restore the writing index and interactive experiment.
-- `project_demos`: large video/GIF previews between Experience and Selected Work. Each entry has a `title`, short `summary`, `links`, and either `video`/`poster` or `image`/`image_alt`. `media_note` is optional.
+- `project_demos`: large video/GIF previews between Experience and Selected Work. Each entry has a `title`, short `summary`, `links`, and either `video`/`poster` or `image`/`image_alt`. `media_note` is optional. For a video gallery, use a `title` and a `videos` array of entries with `title`, `video`, and `poster`; captions appear below the videos. Galleries have two columns on desktop and stack on mobile. Keep web videos and posters in `assets/` with names ending in `-preview.mp4` and `-poster.jpg` so the build copies them. Videos start muted when visible; native controls allow playback and sound.
 - `career`: timeline entries, latest first. Both the homepage and CV show `years`, organizations, roles or work areas, and work summaries. Use an open end date such as `2025–` for a current role. Write two plain-text sentences: `description` explains the work and methods; `impact` explains the qualitative result on a separate line. Do not publish internal metrics.
 
 Example career entry:
@@ -62,7 +62,7 @@ Use only dates and roles you have confirmed. `url` and `logo` are optional.
 
 ## Add research or multimedia
 
-The homepage follows **Bio → Experience → Project Demo → Selected Work → Tech Blog**. **Selected Work** lists papers newest first, and **All Publications ↗** opens the Google Scholar profile configured in `scholar`. Each publication shows its linked title, full author list, venue/year/status, action links, then a short one- or two-sentence summary in the same gray as the authors. Unconfirmed author lists are omitted; entries without a `Paper` URL keep plain-text titles. Add entries to `work` in that order:
+The homepage follows **Bio → Experience → Demo → Selected Work → Tech Blog**. **Selected Work** lists papers newest first, and **All Publications ↗** opens the Google Scholar profile configured in `scholar`. Each publication shows its linked title, full author list, venue/year/status, action links, then a short one- or two-sentence summary in the same gray as the authors. Unconfirmed author lists are omitted; entries without a `Paper` URL keep plain-text titles. Add entries to `work` in that order:
 
 ```json
 {
