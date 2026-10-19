@@ -5,11 +5,7 @@
     "Previously at Waymo, he worked on perception foundation models and onboard perception systems for autonomous driving. He received his Ph.D. in Electrical and Computer Engineering from Carnegie Mellon University, advised by Kris Kitani, where he studied in-the-wild 3D human pose estimation."
   ],
   "bio_links": {
-    "Gemini": "https://deepmind.google/models/gemini/",
-    "Nano Banana": "https://deepmind.google/models/gemini-image/",
-    "Gemini Omni": "https://deepmind.google/models/gemini-omni/",
-    "Kris Kitani": "https://kriskitani.github.io/",
-    "perception foundation models": "https://waymo.com/blog/2024/10/ai-and-ml-at-waymo/"
+    "Kris Kitani": "https://kriskitani.github.io/"
   },
   "portrait": "assets/portrait-headshot.jpg",
   "portrait_alt": "Yan Xu, head-and-shoulders portrait",
