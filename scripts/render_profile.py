@@ -162,7 +162,9 @@ def experiment(home=False):
 
 def demo_video(item):
     poster = f' poster="{url(item["poster"])}"' if item.get("poster") else ""
-    return f'<video class="project-demo-media" src="{url(item["video"])}"{poster} controls loop muted playsinline preload="none" data-work-video aria-label="{esc(item["title"])}: video demo"></video>'
+    css = "project-demo-media project-demo-comparison" if item.get("comparison") else "project-demo-media"
+    label = "Before (left), After (right)" if item.get("comparison") else "video demo"
+    return f'<video class="{css}" src="{url(item["video"])}"{poster} controls loop muted playsinline preload="none" data-work-video aria-label="{esc(item["title"])}: {label}"></video>'
 
 
 def project_demos(profile):
@@ -172,7 +174,8 @@ def project_demos(profile):
             videos = []
             for video in item["videos"]:
                 prompt = f'<span class="project-demo-prompt">Prompt: “{esc(video["prompt"])}”</span>' if video.get("prompt") else ""
-                videos.append(f'<figure class="project-demo-item" data-work-media>{demo_video(video)}<figcaption><span class="project-demo-product">{esc(video["title"])}</span>{prompt}</figcaption></figure>')
+                labels = '<div class="comparison-labels" aria-hidden="true"><span>Before</span><span>After</span></div>' if video.get("comparison") else ""
+                videos.append(f'<figure class="project-demo-item" data-work-media>{labels}{demo_video(video)}<figcaption><span class="project-demo-product">{esc(video["title"])}</span>{prompt}</figcaption></figure>')
             summary = f'<p class="project-demo-description">{esc(item["summary"])}</p>' if item.get("summary") else ""
             entries.append(f'<article class="project-demo"><div class="project-demo-heading"><h3>{esc(item["title"])}</h3></div>{summary}<div class="project-demo-grid">{"".join(videos)}</div></article>')
             continue

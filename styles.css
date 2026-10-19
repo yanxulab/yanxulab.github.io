@@ -146,6 +146,8 @@ a.social-icon:hover { color: var(--link-hover); }
 .project-demo-prompt { display: block; color: var(--muted); font-size: 14px; font-weight: 400; line-height: 1.5; margin-top: 4px; }
 .project-demo-media { display: block; width: 100%; height: auto; border: 1px solid #e6e8eb; border-radius: 2px; }
 video.project-demo-media { aspect-ratio: 16 / 9; object-fit: contain; background: #101519; }
+video.project-demo-comparison { aspect-ratio: 32 / 9; }
+.comparison-labels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); color: var(--muted); font-size: 12px; font-weight: 500; line-height: 1.5; text-align: center; margin-bottom: 6px; }
 .project-demo-caption { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 24px; margin-top: 13px; }
 .project-demo-caption p { flex: 1 1 520px; color: var(--muted); font-size: 16px; line-height: 1.6; margin: 0; }
 .project-demo-caption .media-note { white-space: nowrap; }
