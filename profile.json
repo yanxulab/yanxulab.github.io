@@ -74,7 +74,7 @@
       "description_links": {
         "perception foundation models": "https://waymo.com/blog/2024/10/ai-and-ml-at-waymo/"
       },
-      "impact": "Our work improved pedestrian and vehicle detection in challenging driving scenarios, including freeway driving, and supported fleet-wide deployment.",
+      "impact": "My work improved pedestrian and vehicle detection in challenging driving scenarios, including freeway driving, and supported fleet-wide deployment.",
       "url": "https://waymo.com/"
     },
     {
@@ -82,7 +82,10 @@
       "organization": "Carnegie Mellon University",
       "title": "Ph.D. · Computer Vision & Machine Learning",
       "description": "My Ph.D. research focused on joint 3D human pose estimation and camera calibration, using person re-identification and multi-view geometry.",
-      "impact": "I developed methods that extended multi-person 3D pose estimation to uncalibrated camera networks beyond controlled laboratory settings.",
+      "impact": "My thesis extends multi-person 3D pose estimation to uncalibrated camera networks beyond controlled laboratory settings.",
+      "impact_links": {
+        "My thesis": "https://www.proquest.com/openview/d88a6415df2d38682018c44d88d0b151/1?pq-origsite=gscholar&cbl=18750&diss=y"
+      },
       "url": "https://www.cs.cmu.edu/~yxu2/"
     }
   ],
