@@ -56,18 +56,6 @@
           "poster": "assets/demo-camrm-truck-left-poster.jpg"
         }
       ]
-    },
-    {
-      "title": "Co-Director: Agentic Generative Video Storytelling",
-      "summary": "Agents coordinate image, video, and audio generation from a brief and reference images, with multimodal feedback guiding refinement.",
-      "video": "assets/research-co-director-preview.mp4",
-      "poster": "assets/research-co-director-poster.jpg",
-      "media_note": "12s · Silent Excerpt",
-      "links": [
-        {"label": "Project", "url": "https://co-director-agent.github.io/"},
-        {"label": "Paper", "url": "https://arxiv.org/abs/2604.24842"},
-        {"label": "Code", "url": "https://github.com/GoogleCloudPlatform/genmedia-izumi-agent/tree/main/demos/backend/ads_codirector"}
-      ]
     }
   ],
   "career": [
@@ -144,10 +132,6 @@
         {
           "label": "Paper",
           "url": "https://arxiv.org/abs/2604.24842"
-        },
-        {
-          "label": "Code",
-          "url": "https://github.com/GoogleCloudPlatform/genmedia-izumi-agent/tree/main/demos/backend/ads_codirector"
         }
       ]
     },

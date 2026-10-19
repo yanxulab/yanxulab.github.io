@@ -92,7 +92,7 @@ For a playable video, add `"video": "assets/demo.mp4"`; `image` becomes its post
 
 Publications use open image-and-text rows with 50px between entries and no enclosing cards, shadows, or article rules. Rules are reserved for sections. Figures and videos have the same thin, light-gray border and remain static on desktop and touch devices. Figures retain a white frame and open in a keyboard-accessible preview. Readers can zoom, open the original, or close with Esc; without JavaScript the image link opens the original directly. Interface headings and short labels use Title Case; prose remains sentence case.
 
-Put result videos in `project_demos`; keep the paper’s method figure in `work`. The current Co-Director demo is a locally hosted, silent 12-second excerpt of the official demo, compressed to about 1 MB, displayed across the full content width. It plays only while visible, pauses when offscreen, and respects reduced-motion, data-saving, and manual pause preferences. Without JavaScript, native video controls remain available. Author lists are always shown in full.
+Put result videos in `project_demos`; keep the paper’s method figure in `work`. The current demos show prompt-to-ad generation and CamRM camera-motion comparisons. Videos play only while visible, pause when offscreen, and respect reduced-motion, data-saving, and manual pause preferences. Without JavaScript, native video controls remain available. Author lists are always shown in full.
 
 Put smaller notebooks and figures in `experiments`; they appear under **From the Workbench** when `blog_published` is enabled. Existing drafts and experiment sources are retained while the public Blog page is a placeholder.
 
