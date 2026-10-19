@@ -82,7 +82,7 @@
       "organization": "Carnegie Mellon University",
       "title": "Ph.D. · Computer Vision & Machine Learning",
       "description": "My Ph.D. research focused on joint 3D human pose estimation and camera calibration, using person re-identification and multi-view geometry.",
-      "impact": "My thesis extends multi-person 3D pose estimation to uncalibrated camera networks beyond controlled laboratory settings.",
+      "impact": "My thesis focused on extending multi-person 3D pose estimation to uncalibrated camera networks beyond controlled laboratory settings.",
       "impact_links": {
         "My thesis": "https://www.proquest.com/openview/d88a6415df2d38682018c44d88d0b151/1?pq-origsite=gscholar&cbl=18750&diss=y"
       },
