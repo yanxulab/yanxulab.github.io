@@ -40,20 +40,20 @@
       ]
     },
     {
-      "title": "CamRM: Camera Motion Refinement",
+      "title": "Precise Camera Motion Control",
       "summary": "Motion-grounded feedback refines generated videos to better follow the requested camera motion.",
       "videos": [
         {
           "title": "360° Rotation",
           "comparison": true,
-          "video": "assets/demo-camrm-rotation-preview.mp4",
-          "poster": "assets/demo-camrm-rotation-poster.jpg"
+          "video": "assets/demo-camrm-rotation-stacked-preview.mp4",
+          "poster": "assets/demo-camrm-rotation-stacked-poster.jpg"
         },
         {
           "title": "Truck Left",
           "comparison": true,
-          "video": "assets/demo-camrm-truck-left-preview.mp4",
-          "poster": "assets/demo-camrm-truck-left-poster.jpg"
+          "video": "assets/demo-camrm-truck-left-stacked-preview.mp4",
+          "poster": "assets/demo-camrm-truck-left-stacked-poster.jpg"
         }
       ]
     }
@@ -125,10 +125,6 @@
       "image": "assets/research-co-director.jpg",
       "image_alt": "Co-Director pipeline: a multi-armed bandit orchestrates pre-production, video generation, and post-production agents using multimodal judge feedback.",
       "links": [
-        {
-          "label": "Project",
-          "url": "https://co-director-agent.github.io/"
-        },
         {
           "label": "Paper",
           "url": "https://arxiv.org/abs/2604.24842"
